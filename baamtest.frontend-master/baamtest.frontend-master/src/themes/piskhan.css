@@ -1,0 +1,122 @@
+.box {
+    margin: -5vw 0 2vw 0;
+}
+.box.stars {
+    margin: -5vw 5vw 2vw 0;
+}
+.box .text {
+    color: rgb(254, 95, 85);
+    font-weight: bold;
+    font-size: 1.5vw;
+    padding: 0px 17px;
+}
+.box.stars .text {
+    padding: 0px 15px;
+    text-align: left;
+}
+.box.balance .text {
+    text-align: center;
+}
+
+.events {
+    border-radius: 0px 0px 1rem 1rem;
+    flex-direction: column;
+    display: flex;
+    height: 150px;
+    overflow-y: scroll;
+    background: rgba(61, 130, 164, 0.3);
+    width: 100%;
+}
+
+.add-button {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 200000;
+}
+
+.profile-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f6f9fb91;
+    margin: 60px 15px 0;
+    padding: 0 30px;
+    border-radius: 8px;
+}
+.profile-box .button, .profile-box .button:hover, .profile-box .button:focus {
+    width: calc(100% + 60px);
+    border-radius: 0 0 8px 8px;
+    right: -30px;
+    height: 50px;
+    font-family: 'Yekan' !important;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.profile-image {
+    position: relative;
+    margin-top: -100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.profile-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.profile-details .item {
+    display: flex;
+    flex-direction: row;
+}
+.profile-details .bookmark path {
+    fill: #395e95 !important;
+}
+.profile-details .school path {
+    fill: #495867 !important;
+}
+.profile-details .map path {
+    fill: #fe5f55 !important;
+}
+.calender-title {
+    position: absolute;
+    margin-top: -20%;
+    z-index: 100;
+    font-weight: initial;
+    color: white;
+    font-size: 17px;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        margin: -20vw 0 0vw 0;
+    }
+    .box.stars {
+        margin: -20vw 5vw 2vw 0;
+    }
+    .box .text {
+        font-size: 5.5vw;
+    }
+    .calendar-1 {
+        margin-top: 70px;
+    }
+    .events {
+        width: calc(100% + 15px);
+    }
+    .add-button {
+        width: calc(100% + 15px);
+    }
+    .profile-details {
+        flex-direction: column;
+    }
+    .profile-box {
+        margin-bottom: 50px;
+    }
+    .profile-details .bookmark {
+        width: 100%;
+    }
+}

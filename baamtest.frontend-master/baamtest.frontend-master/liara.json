@@ -1,0 +1,10 @@
+{
+    "platform": "react",
+    "app": "bamtest-frontend-hf43k",
+    "disks": [
+        {
+            "name": "media",
+            "mountTo": "images"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+
+@media only screen and (max-width: 600px) {
+    .part-2 {
+        padding-right: 0px !important;
+        margin-right: -5px !important;
+    }
+}

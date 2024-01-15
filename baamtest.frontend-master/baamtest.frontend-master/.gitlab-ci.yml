@@ -1,0 +1,17 @@
+variables:
+  APP_NAME: "bamtest-frontend-hf43k"
+  TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1ZjlkOTI4YTUwNDJlZjAwMThlMzliZGMiLCJpYXQiOjE2NDE1MDg3Mjd9.Ich0k3OENqa-nGhzXkYEKsIlUozwnaQdErgdaP1Aa4g"
+
+image: node:12-alpine
+
+stages:
+  - update-production
+
+deploy:
+  stage: update-production
+  only:
+    - master
+  script:
+    - npm i -g @liara/cli@2
+    - export http_proxy=http://proxy.liara.ir:6666
+    - liara deploy --app $APP_NAME --detach --region iran --api-token $TOKEN
