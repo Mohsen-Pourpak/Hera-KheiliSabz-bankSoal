@@ -143,7 +143,7 @@ const style = {
     marginRight: 10,
   },
   questionTitle: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#119C04",
     color: "#fff",
     height: 40,
     width: "fit-content",
@@ -163,7 +163,7 @@ const style = {
     marginBottom: 0,
   },
   actionButton: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#119C04",
     color: "#fff",
     width: "fit-content",
     height: 25,
@@ -200,7 +200,7 @@ const style = {
     marginBottom: 30,
   },
   box: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#119C04",
     color: "#fff",
     width: "fit-content",
     height: 25,

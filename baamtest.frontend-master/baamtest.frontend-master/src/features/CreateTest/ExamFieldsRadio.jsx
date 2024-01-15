@@ -131,7 +131,7 @@ export function ExamFieldsRadio({
       }}
     >
       <NormalInput
-        style={{ padding: "12px", borderRadius: "10px 10px 10px 10px" }}
+        style={{ padding: "10px", borderRadius: "10px 10px 10px 10px" }}
         placeholder="نام آزمون"
         value={title}
         onChange={e => valueChange("title", e)}

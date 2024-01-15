@@ -90,8 +90,8 @@ export default function Pagination({
                 type="button"
                 className={classes.pageButton}
                 style={{
-                  color: selected ? "#fff" : "#3d82a4",
-                  background: selected ? "#3d82a4" : color,
+                  color: selected ? "#fff" : "#000",
+                  background: selected ? "#119C04" : color,
                 }}
                 {...item}
               >
@@ -104,6 +104,7 @@ export default function Pagination({
                 disabled={disabled}
                 className={classes.nextButton}
                 style={{
+                  color: "#000",
                   background: color,
                   cursor: disabled ? "auto" : "pointer",
                   opacity: disabled ? 0.5 : 1,
@@ -114,7 +115,7 @@ export default function Pagination({
                 بعدی{" "}
                 <ArrowBackIos
                   style={{
-                    fill: "#fe5f55",
+                    fill: "#000",
                     fontSize: 12,
                     position: "relative",
                     top: 2,
@@ -128,6 +129,7 @@ export default function Pagination({
                 disabled={disabled}
                 className={classes.nextButton}
                 style={{
+                  color: "#000",
                   background: color,
                   cursor: disabled ? "auto" : "pointer",
                   opacity: disabled ? 0.5 : 1,
@@ -137,7 +139,7 @@ export default function Pagination({
               >
                 <ArrowForwardIos
                   style={{
-                    fill: "#fe5f55",
+                    fill: "#000",
                     fontSize: 12,
                     position: "relative",
                     top: 2,

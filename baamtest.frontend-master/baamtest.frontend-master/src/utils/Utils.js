@@ -162,7 +162,7 @@ export function getLevelDisplay(level) {
 }
 
 // export const PER_PAGE_QUESTIONS = 15;
-export const PER_PAGE_QUESTIONS = 5;
+export const PER_PAGE_QUESTIONS = 10;
 
 export const PER_PAGE_TABLES = 10;
 
