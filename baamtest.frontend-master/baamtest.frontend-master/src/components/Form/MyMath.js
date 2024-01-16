@@ -19,7 +19,11 @@ function MyMath({ value }) {
 
   return (
     <span
-      style={{ width: "100%" }}
+      style={{
+        display: "flex",
+        width: "100%",
+        marginRight: "10px",
+      }}
       ref={onRefChange}
       // dangerouslySetInnerHTML={{ __html: value.replaceAll("_{", "_\\text{") }}
       dangerouslySetInnerHTML={{ __html: value }}

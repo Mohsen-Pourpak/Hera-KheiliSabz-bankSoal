@@ -38,7 +38,7 @@ export default function ExamFields({
       <Select
         id="demo-simple-select"
         value={gradeId}
-        style={{ width: "100%" }}
+        style={{ width: "100%", color: "green"}}
         input={<NormalInput style={{ padding: "0.5em" }} />}
         onChange={e => changeInput("gradeId", e)}
       >

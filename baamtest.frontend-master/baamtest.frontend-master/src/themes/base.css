@@ -447,7 +447,7 @@ body {
   justify-content: center !important;
   background: #fff !important;
   border-radius: 100px !important;
-  color: #FFFF00 !important;
+  color: #fff !important;
   border: none !important;
   cursor: pointer !important;
 }
@@ -613,7 +613,7 @@ body {
   background: white;
   margin-bottom: 1vw;
   font-size: 0.9vw;
-  color: #FFFF00;
+  color: #fff;
   padding: 0.5vw 1vw;
   border-radius: 100px;
   box-shadow: 1px 1px 6px -2px #0000007d;
@@ -728,7 +728,7 @@ input:-webkit-autofill:active {
 }
 
 .MuiCheckbox-colorPrimary .MuiSvgIcon-root path {
-  fill: #3d82a4;
+  fill: #85a43d;
 }
 
 .inputContainer {
@@ -1020,7 +1020,7 @@ caption {
 }
 
 .main-comp {
-  background-color: #FFFF00;
+  background-color: #fff;
   background-size: 100%;
   flex: 1 1;
   padding: 25px;

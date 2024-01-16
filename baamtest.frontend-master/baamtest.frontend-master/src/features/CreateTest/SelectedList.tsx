@@ -1,8 +1,10 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Container } from "@material-ui/core";
 
-import Image2 from "../../images/test/Untitled-1.jpg";
+import Image2 from "../../images/test/girl-student-book-on-algebra-600nw-2316142433.webp";
 import { DeleteSweep } from "@material-ui/icons";
+
+import CreateTest from "../../pages/Student/CreateTest";
 
 export default function SelectedList({
   selectedList,
@@ -15,72 +17,86 @@ export default function SelectedList({
     <Grid
       item
       sm={12}
-      spacing={1}
-      alignItems="center"
-      className="inputContainer"
       style={{
-        padding: "15px 15px",
-        overflow: "scroll",
-        backgroundSize: "cover",
-        backgroundImage: `url(${Image2})`,
-        marginRight: 10,
-        marginTop: 5,
+        backgroundColor: "#FFE4B5",
         width: "100%",
+        padding: "30px",
+        borderRadius: "20px",
+        marginBottom: "40px",
       }}
     >
-      <div
+      <Grid
+        item
+        sm={12}
+        spacing={1}
+        alignItems="center"
+        className="inputContainer"
         style={{
-          flexDirection: "column",
-          display: "flex",
+          padding: "15px 15px",
+          overflow: "scroll",
+          marginRight: 30,
+          marginTop: 5,
+          backgroundColor: "#FFE4B5",
           width: "100%",
-          alignItems: "center",
-          height: 400,
         }}
       >
-        {selectedList &&
-          selectedList.map(item => (
-            <div
-              style={{
-                backgroundColor: "#0000006b",
-                display: "flex",
-                width: "100%",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: 10,
-                borderRadius: 35,
-                padding: "10px 15px",
-                textAlign: "right",
-                marginLeft: 5,
-              }}
-            >
-              <div style={{ color: "#fff", fontSize: 17, textAlign: "right" }}>
-                {item.title}
-              </div>
+        <div
+          style={{
+            flexDirection: "column",
+            flexWrap: "wrap",
+            display: "flex",
+            width: "50%",
+            alignItems: "center",
+            height: 400,
+          }}
+        >
+          {selectedList &&
+            selectedList.map(item => (
               <div
-                onClick={() => {
-                  let selectedListFiltered = selectedList.filter(
-                    (el: any) => el.id !== item.id,
-                  );
-                  // setState({ selectedList:selectedListFiltered });
-                  onChange(selectedListFiltered);
-                }}
                 style={{
-                  backgroundColor: "#fe5f55",
-                  cursor: "pointer",
-                  width: 45,
-                  borderRadius: 30,
+                  backgroundColor: "#0000006b",
                   display: "flex",
-                  justifyContent: "center",
+                  width: "100%",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
                   alignItems: "center",
-                  height: 30,
+                  marginBottom: 10,
+                  borderRadius: 35,
+                  padding: "10px 15px",
+                  textAlign: "right",
+                  marginLeft: 5,
                 }}
               >
-                <DeleteSweep style={{ fill: "#fff" }} />
+                <div
+                  style={{ color: "#fff", fontSize: 17, textAlign: "right" }}
+                >
+                  {item.title}
+                </div>
+                <div
+                  onClick={() => {
+                    let selectedListFiltered = selectedList.filter(
+                      (el: any) => el.id !== item.id,
+                    );
+                    // setState({ selectedList:selectedListFiltered });
+                    onChange(selectedListFiltered);
+                  }}
+                  style={{
+                    backgroundColor: "#fe5f55",
+                    cursor: "pointer",
+                    width: 50,
+                    borderRadius: 10,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: 40,
+                  }}
+                >
+                  <DeleteSweep style={{ fill: "#fff" }} />
+                </div>
               </div>
-            </div>
-          ))}
-      </div>
+            ))}
+        </div>
+      </Grid>
     </Grid>
   );
 }

@@ -179,7 +179,7 @@ class Pishkhan extends React.Component {
           <>
             <Grid direction="row" container spacing={3}>
               <Grid item md={6} xs={12}>
-                <div className="profile-box">
+                <div className="profile-box" style={{ boxShadow: "10px 10px 40px"}}>
                   <div className="profile-image">
                     <Mask image={this.props.info.avatar} size={200} />
                   </div>
@@ -225,7 +225,7 @@ class Pishkhan extends React.Component {
               <Grid item md={6} xs={12}>
                 <div
                   className="calendar-1"
-                  style={{ width: "100%", marginTop: -50 }}
+                  style={{ width: "100%", marginTop: -50, boxShadow: "10px 10px 40px" }}
                 >
                   <div
                     style={{
@@ -315,32 +315,6 @@ class Pishkhan extends React.Component {
                     )}
                   </div>
                 </div>
-              </Grid>
-            </Grid>
-            <Grid
-              direction="row"
-              container
-              spacing={6}
-              style={{ padding: "0 20px", marginTop: 50 }}
-            >
-            </Grid>
-            <Grid
-              container
-              item
-              xs={12}
-              style={{ marginTop: 40, padding: "0 30px" }}
-            >
-              <Grid
-                direction="row"
-                alignItems="flex-start"
-                justify="flex-start"
-                container
-                style={{
-                  padding: 20,
-                  backgroundColor: "#dde6f0",
-                  borderRadius: 20,
-                }}
-              >
               </Grid>
             </Grid>
             {selectedDay && (
@@ -433,7 +407,7 @@ class Pishkhan extends React.Component {
           </>
         ) : (
           <Backdrop
-            style={{ zIndex: 1000000, color: "#3d82a4" }}
+            style={{ zIndex: 1000000, color: "#FFD700" }}
             open={this.state.isLoading}
             onClick={() => console.log("clicked")}
           >

@@ -87,7 +87,7 @@ const Level = ({ image, right, percent }) => {
 
 const style = {
   questionNum: {
-    border: "1px solid #fff",
+    border: "1px solid #000",
     borderRadius: 60,
     height: 30,
     width: 30,
@@ -95,20 +95,17 @@ const style = {
     alignItems: "center",
     display: "flex",
     paddingTop: 3,
-    color: "#fff",
+    color: "#000",
     fontSize: 19,
   },
   questionNumContainer: {
-    marginBottom: -30,
     top: 15,
     position: "relative",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     flexDirection: "row",
-    marginRight: 5,
+    width: "100%",
     zIndex: 1000,
-    width: "calc(100% - 60px)",
-    padding: "0 10px 0 15px",
   },
   optionNum: {
     border: "1px solid #495867",
@@ -166,10 +163,9 @@ const style = {
     backgroundColor: "#119C04",
     color: "#fff",
     width: "fit-content",
-    height: 25,
+    height: 30,
     padding: "6.25px 45px 6.25px 20px",
     zIndex: 900,
-    borderRadius: 50,
     fontSize: 12,
     boxShadow: "0 0 5px -2px #000",
     marginRight: -30,
@@ -178,8 +174,7 @@ const style = {
   circleButton: {
     height: 35,
     width: 35,
-    borderRadius: 50,
-    marginBottom: -30,
+    marginBottom: 20,
     zIndex: 1000,
     position: "relative",
     justifyContent: "center",
@@ -607,17 +602,6 @@ class CreateTest extends React.Component {
               {toFA(item.lessonTitle)} | {item.topic}
             </div>
           </div>
-          <div style={style.questionNumContainer}>
-            <div style={{ ...style.questionNum, fontSize }}>
-              {toFA(rowNumber)}
-            </div>
-            {/* <div style={style.boxOutline}>
-                            <div style={style.box}>
-                                ضریب تمیز
-                            </div>
-                            <span style={{padding: '3.25px 10px'}}>{toFA(item.cleanCoefficient)}</span>
-                        </div> */}
-          </div>
           <Grid
             item
             sm={12}
@@ -625,11 +609,10 @@ class CreateTest extends React.Component {
             className="inputContainer"
             style={{
               padding: 0,
-              background: `linear-gradient(90deg, #3d82a4 50%, ${labelColor} 50%)`,
+              background: `linear-gradient(0deg, #3d82a4 , ${labelColor} 60%)`,
               alignItems: "center",
               width: "calc(100% - 10px)",
               marginTop: 5,
-              borderRadius: 20,
               marginRight: 5,
               marginBottom: 20,
             }}
@@ -642,17 +625,19 @@ class CreateTest extends React.Component {
               justify="space-between"
               alignItems="center"
               style={{
-                padding: "10px 5px",
-                backgroundColor: "#fff",
+                backgroundColor: "#FFEFD5",
                 marginBottom: "0px !important",
-                borderRadius: 20,
-                borderTopRightRadius: 150,
-                minHeight: 300,
-                borderBottomLeftRadius: isMore ? 0 : 20,
-                borderBottomRightRadius: isMore ? 0 : 20,
-                borderBottom: isMore ? "1px solid #3d82a4" : "none",
+                border: "solid",
+                borderColor: "black",
+                borderWidth: "thin",
+                minHeight: 200,
               }}
             >
+              {/* <div style={style.questionNumContainer}>
+                <div style={{ ...style.questionNum, fontSize }}>
+                  {toFA(rowNumber)}
+                </div>
+              </div> */}
               <Grid
                 direction="row"
                 alignItems="flex-start"
@@ -660,7 +645,8 @@ class CreateTest extends React.Component {
                 justify="flex-start"
                 container
                 style={{
-                  padding: "50px 80px 0 30px",
+                  paddingTop: "10px",
+                  paddingRight: "50px",
                   margin: 0,
                   justifyContent: isEnglish ? "flex-end" : "flex-start",
                 }}
@@ -671,7 +657,12 @@ class CreateTest extends React.Component {
                     .replace(/font-family/g, "")
                     .replace(/&nbsp;/g, "")}
                 /> */}
-                <MyMath value={item.questionFace} />
+                <div style={style.questionNumContainer}>
+                  <div style={{ ...style.questionNum, fontSize }}>
+                    {toFA(rowNumber)}
+                  </div>
+                  <MyMath value={item.questionFace} />
+                </div>
               </Grid>
               <Grid
                 direction="column"
@@ -679,7 +670,7 @@ class CreateTest extends React.Component {
                 spacing={3}
                 justify="flex-start"
                 container
-                style={{ padding: "20px", marginLeft: 30, marginBottom: 20 }}
+                style={{ padding: "20px"}}
               >
                 <Grid
                   direction={isEnglish ? "row-reverse" : "row"}
@@ -696,7 +687,6 @@ class CreateTest extends React.Component {
                     alignItems="flex-start"
                     style={{
                       padding: "15px 20px",
-                      margin: 0,
                       alignItems: "flex-start",
                     }}
                   >
@@ -832,15 +822,18 @@ class CreateTest extends React.Component {
                   <div style={{ width: 50, height: 30 }} />
                   <Button onClick={() => this.openSendReport(item.id)}>
                     <div
-                      style={{ width: 50, display: "content", textAlign: "center" }}
+                      style={{
+                        width: 50,
+                        display: "content",
+                        textAlign: "center",
+                      }}
                     >
                       <Feedback style={style.actionIcon} />
                       <div style={style.actionText}>گزارش خطا</div>
                     </div>
                   </Button>
                 </div>
-                )
-              }
+              )}
               {/* <div>
                 <div style={{ width: 50, height: 30 }} />
                 <Button onClick={() => this.openSendReport(item.id)}>
@@ -897,22 +890,9 @@ class CreateTest extends React.Component {
             </Grid>
           </div>
           <div style={style.bottomActions}>
-            <div style={{ flex: 1, justifyContent: "center", display: "flex" }}>
-              <div
-                style={style.circleButton}
-                onClick={() => this.selectQuestion(item)}
-              >
-                {isSelected ? (
-                  <Remove style={{ fill: "#fe5f55" }} />
-                ) : (
-                  <Add style={{ fill: "#3EC592" }} />
-                )}
-              </div>
-              <div style={style.actionButton}>
-                {isSelected ? "حذف" : "انتخاب"} سوال
-              </div>
-            </div>
-            <div style={{ flex: 1, justifyContent: "center", display: "flex" }}>
+            <div
+              style={{ flex: 1, justifyContent: "flex-start", display: "flex" }}
+            >
               <div
                 style={style.circleButton}
                 onClick={() => {
@@ -925,6 +905,23 @@ class CreateTest extends React.Component {
               </div>
               <div style={style.actionButton}>
                 {isMore ? "بستن" : "مشاهده"} پاسخ
+              </div>
+            </div>
+            <div
+              style={{ flex: 1, justifyContent: "flex-end", display: "flex" }}
+            >
+              <div
+                style={style.circleButton}
+                onClick={() => this.selectQuestion(item)}
+              >
+                {isSelected ? (
+                  <Remove style={{ fill: "#fe5f55" }} />
+                ) : (
+                  <Add style={{ fill: "#3EC592" }} />
+                )}
+              </div>
+              <div style={style.actionButton}>
+                {isSelected ? "حذف" : "انتخاب"} سوال
               </div>
             </div>
           </div>
@@ -1057,7 +1054,7 @@ class CreateTest extends React.Component {
         >
           <CircularProgress color="inherit" />
         </Backdrop>
-        <PageTitle title="ساخت آزمون - انتخاب دستی" />
+
         {!this.state.progress && (
           <Grid container item xs={12} style={{ padding: "0 10px" }}>
             <div
@@ -1091,7 +1088,6 @@ class CreateTest extends React.Component {
                   style={{
                     padding: "7.5px 15px",
                     backgroundColor: "rgb(61 130 164 / 30%)",
-                    margin: "20px 0",
                     width: "100%",
                   }}
                 >
@@ -1101,7 +1097,6 @@ class CreateTest extends React.Component {
                       display: "flex",
                       width: "100%",
                       paddingTop: 30,
-                      margin: "-15px 0",
                       alignItems: "center",
                       justifyContent: "space-between",
                     }}
@@ -1232,7 +1227,8 @@ class CreateTest extends React.Component {
                       <div>تومان</div>
                     </div>
                   </div>
-                  <div
+                  {/* must move to header */}
+                  {/* <div
                     onClick={() => this.setState({ selectedList: [] })}
                     style={{
                       flexDirection: "row",
@@ -1269,7 +1265,7 @@ class CreateTest extends React.Component {
                     }}
                   >
                     انتخاب همه
-                  </div>
+                  </div> */}
                 </Grid>
                 <div
                   onClick={this.goToRegisterExam}
@@ -1300,6 +1296,9 @@ class CreateTest extends React.Component {
                     onChange={e =>
                       this.setState({ questionContentSearch: e.target.value })
                     }
+                    style={{
+                      backgroundColor: "yellow",
+                    }}
                   />
                   <FilterBoxTextField
                     title="پاسخ سوال"
@@ -1460,7 +1459,7 @@ class CreateTest extends React.Component {
                     </div>
                   </div>
                 </FilterBox>
-                <FilterBox>
+                <FilterBox title="گزینش بازۀ پاسخگویی">
                   <div
                     style={{
                       display: "flex",
@@ -1651,6 +1650,31 @@ class CreateTest extends React.Component {
                   <div class={`loader4 ${this.state.hidden}`}></div>
                 </div>
                 <div
+                  style={{
+                    display: "flex",
+                    marginBottom: "10px",
+                    height: "70px",
+                    width: "100%",
+                    backgroundColor: "red",
+                    borderRadius: "20px",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      justifyContent: "center",
+                      display: "flex",
+                    }}
+                  >
+                    <Pagination
+                      count={this.state.pageCount}
+                      page={this.state.page}
+                      onChange={this.handleChangePage}
+                      bgColor="#fff"
+                    />
+                  </div>{" "}
+                </div>
+                <div
                   className="exam-tabs"
                   style={{
                     display: "flex",
@@ -1680,6 +1704,7 @@ class CreateTest extends React.Component {
                   ))}
                   <Button variant="contained" onClick={this.goToAddTopic}>
                     افزودن
+                    <Add style={{ fill: "#3EC592" }} />
                   </Button>
                 </div>
                 <div
@@ -1687,7 +1712,7 @@ class CreateTest extends React.Component {
                   style={{ borderRadius: 20, width: "100%" }}
                 >
                   {this.renderQuestionsList(this.state.questionsList)}
-                  <div
+                  {/* <div
                     style={{
                       width: "100%",
                       justifyContent: "center",
@@ -1700,7 +1725,7 @@ class CreateTest extends React.Component {
                       onChange={this.handleChangePage}
                       bgColor="#fff"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </Grid>
             </div>

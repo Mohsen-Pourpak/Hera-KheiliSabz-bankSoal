@@ -1,4 +1,5 @@
 import React from "react";
+import { setSelectedGrades } from "../../../src/features/CreateTest/ExamFieldsRadio";
 import {
   Grid,
   Button,
@@ -26,7 +27,7 @@ import SearchBox from "../../features/CreateTest/SearchBox";
 import ExamFields from "../../features/CreateTest/ExamFields";
 import SelectedList from "../../features/CreateTest/SelectedList";
 
-import { ExamFieldsRadio } from "../../features/CreateTest/ExamFieldsRadio"
+import { ExamFieldsRadio } from "../../features/CreateTest/ExamFieldsRadio";
 
 class CreateTest extends React.Component {
   constructor() {
@@ -94,20 +95,20 @@ class CreateTest extends React.Component {
     let query = "";
 
     if (gradesLabel.length !== 0) {
-      gradesLabel.forEach(el => query += 'gradesId=' + el + '&')
-      this.setState({ gradeId: gradesLabel[0] })
+      gradesLabel.forEach(el => (query += "gradesId=" + el + "&"));
+      this.setState({ gradeId: gradesLabel[0] });
     }
     if (fieldsLabel.length !== 0) {
-      fieldsLabel.forEach(el => query += 'fieldsId=' + el + '&')
-      this.setState({ fieldId: fieldsLabel[0] })
+      fieldsLabel.forEach(el => (query += "fieldsId=" + el + "&"));
+      this.setState({ fieldId: fieldsLabel[0] });
     }
 
-    return query
-  }
+    return query;
+  };
 
   getBooksMultipleFilter = (fieldIds, gradeIds, search) => {
     let token = localStorage.getItem("userToken");
-    let query = this.queryCreator(fieldIds, gradeIds)
+    let query = this.queryCreator(fieldIds, gradeIds);
 
     if (search) {
       query += `search=${search}`;
@@ -127,14 +128,13 @@ class CreateTest extends React.Component {
       this.setState({ progress: false });
       toast.error("لطفا پایه و رشته را وارد کنید");
     }
-  }
+  };
 
   getBooks = (fieldId, gradeId, search) => {
     // this.setState({ progress: true });
     let token = localStorage.getItem("userToken");
     let query = "";
     if (fieldId && fieldId !== "d") {
-      
       query += `fieldsId=${fieldId}&`;
     }
     if (gradeId && gradeId !== "d") {
@@ -160,26 +160,26 @@ class CreateTest extends React.Component {
     }
   };
 
-  setSearchTitle = (examTitle) => {
-    this.setState({ title: examTitle })
-  }
+  setSearchTitle = examTitle => {
+    this.setState({ title: examTitle });
+  };
 
-  setSelectedGrades = (arr) => {
-    this.setState({ selectedGrades: arr })
-  }
+  setSelectedGrades = arr => {
+    this.setState({ selectedGrades: arr });
+  };
 
-  setSelectedFields = (arr) => {
-    this.setState({ selectedFields: arr })
-  }
+  setSelectedFields = arr => {
+    this.setState({ selectedFields: arr });
+  };
 
   // FLAG
   changeInput = (gradesLabel, fieldsLabel, examTitle) => {
     if (examTitle) {
-      this.setState({ title: examTitle })
+      this.setState({ title: examTitle });
     }
 
     let token = localStorage.getItem("userToken");
-    let query = this.queryCreator(gradesLabel, fieldsLabel)
+    let query = this.queryCreator(gradesLabel, fieldsLabel);
 
     bookConditionUser(token, query).then(res => {
       let userLessons = [];
@@ -417,14 +417,16 @@ class CreateTest extends React.Component {
                       });
                     }}
                   />
-                  {this.state[`isShow__${item_.id}`] ? 'پنهان کردن' : 'نمایش جزئیات'}
+                  {this.state[`isShow__${item_.id}`]
+                    ? "پنهان کردن"
+                    : "نمایش جزئیات"}
                 </div>
               </Grid>
             )}
             <Grid item style={{ padding: 0, flex: 1 }}>
               <p
                 style={{
-                  color: "#3d82a4",
+                  color: "#8B008B",
                   fontWeight: "bold",
                   fontSize: 18,
                   padding: "0 17px",
@@ -483,7 +485,7 @@ class CreateTest extends React.Component {
               style={{
                 cursor: "pointer",
               }}
-            > 
+            >
               <div
                 style={{
                   flexDirection: "row",
@@ -508,7 +510,7 @@ class CreateTest extends React.Component {
                   style={{
                     height: 25,
                     cursor: "pointer",
-                    marginLeft: '10px',
+                    marginLeft: "10px",
                     transform: this.state[`isShow__${item.id}`]
                       ? "rotate(-90deg)"
                       : "rotate(0deg)",
@@ -520,14 +522,13 @@ class CreateTest extends React.Component {
                     });
                   }}
                 />
-                {this.state[`isShow__${item.id}`] ? 'پنهان کردن' : 'نمایش فصول'}
+                {this.state[`isShow__${item.id}`] ? "پنهان کردن" : "نمایش فصول"}
               </div>
-              
             </Grid>
             <Grid item style={{ padding: 0, flex: 1 }}>
               <div
                 style={{
-                  color: "#3d82a4",
+                  color: "#000",
                   fontWeight: "bold",
                   fontSize: 18,
                   padding: "0 17px",
@@ -540,7 +541,7 @@ class CreateTest extends React.Component {
             <Grid item>
               <Button
                 variant="contained"
-                color={isSelected ? "secondary" : "primary"}
+                color={isSelected ? "success" : "primary"}
                 onClick={() => this.toggleSelectTopic("book", item, isSelected)}
                 style={{ fontSize: 11, height: 30 }}
                 disabled={this.state.searchFetched}
@@ -664,8 +665,25 @@ class CreateTest extends React.Component {
     return (
       <>
         <PageTitle title="ساخت آزمون - انتخاب مباحث" />
+        <hr/>
+        <div
+          style={{
+            margin:"20px",
+            display: "flex",
+            justifyContent: "right",
+            flexDirection: "column",
+            alignItems: "right",
+            fontFamily: "Yekan",
+            fontSize: 30,
+          }}
+        >
+          <p>
+            لطفا نام آزمون، پایه(ها) و رشته(های) مورد نظر خود را انتخاب کنید
+          </p>
+          <p>سپس دکمه اعمال را فشار دهید</p>
+        </div>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#3d82a4" }}
+          style={{ zIndex: 1000000, color: "#33B950" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >
@@ -685,7 +703,11 @@ class CreateTest extends React.Component {
             }}
           >
             <Grid direction="column" container item md={6} xs={12}>
-              <Grid direction="row" container spacing={1}>
+              <Grid
+                direction="row"
+                container
+                spacing={1}
+              >
                 {/* FLAG */}
                 {/* <ExamFields 
                   changeInput={this.changeInput}
@@ -695,7 +717,7 @@ class CreateTest extends React.Component {
                   grades={this.state.grades}
                   title={this.state.title}
                 /> */}
-                <ExamFieldsRadio 
+                <ExamFieldsRadio
                   changeInput={this.changeInput}
                   fieldId={this.state.fieldId}
                   fields={this.state.fields}
@@ -706,26 +728,38 @@ class CreateTest extends React.Component {
                   setSelectedFields={this.setSelectedFields}
                   setSearchTitle={this.setSearchTitle}
                 />
+                
               </Grid>
               <Grid direction="column" container item xs={12}>
                 {this.state.userLessons.length === 0 ? (
                   <div
                     style={{
-                      marginTop: "30%",
+                      marginTop: "10%",
                       fontSize: "1.5rem",
                       opacity: 0.5,
                     }}
                   >
                     {Boolean(
                       this.state.fieldId !== "d" && this.state.gradeId !== "d",
-                    )
-                      ? "کتابی موجود نیست"
+                    ) ? (
+                      "کتابی موجود نیست"
+                    ) : (
                       // : "لطفا یک پایه و رشته تحصیلی انتخاب کنید"}
-                      : <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-                          <p>لطفا نام آزمون، پایه(ها) و رشته(های) مورد نظر خود را انتخاب کنید</p>
-                          <p>سپس دکمه اعمال را فشار دهید</p>
-                        </div>
-                    }
+                      <div
+                        style={{
+                          boxShadow: "10px 20px 60px",
+                          justifyContent: "center",
+                          justifyItems: "center",
+                          background: "#FFE4B5",
+                          height: "500px",
+                          width: "700px",
+                          display: "flex",
+                          borderRadius: "20px",
+                        }}
+                      >
+                        <p>هنوز هیچ مبحثی برای نمایش انتخاب نشده.</p>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   this.renderUserLessons(this.state.userLessons)
@@ -739,6 +773,12 @@ class CreateTest extends React.Component {
               item
               md={6}
               xs={12}
+              style={{
+                boxShadow: "5px 5px 50px",
+                padding: "25px",
+                borderRadius: "30px",
+                backgroundColor: "#FFE4B5",
+              }}
             >
               <Grid
                 item
@@ -766,7 +806,10 @@ class CreateTest extends React.Component {
                       );
                     } else {
                       this.setState({ searchFetched: false });
-                      this.getBooksMultipleFilter(this.state.selectedFields, this.state.selectedGrades);
+                      this.getBooksMultipleFilter(
+                        this.state.selectedFields,
+                        this.state.selectedGrades,
+                      );
                     }
                   }}
                 />
@@ -776,44 +819,44 @@ class CreateTest extends React.Component {
                 selectedList={this.state.selectedList}
               />
               <Grid direction="row" justify="center" container spacing={1}>
-                  <Grid item md={4} xs={6}>
-                    <Button
-                      disabled={Boolean(
-                        this.props.location &&
-                          this.props.location.state &&
-                          this.props.location.state.isAutomatic
-                          ? this.props.location.state.isAutomatic
-                          : false,
-                      )}
-                      onClick={() => {
-                        if (this.state.selectedList.length === 0) {
-                          toast.error(
-                            "لطفا حداقل یک درس برای ساخت آزمون انتخاب کنید",
-                          );
-                        } else if (
-                          !this.state.title ||
-                          this.state.gradeId === "d" ||
-                          this.state.fieldId === "d"
-                        ) {
-                          toast.error("لطفا همه موارد را وارد کنید");
-                        } else {
-                          this.create(false);
-                        }
-                      }}
-                      fullWidth
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      className={classes.createAccountButton}
-                      style={{
-                        fontSize: "1rem",
-                        textAlign: "center",
-                        fontFamily: "Dana",
-                      }}
-                    >
-                      انتخاب دستی
-                    </Button>
-                  </Grid>
+                <Grid item md={4} xs={6}>
+                  <Button
+                    disabled={Boolean(
+                      this.props.location &&
+                        this.props.location.state &&
+                        this.props.location.state.isAutomatic
+                        ? this.props.location.state.isAutomatic
+                        : false,
+                    )}
+                    onClick={() => {
+                      if (this.state.selectedList.length === 0) {
+                        toast.error(
+                          "لطفا حداقل یک درس برای ساخت آزمون انتخاب کنید",
+                        );
+                      } else if (
+                        !this.state.title ||
+                        this.state.gradeId === "d" ||
+                        this.state.fieldId === "d"
+                      ) {
+                        toast.error("لطفا همه موارد را وارد کنید");
+                      } else {
+                        this.create(false);
+                      }
+                    }}
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.createAccountButton}
+                    style={{
+                      fontSize: "1rem",
+                      textAlign: "center",
+                      fontFamily: "Dana",
+                    }}
+                  >
+                    انتخاب دستی
+                  </Button>
+                </Grid>
                 {/* {!this.state.isStudent && (
                   <Grid item md={4} xs={6}>
                     <Button

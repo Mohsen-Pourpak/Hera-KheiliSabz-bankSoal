@@ -10,7 +10,7 @@ export default function FilterBox({
   title: string;
   children: ReactNode;
 }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <Box className={clsx("inputContainer", "filter-box")}>

@@ -32,7 +32,7 @@ export default makeStyles(theme => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     border: 'none',
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFF00',
     overflowX: "hidden",
   },
   logoOpen: {
@@ -72,7 +72,7 @@ export default makeStyles(theme => ({
       width: drawerWidth,
     },
     border: 'none',
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFF00',
   },
   toolbar: {
     ...theme.mixins.toolbar,

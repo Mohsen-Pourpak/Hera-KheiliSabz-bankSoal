@@ -24,7 +24,7 @@ import useStyles from "./styles";
 import SidebarLink from "./components/SidebarLink/SidebarLink";
 import Dot from "./components/Dot";
 // context
-import logo from "../../images/لوگو-خیلی-سبز.jpg";
+import logo from "../../images/لوگو-خیلی-سبز.png";
 import { toggleSidebar, useLayoutDispatch, useLayoutState } from "../../context/LayoutContext";
 import ActivePishkhan from "../../images/sidbar-icons/piskhan-icon.svg";
 import Pishkhan from "../../images/sidbar-icons/piskhan-w-icon.svg";
@@ -422,7 +422,6 @@ function Sidebar({ location, history }) {
       }}
       open={isSidebarOpened}
     >
-      <div className={classes.leftElement}/>
       <div className={classes.toolbar}/>
       <div className={classes.mobileBackButton}>
         <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
