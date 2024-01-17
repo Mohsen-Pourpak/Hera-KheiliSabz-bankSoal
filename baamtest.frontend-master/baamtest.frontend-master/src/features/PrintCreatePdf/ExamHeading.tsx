@@ -144,9 +144,10 @@ export default function ExamHeading({
         </Box>
         <Button
           variant="contained"
-          color="primary"
           onClick={handleSubmit}
           style={{
+            backgroundColor: "#4F8EC6",
+            color: "#000",
             borderRadius: 50,
             height: 40,
             boxShadow: "none",

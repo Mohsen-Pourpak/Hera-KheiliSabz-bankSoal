@@ -127,9 +127,10 @@ export default function EachQuestionSpace({
 
         <Button
           variant="contained"
-          color="primary"
           onClick={handleSubmit}
           style={{
+            backgroundColor: "#4F8EC6",
+            color: "#000",
             marginTop: "auto",
             borderRadius: 50,
             height: 40,

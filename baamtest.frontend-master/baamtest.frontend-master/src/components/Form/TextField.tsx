@@ -149,7 +149,7 @@ export function CustomTextField({
           padding: "4px 8px",
           background: "#7AD3FF",
           borderRadius: 16,
-          color: "white",
+          color: "#000",
           display: "flex",
           alignItems: "center",
           width: 150,

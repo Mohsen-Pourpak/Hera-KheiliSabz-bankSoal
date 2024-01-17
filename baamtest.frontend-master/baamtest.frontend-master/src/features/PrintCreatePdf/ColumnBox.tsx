@@ -109,9 +109,10 @@ export default function ColumnBox({
         </div>
         <Button
           variant="contained"
-          color="primary"
           onClick={handleSubmit}
           style={{
+            color: "#000",
+            backgroundColor: "#4F8EC6",
             borderRadius: 50,
             height: 40,
             marginTop: 5,
