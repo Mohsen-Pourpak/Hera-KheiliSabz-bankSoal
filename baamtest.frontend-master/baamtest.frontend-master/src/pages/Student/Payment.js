@@ -101,7 +101,7 @@ class RegisterTest extends React.Component {
         return (
             <>
                 {!this.state.paymentInfo ? (
-                    <Backdrop style={{zIndex: 1000000, color: '#3d82a4'}} open={!this.state.paymentInfo} onClick={() => console.log('clicked')}>
+                    <Backdrop style={{zIndex: 1000000, color: '#FFD700'}} open={!this.state.paymentInfo} onClick={() => console.log('clicked')}>
                         <CircularProgress color="inherit" />
                     </Backdrop>
                 ) : this.state.isSuccess ? (

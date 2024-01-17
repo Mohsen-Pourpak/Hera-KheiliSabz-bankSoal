@@ -127,7 +127,7 @@ class CreateTest extends React.Component {
         const classes = this.props.classes
         return (
             <>  
-                <Backdrop style={{zIndex: 1000000, color: '#3d82a4'}} open={this.state.progress} onClick={() => console.log('clicked')}>
+                <Backdrop style={{zIndex: 1000000, color: '#FFD700'}} open={this.state.progress} onClick={() => console.log('clicked')}>
                     <CircularProgress color="inherit" />
                 </Backdrop>
                 <PageTitle title="گزارش های خطای سوال" />

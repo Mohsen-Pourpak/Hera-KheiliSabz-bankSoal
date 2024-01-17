@@ -35,7 +35,7 @@ export default function BaamTeachers(props) {
     
     return (
         <div style={{overflowX: 'hidden !important'}}>
-            <Backdrop style={{zIndex: 1000000, color: '#3d82a4'}} open={isLoading} onClick={() => console.log('clicked')}>
+            <Backdrop style={{zIndex: 1000000, color: '#FFD700'}} open={isLoading} onClick={() => console.log('clicked')}>
                 <CircularProgress color="inherit" />
             </Backdrop>
             {!show && <Fade exit onExited={() => setShow(true)} in={progress}>

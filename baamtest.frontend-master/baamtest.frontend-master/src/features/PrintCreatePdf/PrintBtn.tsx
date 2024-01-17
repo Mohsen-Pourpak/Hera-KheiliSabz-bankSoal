@@ -5,7 +5,7 @@ import ReactToPrint from "react-to-print";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    backgroundColor: "#fe5f55",
+    backgroundColor: "#228B22",
     border: 0,
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",

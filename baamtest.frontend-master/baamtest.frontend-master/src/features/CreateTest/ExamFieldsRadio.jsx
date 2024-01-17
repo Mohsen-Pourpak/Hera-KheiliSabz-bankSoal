@@ -121,19 +121,20 @@ export function ExamFieldsRadio({
     <>
       <div
         style={{
-          paddingRight: "50px",
+          boxShadow: "10px 20px 40px",
+          marginRight: "230px",
+          backgroundColor: "#FFDAB9",
+          padding: "10px",
           justifyContent: "center",
-          alignContent: "center",
+          alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          flexWrap: "wrap",
           rowGap: "20px",
         }}
       >
         <NormalInput
           style={{
             padding: "10px",
-            borderRadius: "10px 10px 10px 10px",
             width: "300px",
           }}
           placeholder="نام آزمون"
@@ -150,7 +151,7 @@ export function ExamFieldsRadio({
             setGradeFilter(false);
           }}
           value={gradesLabel}
-          style={{ width: "100%", borderRadius: 10, padding: "10px" }}
+          style={{ width: "100%", padding: "10px" }}
           input={
             <NormalInput style={{ padding: "0.5em" }} placeholder="پایه" />
           }
@@ -197,7 +198,7 @@ export function ExamFieldsRadio({
         <Select
           id="filedSelect"
           value={fieldsLabel}
-          style={{ width: "100%", borderRadius: 10, padding: "10px" }}
+          style={{ width: "100%", padding: "10px" }}
           open={fieldFilter}
           onOpen={() => {
             setFieldFilter(true);
@@ -252,11 +253,13 @@ export function ExamFieldsRadio({
           color="primary"
           size="small"
           style={{
+            display: "flex",
+            width: "100%",
             fontSize: "0.9rem",
             textAlign: "center",
             fontFamily: "Dana",
             height: 45,
-            borderRadius: 10,
+            borderRadius: 0,
             backgroundColor: "#3CB371",
             color: "black",
           }}

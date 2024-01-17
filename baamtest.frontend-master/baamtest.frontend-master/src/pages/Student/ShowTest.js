@@ -32,9 +32,9 @@ import Textarea from "../../components/Form/Textarea";
 
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
-import Hard from "../../images/test/hard.svg";
-import Normal from "../../images/test/normal.svg";
-import Easy from "../../images/test/easy.svg";
+import Hard from "../../images/test/chart-simple red .svg";
+import Normal from "../../images/test/chart-yellow.svg";
+import Easy from "../../images/test/chart-green.svg";
 import CheckRadioIcon from "../../images/icons/check-radio-icon.svg";
 
 import {
@@ -148,7 +148,7 @@ const style = {
     zIndex: 3000,
     position: "relative",
     marginBottom: -25,
-    borderRadius: 50,
+    borderRadius: 0,
   },
   actionText: {
     color: "#deeaf4",
@@ -163,20 +163,20 @@ const style = {
     backgroundColor: "#119C04",
     color: "#fff",
     width: "fit-content",
-    height: 30,
+    height: 35,
     padding: "6.25px 45px 6.25px 20px",
     zIndex: 900,
     fontSize: 12,
     boxShadow: "0 0 5px -2px #000",
     marginRight: -30,
-    marginTop: 10,
+    marginTop: -10,
   },
   circleButton: {
     height: 35,
     width: 35,
-    marginBottom: 20,
-    zIndex: 1000,
-    position: "relative",
+    marginTop: -10,
+    zIndex: 910,
+    position: "absolate",
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
@@ -184,7 +184,6 @@ const style = {
     backgroundColor: "#fff",
     border: "1px solid #3d82a4",
     boxShadow: "0 0 5px -2px #000",
-    marginTop: 5,
   },
   bottomActions: {
     display: "flex",
@@ -594,7 +593,7 @@ class CreateTest extends React.Component {
           : 19;
       return (
         <div
-          style={{ position: "relative", flex: 1, width: "100%" }}
+          style={{ position: "relative", flex: 1, width: "100%", marginBottom: "-50px" }}
           key={item.id}
         >
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -615,6 +614,7 @@ class CreateTest extends React.Component {
               marginTop: 5,
               marginRight: 5,
               marginBottom: 20,
+              borderRadius: 0,
             }}
           >
             <Grid
@@ -625,12 +625,13 @@ class CreateTest extends React.Component {
               justify="space-between"
               alignItems="center"
               style={{
-                backgroundColor: "#FFEFD5",
+                backgroundColor: "#DEF6FF",
                 marginBottom: "0px !important",
                 border: "solid",
                 borderColor: "black",
                 borderWidth: "thin",
-                minHeight: 200,
+                minHeight: 250,
+                paddingTop: "30px"
               }}
             >
               {/* <div style={style.questionNumContainer}>
@@ -647,6 +648,7 @@ class CreateTest extends React.Component {
                 style={{
                   paddingTop: "10px",
                   paddingRight: "50px",
+                  
                   margin: 0,
                   justifyContent: isEnglish ? "flex-end" : "flex-start",
                 }}
@@ -670,7 +672,7 @@ class CreateTest extends React.Component {
                 spacing={3}
                 justify="flex-start"
                 container
-                style={{ padding: "20px"}}
+                style={{ padding: "20px", marginBottom: "30px" }}
               >
                 <Grid
                   direction={isEnglish ? "row-reverse" : "row"}
@@ -866,13 +868,14 @@ class CreateTest extends React.Component {
             style={{
               padding: "20px 30px 45px",
               display: isMore ? "block" : "none",
-              width: "calc(100% - 60px)",
-              backgroundColor: "#fff",
+              width: "calc(100% - 64px)",
+              backgroundColor: "#DEF6FF",
               marginTop: -20,
               position: "relative",
               right: 5,
               marginBottom: 20,
               borderRadius: "0 0 20px 20px",
+              border: "1px solid #000",
             }}
           >
             <div style={style.correctOption}>
@@ -891,7 +894,12 @@ class CreateTest extends React.Component {
           </div>
           <div style={style.bottomActions}>
             <div
-              style={{ flex: 1, justifyContent: "flex-start", display: "flex" }}
+              style={{
+                flex: 1,
+                justifyContent: "flex-start",
+                display: "flex",
+                marginBottom: 100,
+              }}
             >
               <div
                 style={style.circleButton}
@@ -908,7 +916,12 @@ class CreateTest extends React.Component {
               </div>
             </div>
             <div
-              style={{ flex: 1, justifyContent: "flex-end", display: "flex" }}
+              style={{
+                flex: 1,
+                justifyContent: "flex-end",
+                display: "flex",
+                marginLeft: "4px",
+              }}
             >
               <div
                 style={style.circleButton}
@@ -1043,13 +1056,13 @@ class CreateTest extends React.Component {
         />
 
         <Backdrop
-          style={{ zIndex: 1000000, color: "#3d82a4" }}
+          style={{ zIndex: 1000000, color: "#FFD700" }}
           open={this.state.progress}
         >
           <CircularProgress color="inherit" />
         </Backdrop>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#3d82a4" }}
+          style={{ zIndex: 1000000, color: "#FFD700" }}
           open={this.state.isLoading}
         >
           <CircularProgress color="inherit" />
@@ -1078,157 +1091,166 @@ class CreateTest extends React.Component {
                   textAlign: "center",
                 }}
               >
-                <Grid
-                  direction="column"
-                  item
-                  sm={12}
-                  spacing={1}
-                  alignItems="center"
-                  className="inputContainer"
+                <div
                   style={{
-                    padding: "7.5px 15px",
-                    backgroundColor: "rgb(61 130 164 / 30%)",
-                    width: "100%",
+                    backgroundColor: "#CBF2CF",
+                    padding: "30px",
+                    paddingBottom: "20px",
+                    marginBottom: "20px",
+                    borderRadius: "2rem",
                   }}
                 >
-                  <div
+                  <Grid
+                    direction="column"
+                    item
+                    sm={12}
+                    spacing={1}
+                    alignItems="center"
+                    className="inputContainer"
                     style={{
-                      flexDirection: "row",
-                      display: "flex",
+                      padding: "30px",
+                      backgroundColor: "#fff",
                       width: "100%",
-                      paddingTop: 30,
-                      alignItems: "center",
-                      justifyContent: "space-between",
                     }}
                   >
-                    <PageTitle
-                      title="سوالات انتخاب شده"
-                      size="h4"
-                      color="#555"
-                    />
                     <div
                       style={{
-                        color: "#3d82a4",
-                        fontSize: 14,
-                        padding: "10px 17px 0",
-                        margin: "-30px 0 0",
-                        textAlign: "center",
+                        flexDirection: "row",
+                        display: "flex",
+                        width: "100%",
+                        paddingTop: 30,
+                        alignItems: "center",
+                        justifyContent: "space-between",
                       }}
                     >
+                      <PageTitle
+                        title="سوالات انتخاب شده"
+                        size="h4"
+                        color="#555"
+                      />
                       <div
                         style={{
-                          fontSize: 30,
-                          fontWeight: 800,
-                          margin: "0 0 -10px",
+                          color: "#3d82a4",
+                          fontSize: 14,
+                          padding: "10px 17px 0",
+                          margin: "-30px 0 0",
+                          textAlign: "center",
                         }}
                       >
-                        {toFA(this.state.selectedList.length)}
+                        <div
+                          style={{
+                            fontSize: 30,
+                            fontWeight: 800,
+                            margin: "0 0 -10px",
+                          }}
+                        >
+                          {toFA(this.state.selectedList.length)}
+                        </div>
+                        سوال
                       </div>
-                      سوال
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      width: "100%",
-                      right: "9%",
-                      height: 100,
-                      margin: "0 0 -5px 0",
-                      alignItems: "flex-end",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div style={{ flex: 0.5 }} />
-                    <Level
-                      image={Hard}
-                      right={0}
-                      percent={
-                        this.levelPercent(3) +
-                        this.levelPercent(4) +
-                        this.levelPercent(5)
-                      }
-                    />
-                    <div style={{ margin: "0 -10px" }} />
-                    <Level
-                      image={Normal}
-                      right={-20}
-                      percent={this.levelPercent(2)}
-                    />
-                    <div style={{ margin: "0 -10px" }} />
-                    <Level
-                      image={Easy}
-                      right={-40}
-                      percent={this.levelPercent(1)}
-                    />
-                    <div style={{ flex: 0.5 }} />
-                  </div>
-                  <div
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      width: "100%",
-                      position: "relative",
-                      zIndex: 2000,
-                      margin: "0 0 30px 0",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Point color="#fff" />
-                    <Line />
-                    <Point color="#C83E43" />
-                    <Line />
-                    <Point color="#FB963A" />
-                    <Line />
-                    <Point color="#3EC592" />
-                    <Line />
-                    <Point color="#fff" />
-                  </div>
-                  <div
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      background: "#495867",
-                      height: 40,
-                      borderRadius: 50,
-                      width: "100%",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <div
-                      style={{ flex: 1, color: "#fff", textAlign: "center" }}
-                    >
-                      قیمت
                     </div>
                     <div
                       style={{
                         flexDirection: "row",
                         display: "flex",
+                        width: "100%",
+                        right: "9%",
+                        height: 100,
+                        margin: "0 0 -5px 0",
+                        alignItems: "flex-end",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div style={{ flex: 0.5, paddingRight: "5px" }} />
+                      <Level
+                        image={Hard}
+                        right={100}
+                        percent={
+                          this.levelPercent(3) +
+                          this.levelPercent(4) +
+                          this.levelPercent(5)
+                        }
+                      />
+                      <div style={{ paddingRight: "20px" }} />
+                      <Level
+                        image={Normal}
+                        right={-20}
+                        percent={this.levelPercent(2)}
+                      />
+                      <div style={{ paddingRight: "130px" }} />
+                      <Level
+                        image={Easy}
+                        right={-40}
+                        percent={this.levelPercent(1)}
+                      />
+                      <div style={{ flex: 0.5 }} />
+                    </div>
+                    <div
+                      style={{
+                        flexDirection: "row",
+                        display: "flex",
+                        width: "100%",
+                        position: "relative",
+                        zIndex: 2000,
+                        margin: "0 0 30px 0",
                         alignItems: "center",
-                        paddingLeft: 10,
-                        flex: 2,
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Point color="#fff" />
+                      <Line />
+                      <Point color="#C83E43" />
+                      <Line />
+                      <Point color="#FB963A" />
+                      <Line />
+                      <Point color="#3EC592" />
+                      <Line />
+                      <Point color="#fff" />
+                    </div>
+                    <div
+                      style={{
+                        flexDirection: "row",
+                        display: "flex",
+                        background: "#495867",
+                        height: 40,
                         borderRadius: 50,
-                        background: "#fff",
-                        height: 37,
-                        margin: 1,
+                        width: "100%",
+                        alignItems: "center",
+                        justifyContent: "space-between",
                       }}
                     >
                       <div
-                        style={{ flex: 1, textAlign: "center", fontSize: 20 }}
+                        style={{ flex: 1, color: "#fff", textAlign: "center" }}
                       >
-                        {toFA(
-                          (
-                            this.state.selectedList.length * QUESTION_PRICE
-                          ).toLocaleString(),
-                        )}
+                        قیمت
                       </div>
-                      <div>تومان</div>
+                      <div
+                        style={{
+                          flexDirection: "row",
+                          display: "flex",
+                          alignItems: "center",
+                          paddingLeft: 10,
+                          flex: 2,
+                          borderRadius: 50,
+                          background: "#fff",
+                          height: 37,
+                          margin: 1,
+                        }}
+                      >
+                        <div
+                          style={{ flex: 1, textAlign: "center", fontSize: 20 }}
+                        >
+                          {toFA(
+                            (
+                              this.state.selectedList.length * QUESTION_PRICE
+                            ).toLocaleString(),
+                          )}
+                        </div>
+                        <div>تومان</div>
+                      </div>
                     </div>
-                  </div>
-                  {/* must move to header */}
-                  {/* <div
+                    {/* must move to header */}
+                    {/* <div
                     onClick={() => this.setState({ selectedList: [] })}
                     style={{
                       flexDirection: "row",
@@ -1266,13 +1288,14 @@ class CreateTest extends React.Component {
                   >
                     انتخاب همه
                   </div> */}
-                </Grid>
+                  </Grid>
+                </div>
                 <div
                   onClick={this.goToRegisterExam}
                   style={{
                     flexDirection: "row",
                     display: "flex",
-                    background: "#fe5f55",
+                    background: "#228B22",
                     color: "#fff",
                     height: 45,
                     marginBottom: 20,
@@ -1649,31 +1672,7 @@ class CreateTest extends React.Component {
                   {/* <div class={`sp sp-3balls ${this.state.hidden}`}></div> */}
                   <div class={`loader4 ${this.state.hidden}`}></div>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    marginBottom: "10px",
-                    height: "70px",
-                    width: "100%",
-                    backgroundColor: "red",
-                    borderRadius: "20px",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "100%",
-                      justifyContent: "center",
-                      display: "flex",
-                    }}
-                  >
-                    <Pagination
-                      count={this.state.pageCount}
-                      page={this.state.page}
-                      onChange={this.handleChangePage}
-                      bgColor="#fff"
-                    />
-                  </div>{" "}
-                </div>
+
                 <div
                   className="exam-tabs"
                   style={{
@@ -1698,13 +1697,16 @@ class CreateTest extends React.Component {
                           ? "secondary"
                           : "primary"
                       }
+                      style={{
+                        borderRadius: 0,
+                      }}
                     >
                       {t.title}
                     </Button>
                   ))}
-                  <Button variant="contained" onClick={this.goToAddTopic}>
+                  <Button variant="contained" onClick={this.goToAddTopic} style={{backgroundColor: "#FDEFD5"}}>
                     افزودن
-                    <Add style={{ fill: "#3EC592" }} />
+                    <Add style={{ fill: "#FF0000" }} />
                   </Button>
                 </div>
                 <div
@@ -1712,20 +1714,31 @@ class CreateTest extends React.Component {
                   style={{ borderRadius: 20, width: "100%" }}
                 >
                   {this.renderQuestionsList(this.state.questionsList)}
-                  {/* <div
+                  <div
                     style={{
-                      width: "100%",
-                      justifyContent: "center",
                       display: "flex",
+                      marginBottom: "10px",
+                      height: "70px",
+                      width: "100%",
+                      backgroundColor: "red",
+                      borderRadius: "20px",
                     }}
                   >
-                    <Pagination
-                      count={this.state.pageCount}
-                      page={this.state.page}
-                      onChange={this.handleChangePage}
-                      bgColor="#fff"
-                    />
-                  </div> */}
+                    <div
+                      style={{
+                        width: "100%",
+                        justifyContent: "center",
+                        display: "flex",
+                      }}
+                    >
+                      <Pagination
+                        count={this.state.pageCount}
+                        page={this.state.page}
+                        onChange={this.handleChangePage}
+                        bgColor="#fff"
+                      />
+                    </div>{" "}
+                  </div>
                 </div>
               </Grid>
             </div>

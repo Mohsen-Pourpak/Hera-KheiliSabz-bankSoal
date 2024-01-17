@@ -32,7 +32,7 @@ export default makeStyles(theme => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     border: 'none',
-    backgroundColor: '#FFFF00',
+    backgroundColor: '#CBF2CF',
     overflowX: "hidden",
   },
   logoOpen: {

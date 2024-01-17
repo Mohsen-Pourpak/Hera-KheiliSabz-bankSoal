@@ -23,7 +23,7 @@ export default makeStyles(theme => ({
     boxShadow: 'none'
   },
   toolbar: {
-    backgroundColor: "#FFFF00",
+    backgroundColor: "#CBF2CF",
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },

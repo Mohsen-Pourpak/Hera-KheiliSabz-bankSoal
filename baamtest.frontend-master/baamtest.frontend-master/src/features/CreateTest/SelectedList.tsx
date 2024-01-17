@@ -61,7 +61,7 @@ export default function SelectedList({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: 10,
-                  borderRadius: 35,
+                  borderRadius: 0,
                   padding: "10px 15px",
                   textAlign: "right",
                   marginLeft: 5,
@@ -81,7 +81,7 @@ export default function SelectedList({
                     onChange(selectedListFiltered);
                   }}
                   style={{
-                    backgroundColor: "#fe5f55",
+                    backgroundColor: "#FF0000",
                     cursor: "pointer",
                     width: 50,
                     borderRadius: 10,

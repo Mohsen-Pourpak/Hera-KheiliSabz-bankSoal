@@ -687,13 +687,13 @@ class CreateTest extends React.Component {
     return (
       <>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#3d82a4" }}
+          style={{ zIndex: 1000000, color: "#FFD700" }}
           open={this.state.progress}
         >
           <CircularProgress color="inherit" />
         </Backdrop>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#3d82a4" }}
+          style={{ zIndex: 1000000, color: "#FFD700" }}
           open={this.state.loading}
         >
           <CircularProgress color="inherit" />
@@ -865,7 +865,7 @@ class CreateTest extends React.Component {
                             printType === itm.type ? "bold" : "normal",
                           backgroundColor:
                             printType === itm.type
-                              ? "rgb(254, 95, 85)"
+                              ? "rgb(255, 0, 0)"
                               : "transparent",
                           border: "1px solid rgb(254, 95, 85)",
                           color:

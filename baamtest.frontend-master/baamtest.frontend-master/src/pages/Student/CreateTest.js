@@ -443,7 +443,7 @@ class CreateTest extends React.Component {
                 onClick={() =>
                   this.toggleSelectTopic("topic", item_, isSelected)
                 }
-                style={{ fontSize: 11, height: 30 }}
+                style={{ fontSize: 11, height: 30, backgroundColor: "#FF0000" }}
               >
                 {isSelected ? "- حذف" : "+ افزودن"}
               </Button>
@@ -665,10 +665,10 @@ class CreateTest extends React.Component {
     return (
       <>
         <PageTitle title="ساخت آزمون - انتخاب مباحث" />
-        <hr/>
+        <hr />
         <div
           style={{
-            margin:"20px",
+            margin: "20px",
             display: "flex",
             justifyContent: "right",
             flexDirection: "column",
@@ -683,7 +683,7 @@ class CreateTest extends React.Component {
           <p>سپس دکمه اعمال را فشار دهید</p>
         </div>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#33B950" }}
+          style={{ zIndex: 1000000, color: "#FFD700" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >
@@ -703,11 +703,7 @@ class CreateTest extends React.Component {
             }}
           >
             <Grid direction="column" container item md={6} xs={12}>
-              <Grid
-                direction="row"
-                container
-                spacing={1}
-              >
+              <Grid direction="row" container spacing={1}>
                 {/* FLAG */}
                 {/* <ExamFields 
                   changeInput={this.changeInput}
@@ -728,7 +724,6 @@ class CreateTest extends React.Component {
                   setSelectedFields={this.setSelectedFields}
                   setSearchTitle={this.setSearchTitle}
                 />
-                
               </Grid>
               <Grid direction="column" container item xs={12}>
                 {this.state.userLessons.length === 0 ? (
@@ -736,25 +731,27 @@ class CreateTest extends React.Component {
                     style={{
                       marginTop: "10%",
                       fontSize: "1.5rem",
-                      opacity: 0.5,
+                      opacity: 1,
                     }}
                   >
                     {Boolean(
                       this.state.fieldId !== "d" && this.state.gradeId !== "d",
                     ) ? (
-                      "کتابی موجود نیست"
+                      <div style={{ backgroundColor: "#F08080", padding:"20px" }}>
+                         "کتابی موجود نیست" :(
+                      </div>
                     ) : (
                       // : "لطفا یک پایه و رشته تحصیلی انتخاب کنید"}
                       <div
                         style={{
                           boxShadow: "10px 20px 60px",
                           justifyContent: "center",
-                          justifyItems: "center",
-                          background: "#FFE4B5",
+                          alignItems: "center",
+                          backgroundColor: "#FFDAB9",
                           height: "500px",
                           width: "700px",
                           display: "flex",
-                          borderRadius: "20px",
+                          borderRadius: "0",
                         }}
                       >
                         <p>هنوز هیچ مبحثی برای نمایش انتخاب نشده.</p>
@@ -774,10 +771,10 @@ class CreateTest extends React.Component {
               md={6}
               xs={12}
               style={{
-                boxShadow: "5px 5px 50px",
+                boxShadow: "10px 20px 60px",
                 padding: "25px",
-                borderRadius: "30px",
-                backgroundColor: "#FFE4B5",
+                borderRadius: "0",
+                backgroundColor: "#FFDAB9",
               }}
             >
               <Grid
@@ -849,6 +846,7 @@ class CreateTest extends React.Component {
                     size="large"
                     className={classes.createAccountButton}
                     style={{
+                      borderRadius: "0",
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",
@@ -930,6 +928,7 @@ class CreateTest extends React.Component {
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",
+                      borderRadius: "0"
                     }}
                   >
                     انتخاب خودکار

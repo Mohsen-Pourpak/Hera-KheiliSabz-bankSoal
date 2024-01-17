@@ -26,7 +26,7 @@ export default function FilterBox({
           >
             <div
               style={{
-                color: "#555",
+                color: "#000",
                 fontSize: 17,
                 padding: "0 17px",
                 textAlign: "center",
@@ -34,7 +34,7 @@ export default function FilterBox({
             >
               {title}
             </div>
-            <div className="filter-minimize" onClick={() => setOpen(!open)}>
+            <div className="filter-minimize" onClick={() => setOpen(!open)} style={{color: "#FF0000"}}>
               {!open ? "+" : "-"}
             </div>
           </Box>

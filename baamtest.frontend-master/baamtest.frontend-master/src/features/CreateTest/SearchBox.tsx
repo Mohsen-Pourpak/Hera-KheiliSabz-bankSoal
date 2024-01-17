@@ -14,7 +14,7 @@ export default function SearchBox({
 
   return (
     <form
-      style={{ display: "flex", width: "100%" }}
+      style={{ display: "flex", width: "100%", borderRadius: 0 }}
       onSubmit={e => {
         e.preventDefault();
         onSubmit(search);
@@ -22,7 +22,7 @@ export default function SearchBox({
     >
       <NormalInput
         placeholder="جست و جو در مباحث"
-        style={{ height: 40, flexGrow: 1 }}
+        style={{ height: 40, flexGrow: 1, borderRadius: 0 }}
         fullWidth
         onChange={e => {
           setSearch(e.target.value);

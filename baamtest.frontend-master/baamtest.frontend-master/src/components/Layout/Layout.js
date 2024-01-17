@@ -686,7 +686,7 @@ function Layout(props) {
             style={{ background: "#3d82a4", height: "100vh", width: "100vw" }}
           >
             <Backdrop
-              style={{ zIndex: 1000000, color: "#3d82a4" }}
+              style={{ zIndex: 1000000, color: "#FFD700" }}
               open={!info}
             >
               <CircularProgress

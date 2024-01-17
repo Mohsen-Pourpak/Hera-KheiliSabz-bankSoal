@@ -1069,7 +1069,7 @@ class EditTest extends React.Component {
     return (
       <>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#3d82a4" }}
+          style={{ zIndex: 1000000, color: "#FFD700" }}
           open={this.state.progress}
         >
           <CircularProgress color="inherit" />

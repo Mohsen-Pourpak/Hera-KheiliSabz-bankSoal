@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#7AD3FF",
     border: "1px solid #3d82a4",
     color: "#fff",
     width: "100%",

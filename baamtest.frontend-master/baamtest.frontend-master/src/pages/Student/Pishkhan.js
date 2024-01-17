@@ -54,7 +54,7 @@ const ActionButton = ({ Icon, onClick }) => {
       onClick={onClick}
       style={{ float: "left", marginBottom: -45, marginTop: 5, marginLeft: 5 }}
     >
-      <Icon style={{ fill: "#3d82a4", fontSize: 20 }} />
+      <Icon style={{ fill: "#000", fontSize: 20 }} />
     </IconButton>
   );
 };
@@ -216,8 +216,9 @@ class Pishkhan extends React.Component {
                     color="primary"
                     size="large"
                     className="button"
+                    style={{color: "#000"}}
                   >
-                    <Edit style={{ fontSize: "1.2rem", marginLeft: 5 }} />{" "}
+                    <Edit style={{ fontSize: "1.2rem", marginLeft: 5, color: "#000" }} />{" "}
                     ویرایش
                   </Button>
                 </div>
@@ -251,11 +252,11 @@ class Pishkhan extends React.Component {
                       }}
                     />
                   </div>
-                  <div className="events">
+                  <div className="events" style={{backgroundColor: "#228B22", borderRadius: "0"}}>
                     {this.state.selectedDayPlan.length === 0 ? (
                       <div
                         style={{
-                          color: "#3d82a4",
+                          color: "#000",
                           width: "100%",
                           textAlign: "center",
                           height: 150,
@@ -276,7 +277,7 @@ class Pishkhan extends React.Component {
                           <div
                             style={{
                               borderTopWidth: idx !== 0 ? 1 : 0,
-                              borderTopColor: "#3d82a4",
+                              borderTopColor: "#000",
                               margin: "0 15px",
                               padding: "10px 0",
                               borderTopStyle: "solid",
@@ -296,7 +297,7 @@ class Pishkhan extends React.Component {
                             <div style={{ flex: 1 }}>
                               <div
                                 style={{
-                                  color: "#3d82a4",
+                                  color: "#000",
                                   fontFamily: "Dana",
                                   marginBottom: 10,
                                 }}
@@ -304,7 +305,7 @@ class Pishkhan extends React.Component {
                                 {item.title}
                               </div>
                               <div
-                                style={{ color: "#3d82a4", fontFamily: "Dana" }}
+                                style={{ color: "#000", fontFamily: "Dana" }}
                               >
                                 {item.description}
                               </div>
@@ -327,7 +328,7 @@ class Pishkhan extends React.Component {
               >
                 <div
                   style={{
-                    background: "rgb(61 130 164 / 30%)",
+                    background: "#FFFF00",
                     flexDirection: "column",
                     padding: "0px 30px",
                     width: 400,
@@ -338,7 +339,7 @@ class Pishkhan extends React.Component {
                 >
                   <DialogTitle
                     id="simple-dialog-title"
-                    style={{ marginBottom: 15 }}
+                    style={{ marginBottom: 15, backgroundColor: "#ADFF2F" }}
                   >{`${toFA(selectedDay.year)}/${toFA(
                     selectedDay.month,
                   )}/${toFA(selectedDay.day)}`}</DialogTitle>
@@ -358,7 +359,6 @@ class Pishkhan extends React.Component {
                     <TimePicker
                       style={{
                         backgroundColor: "white",
-                        borderRadius: "2em",
                         padding: "0 1em",
                         margin: "4px 0",
                       }}
@@ -392,6 +392,8 @@ class Pishkhan extends React.Component {
                     size="large"
                     className={classes.createAccountButton}
                     style={{
+                      color: "#000",
+                      borderRadius: 0,
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",

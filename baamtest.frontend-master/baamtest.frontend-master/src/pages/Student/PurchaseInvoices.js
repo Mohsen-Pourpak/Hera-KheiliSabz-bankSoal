@@ -150,7 +150,7 @@ class PurchaseInvoices extends React.Component {
             <>  
                 <PageTitle title="لیست رسیدهای پرداخت" />
                 {this.state.isLoading ? (
-                    <Backdrop style={{zIndex: 1000000, color: '#3d82a4'}} open={this.state.isLoading} onClick={() => console.log('clicked')}>
+                    <Backdrop style={{zIndex: 1000000, color: '#FFD700'}} open={this.state.isLoading} onClick={() => console.log('clicked')}>
                         <CircularProgress color="inherit" />
                     </Backdrop>
                 ) : (

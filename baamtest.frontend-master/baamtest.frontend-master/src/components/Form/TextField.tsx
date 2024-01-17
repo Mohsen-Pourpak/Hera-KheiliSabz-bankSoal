@@ -38,7 +38,8 @@ export const FilterBoxTextField = ({
         flexDirection: "row",
         display: "flex",
         marginTop: 20,
-        background: "#fff",
+        backgroundColor: "#DEF6FF",
+        color: "#000",
         minHeight: 45,
         borderRadius: 25,
         alignItems: "normal",
@@ -50,12 +51,12 @@ export const FilterBoxTextField = ({
         style={{
           flexDirection: "row",
           display: "flex",
-          color: "#fff",
+          color: "#000",
           alignItems: "center",
           padding: "0 15px",
           borderRadius: 25,
           justifyContent: "center",
-          background: "#3d82a4",
+          backgroundColor: "#7AD3FF",
         }}
       >
         {title}
@@ -146,7 +147,7 @@ export function CustomTextField({
         htmlFor="my-input"
         style={{
           padding: "4px 8px",
-          background: "#3d82a4",
+          background: "#7AD3FF",
           borderRadius: 16,
           color: "white",
           display: "flex",
@@ -170,7 +171,6 @@ export function CustomTextField({
 
 export const NormalInput = styled(InputBase)`
   background: white;
-  border-radius: 2em;
   padding: 0 1em;
 `;
 
