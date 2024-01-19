@@ -29,9 +29,9 @@ import "react-modern-calendar-datepicker/lib/DatePicker.css";
 // import { Calendar } from "react-modern-calendar-datepicker";
 // import ArrowIcon from "../../images/icons/circle-arrow-icon.svg";
 // import Image5 from "../../images/pishkhan/Untitled-5.svg";
-import Hard from "../../images/test/hard.svg";
-import Normal from "../../images/test/normal.svg";
-import Easy from "../../images/test/easy.svg";
+import Hard from "../../images/test/chart-simple red .svg";
+import Normal from "../../images/test/chart-yellow.svg";
+import Easy from "../../images/test/chart-green.svg";
 import {
   questionNormal,
   saveQuestion,
