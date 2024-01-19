@@ -541,9 +541,12 @@ class CreateTest extends React.Component {
             <Grid item>
               <Button
                 variant="contained"
-                color={isSelected ? "success" : "primary"}
                 onClick={() => this.toggleSelectTopic("book", item, isSelected)}
-                style={{ fontSize: 11, height: 30 }}
+                style={{
+                  fontSize: 11,
+                  height: 30,
+                  backgroundColor: isSelected ? "#FF0000" : "#228B22",
+                }}
                 disabled={this.state.searchFetched}
               >
                 {isSelected ? "- حذف" : "+ افزودن"}
@@ -702,7 +705,7 @@ class CreateTest extends React.Component {
               borderRadius: 20,
             }}
           >
-            <Grid direction="column" container item md={6} xs={12}>
+            <Grid direction="column" container item md={4} xs={12}>
               <Grid direction="row" container spacing={1}>
                 {/* FLAG */}
                 {/* <ExamFields 
@@ -724,43 +727,6 @@ class CreateTest extends React.Component {
                   setSelectedFields={this.setSelectedFields}
                   setSearchTitle={this.setSearchTitle}
                 />
-              </Grid>
-              <Grid direction="column" container item xs={12}>
-                {this.state.userLessons.length === 0 ? (
-                  <div
-                    style={{
-                      marginTop: "10%",
-                      fontSize: "1.5rem",
-                      opacity: 1,
-                    }}
-                  >
-                    {Boolean(
-                      this.state.fieldId !== "d" && this.state.gradeId !== "d",
-                    ) ? (
-                      <div style={{ backgroundColor: "#F08080", padding:"20px" }}>
-                         "کتابی موجود نیست" :(
-                      </div>
-                    ) : (
-                      // : "لطفا یک پایه و رشته تحصیلی انتخاب کنید"}
-                      <div
-                        style={{
-                          boxShadow: "10px 20px 60px",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          backgroundColor: "#FFDAB9",
-                          height: "500px",
-                          width: "700px",
-                          display: "flex",
-                          borderRadius: "0",
-                        }}
-                      >
-                        <p>هنوز هیچ مبحثی برای نمایش انتخاب نشده.</p>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  this.renderUserLessons(this.state.userLessons)
-                )}
               </Grid>
             </Grid>
             <Grid
@@ -811,10 +777,50 @@ class CreateTest extends React.Component {
                   }}
                 />
               </Grid>
-              <SelectedList
-                onChange={list => this.setState({ selectedList: list })}
-                selectedList={this.state.selectedList}
-              />
+              <Grid direction="column" container item xs={12}>
+                {this.state.userLessons.length === 0 ? (
+                  <div
+                    style={{
+                      marginTop: "10%",
+                      fontSize: "1.5rem",
+                      opacity: 1,
+                    }}
+                  >
+                    {Boolean(
+                      this.state.fieldId !== "d" && this.state.gradeId !== "d",
+                    ) ? (
+                      <div
+                        style={{
+                          backgroundColor: "#F08080",
+                          padding: "20px",
+                          marginBottom: "65px",
+                        }}
+                      >
+                        "کتابی موجود نیست" :(
+                      </div>
+                    ) : (
+                      // : "لطفا یک پایه و رشته تحصیلی انتخاب کنید"}
+                      <div
+                        style={{
+                          // boxShadow: "10px 20px 60px",
+                          // backgroundColor: "#FFDAB9",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          height: "500px",
+                          width: "700px",
+                          display: "flex",
+                          borderRadius: "0",
+                          marginBottom: "100px",
+                        }}
+                      >
+                        <p>هنوز هیچ مبحثی برای نمایش انتخاب نشده.</p>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  this.renderUserLessons(this.state.userLessons)
+                )}
+              </Grid>
               <Grid direction="row" justify="center" container spacing={1}>
                 <Grid item md={4} xs={6}>
                   <Button
@@ -928,7 +934,7 @@ class CreateTest extends React.Component {
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",
-                      borderRadius: "0"
+                      borderRadius: "0",
                     }}
                   >
                     انتخاب خودکار
