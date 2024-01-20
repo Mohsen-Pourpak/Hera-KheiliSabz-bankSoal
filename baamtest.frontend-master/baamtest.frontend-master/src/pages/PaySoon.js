@@ -38,7 +38,7 @@ export default function PaySoon(props) {
                     style={{fontSize: "1rem", textAlign : 'center', fontFamily: "Dana", width: 'fit-content', marginTop: '2vw'}}
                   >
                     بازگشت
-                </Button>
+                </Button> 
             </div>
         </div>
     );

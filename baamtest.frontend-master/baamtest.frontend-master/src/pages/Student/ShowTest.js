@@ -75,7 +75,7 @@ const Level = ({ image, right, percent }) => {
       }}
     >
       <img
-        style={{ position: "relative", margin: "0 auto" }}
+        style={{ position: "relative" }}
         src={image}
         alt=""
         width={`${percent}%`}
@@ -593,7 +593,12 @@ class CreateTest extends React.Component {
           : 19;
       return (
         <div
-          style={{ position: "relative", flex: 1, width: "100%", marginBottom: "-50px" }}
+          style={{
+            position: "relative",
+            flex: 1,
+            width: "100%",
+            marginBottom: "-50px",
+          }}
           key={item.id}
         >
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -631,7 +636,7 @@ class CreateTest extends React.Component {
                 borderColor: "black",
                 borderWidth: "thin",
                 minHeight: 250,
-                paddingTop: "30px"
+                paddingTop: "30px",
               }}
             >
               {/* <div style={style.questionNumContainer}>
@@ -648,7 +653,7 @@ class CreateTest extends React.Component {
                 style={{
                   paddingTop: "10px",
                   paddingRight: "50px",
-                  
+
                   margin: 0,
                   justifyContent: isEnglish ? "flex-end" : "flex-start",
                 }}
@@ -1154,36 +1159,38 @@ class CreateTest extends React.Component {
                         flexDirection: "row",
                         display: "flex",
                         width: "100%",
-                        right: "9%",
-                        height: 100,
-                        margin: "0 0 -5px 0",
+                        height: "100px",
                         alignItems: "flex-end",
                         justifyContent: "center",
+                        position: "relative"
                       }}
                     >
-                      <div style={{ flex: 0.5, paddingRight: "5px" }} />
-                      <Level
-                        image={Hard}
-                        right={100}
-                        percent={
-                          this.levelPercent(3) +
-                          this.levelPercent(4) +
-                          this.levelPercent(5)
-                        }
-                      />
-                      <div style={{ paddingRight: "20px" }} />
-                      <Level
-                        image={Normal}
-                        right={-20}
-                        percent={this.levelPercent(2)}
-                      />
-                      <div style={{ paddingRight: "130px" }} />
-                      <Level
-                        image={Easy}
-                        right={-40}
-                        percent={this.levelPercent(1)}
-                      />
-                      <div style={{ flex: 0.5 }} />
+                      <div style={{paddingRight: "55px"}}>
+                        <Level
+                          image={Hard}
+                          right={100}
+                          percent={
+                            this.levelPercent(3) +
+                            this.levelPercent(4) +
+                            this.levelPercent(5)
+                          }
+                        />
+                      </div>
+                      <div style={{paddingLeft: "55px"}}>
+                        <Level
+                          image={Normal}
+                          right={100}
+                          percent={this.levelPercent(2)}
+                        />
+                      </div>
+                      <div style={{paddingLeft: "35px"}}>
+                        <Level
+                          image={Easy}
+                          right={100}
+                          percent={this.levelPercent(1)}
+                        />
+                      </div>
+                      <div />
                     </div>
                     <div
                       style={{
@@ -1704,7 +1711,11 @@ class CreateTest extends React.Component {
                       {t.title}
                     </Button>
                   ))}
-                  <Button variant="contained" onClick={this.goToAddTopic} style={{backgroundColor: "#FDEFD5"}}>
+                  <Button
+                    variant="contained"
+                    onClick={this.goToAddTopic}
+                    style={{ backgroundColor: "#FDEFD5" }}
+                  >
                     افزودن
                     <Add style={{ fill: "#FF0000" }} />
                   </Button>

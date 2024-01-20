@@ -818,7 +818,15 @@ class CreateTest extends React.Component {
                     )}
                   </div>
                 ) : (
-                  this.renderUserLessons(this.state.userLessons)
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      flexDirection: "row",
+                    }}
+                  >
+                    {this.renderUserLessons(this.state.userLessons)}
+                  </div>
                 )}
               </Grid>
               <Grid direction="row" justify="center" container spacing={1}>
