@@ -45,6 +45,7 @@ import {
 
 import { toFA, QUESTION_PRICE, PER_PAGE_QUESTIONS } from "../../utils/Utils";
 import AddTopic from "../../features/ShowTest/AddTopic";
+import zIndex from "@material-ui/core/styles/zIndex";
 
 const Point = ({ color }) => (
   <div
@@ -140,16 +141,50 @@ const style = {
     marginRight: 10,
   },
   questionTitle: {
-    backgroundColor: "#119C04",
-    color: "#fff",
-    height: 40,
-    width: "fit-content",
-    padding: "10px 20px",
-    zIndex: 3000,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    height: "auto",
+    width: "95%",
+    marginTop: "0px",
+    marginBottom: "-56px",
+    marginLeft: "50px",
     position: "relative",
-    marginBottom: -25,
-    borderRadius: 0,
+    zIndex: 3000,
   },
+
+  rightDetailDivs: {
+    textAlign: "center",
+    border: "1px solid #000",
+    width: "60px",
+    height: "30px",
+    margin: "0px",
+  },
+
+  leftDetailDivs: {
+    textAlign: "center",
+    border: "1px solid #000",
+    width: "60px",
+    height: "30px",
+    margin: "0px",
+  },
+
+  leftDetailDivExpand: {
+    textAlign: "center",
+    border: "1px solid #000",
+    height: "30px",
+    margin: "0px",
+    width: "50.0%",
+  },
+
+  rightDetailDivExpand: {
+    textAlign: "center",
+    border: "1px solid #000",
+    height: "30px",
+    margin: "0px",
+    width: "50.0%",
+  },
+
   actionText: {
     color: "#deeaf4",
     fontSize: 7,
@@ -603,7 +638,60 @@ class CreateTest extends React.Component {
         >
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={style.questionTitle}>
-              {toFA(item.lessonTitle)} | {item.topic}
+              {/* {toFA(item.lessonTitle)} | {item.topic} */}
+              <div
+                class="Question-rightSide-detailContainer"
+                style={{
+                  backgroundColor: `${labelColor}`,
+                  height: "60px",
+                  width: "300px",
+                  margin: "20px",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                }}
+              >
+                <div style={style.rightDetailDivs}>
+                  {toFA(item.lessonTitle)}
+                </div>
+                <div style={style.rightDetailDivs}>فصل</div>
+                <div style={style.rightDetailDivs}>مبحث</div>
+                <div style={style.rightDetailDivs}>زیر مبحث</div>
+                <div style={style.rightDetailDivs}>مبحث تر</div>
+                <div style={style.rightDetailDivs}>سطح</div>
+                <div style={style.rightDetailDivs}>تکراری ؟</div>
+                <div style={style.rightDetailDivs}>تستی ؟</div>
+                <div style={style.rightDetailDivs}>سبک</div>
+                <div style={style.rightDetailDivs}>مولف|منبع</div>
+              </div>
+              <div
+                class="Question-leftSide-detailContainer"
+                style={{
+                  backgroundColor: `${labelColor}`,
+                  height: "60px",
+                  width: "300px",
+                  margin: "20px",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  position: "relative",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <div style={style.leftDetailDivs}>comment</div>
+                <div style={style.leftDetailDivs}>note</div>
+                <div style={style.leftDetailDivs}>bug</div>
+                <div style={style.leftDetailDivs}>آمار</div>
+                <div style={style.leftDetailDivs}>ذخیره</div>
+                <div id="left-div-expand" style={style.leftDetailDivExpand}>
+                  Rating
+                </div>
+                <div id="right-div-expand" style={style.rightDetailDivExpand}>
+                  زمان پاسخگویی
+                </div>
+              </div>
             </div>
           </div>
           <Grid
@@ -613,7 +701,7 @@ class CreateTest extends React.Component {
             className="inputContainer"
             style={{
               padding: 0,
-              background: `linear-gradient(0deg, #3d82a4 , ${labelColor} 60%)`,
+              background: `linear-gradient(0deg, #000 , ${labelColor} 60%)`,
               alignItems: "center",
               width: "calc(100% - 10px)",
               marginTop: 5,
@@ -1162,10 +1250,10 @@ class CreateTest extends React.Component {
                         height: "100px",
                         alignItems: "flex-end",
                         justifyContent: "center",
-                        position: "relative"
+                        position: "relative",
                       }}
                     >
-                      <div style={{paddingRight: "55px"}}>
+                      <div style={{ paddingRight: "55px" }}>
                         <Level
                           image={Hard}
                           right={100}
@@ -1176,14 +1264,14 @@ class CreateTest extends React.Component {
                           }
                         />
                       </div>
-                      <div style={{paddingLeft: "55px"}}>
+                      <div style={{ paddingLeft: "55px" }}>
                         <Level
                           image={Normal}
                           right={100}
                           percent={this.levelPercent(2)}
                         />
                       </div>
-                      <div style={{paddingLeft: "35px"}}>
+                      <div style={{ paddingLeft: "35px" }}>
                         <Level
                           image={Easy}
                           right={100}
@@ -1315,6 +1403,79 @@ class CreateTest extends React.Component {
                 >
                   ثبت
                 </div>
+                <FilterBox title="نمایش سوالات">
+                  <div>
+                    {/* هنوز عملکرد چینش پیش فرض را دارد. باید اصلاح شود  */}
+                    <div
+                      onClick={() =>
+                        this.setState({ randomize: null }, () =>
+                          this.getQuestions(),
+                        )
+                      }
+                      style={style.randomFilter}
+                    >
+                      حذف کل سوالات آزمون های قبل
+                    </div>
+                    <div style={{ height: 10 }} />
+
+                    <div
+                      onClick={() =>
+                        this.setState(
+                          { sortBySaved: !this.state.sortBySaved },
+                          () => this.getQuestions(),
+                        )
+                      }
+                      style={
+                        this.state.sortBySaved
+                          ? style.randomFilterActive
+                          : style.randomFilter
+                      }
+                    >
+                      {/* هنوز عملکرد بر اساس سوالات ذخیره شده را دارد، باید اصلاح شود.  */}
+                      نمایش کل سوالات آزمون های قبل
+                    </div>
+                    <div style={{ height: 10 }} />
+                    <div
+                      onClick={() =>
+                        this.setState({ randomize: uuidv4() }, () =>
+                          this.getQuestions(),
+                        )
+                      }
+                      style={style.randomFilter}
+                    >
+                      {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
+                      حذف سوالات آزمون های قبل ⏱
+                    </div>
+                    <div style={{ height: 10 }} />
+                    <div
+                      onClick={() =>
+                        this.setState({ randomize: uuidv4() }, () =>
+                          this.getQuestions(),
+                        )
+                      }
+                      style={style.randomFilter}
+                    >
+                      {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
+                      نمایش سوالات آزمون های قبل ⏱
+                    </div>
+                    <div style={{ height: 10 }} />
+                    <div
+                      onClick={() =>
+                        this.setState(
+                          { justSaved: !this.state.justSaved },
+                          () => this.getQuestions(),
+                        )
+                      }
+                      style={
+                        this.state.justSaved
+                          ? { ...style.sortFilterActive, padding: 10 }
+                          : { ...style.sortFilter, padding: 10 }
+                      }
+                    >
+                      نمایش سوالات ذخیره شده
+                    </div>
+                  </div>
+                </FilterBox>
                 <FilterBox title="جست و جو">
                   <FilterBoxTextField
                     title="صورت سوال"

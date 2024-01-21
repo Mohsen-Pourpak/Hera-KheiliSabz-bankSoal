@@ -122,7 +122,7 @@ export function ExamFieldsRadio({
       <div
         style={{
           boxShadow: "10px 20px 40px",
-          marginRight: "230px",
+          marginRight: "200px",
           backgroundColor: "#FFDAB9",
           padding: "10px",
           justifyContent: "center",
@@ -130,6 +130,7 @@ export function ExamFieldsRadio({
           display: "flex",
           flexDirection: "column",
           rowGap: "20px",
+          borderRadius: "2%"
         }}
       >
         <NormalInput

@@ -385,7 +385,7 @@ class CreateTest extends React.Component {
                     alignItems: "center",
                     padding: "0 10px 0 20px",
                     borderRadius: 50,
-                    background: "#fe5f55",
+                    background: "#FF0000",
                     height: 45,
                     opacity: this.state[`isShow__${item_.id}`] ? 0.5 : 1,
                   }}
@@ -426,7 +426,7 @@ class CreateTest extends React.Component {
             <Grid item style={{ padding: 0, flex: 1 }}>
               <p
                 style={{
-                  color: "#8B008B",
+                  color: "#000",
                   fontWeight: "bold",
                   fontSize: 18,
                   padding: "0 17px",
@@ -439,13 +439,12 @@ class CreateTest extends React.Component {
             <Grid item>
               <Button
                 variant="contained"
-                color={isSelected ? "secondary" : "primary"}
                 onClick={() =>
                   this.toggleSelectTopic("topic", item_, isSelected)
                 }
-                style={{ fontSize: 11, height: 30, backgroundColor: "#FF0000" }}
+                style={{ fontSize: 25, height: 30, backgroundColor: isSelected ? "#FF0000" : "#228B22", }}
               >
-                {isSelected ? "- حذف" : "+ افزودن"}
+                {isSelected ? "-" : "+"}
               </Button>
             </Grid>
           </Grid>
@@ -494,7 +493,7 @@ class CreateTest extends React.Component {
                   alignItems: "center",
                   padding: "0 10px 0 20px",
                   borderRadius: 50,
-                  background: "#fe5f55",
+                  background: "#FF0000",
                   height: 45,
                   opacity: this.state[`isShow__${item.id}`] ? 0.5 : 1,
                 }}
@@ -543,13 +542,13 @@ class CreateTest extends React.Component {
                 variant="contained"
                 onClick={() => this.toggleSelectTopic("book", item, isSelected)}
                 style={{
-                  fontSize: 11,
+                  fontSize: 25,
                   height: 30,
                   backgroundColor: isSelected ? "#FF0000" : "#228B22",
                 }}
                 disabled={this.state.searchFetched}
               >
-                {isSelected ? "- حذف" : "+ افزودن"}
+                {isSelected ? "-" : "+"}
               </Button>
             </Grid>
           </Grid>
@@ -705,7 +704,7 @@ class CreateTest extends React.Component {
               borderRadius: 20,
             }}
           >
-            <Grid direction="column" container item md={4} xs={12}>
+            <Grid direction="column" container item md={4} xs={12} style={{marginLeft: "60px"}}>
               <Grid direction="row" container spacing={1}>
                 {/* FLAG */}
                 {/* <ExamFields 
@@ -739,8 +738,9 @@ class CreateTest extends React.Component {
               style={{
                 boxShadow: "10px 20px 60px",
                 padding: "25px",
-                borderRadius: "0",
+                borderRadius: "2%",
                 backgroundColor: "#FFDAB9",
+                marginRight: "60px"
               }}
             >
               <Grid
@@ -860,7 +860,7 @@ class CreateTest extends React.Component {
                     size="large"
                     className={classes.createAccountButton}
                     style={{
-                      borderRadius: "0",
+                      borderRadius: "2%",
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",
@@ -942,7 +942,7 @@ class CreateTest extends React.Component {
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",
-                      borderRadius: "0",
+                      borderRadius: "2%",
                     }}
                   >
                     انتخاب خودکار

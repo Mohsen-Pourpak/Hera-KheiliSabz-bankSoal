@@ -50,3 +50,12 @@
     height: 50px;
     margin: 5px;
 }
+
+
+#left-div-expand {
+    width: 40%;
+}
+
+#right-div-expand {
+    width: 40%;
+}

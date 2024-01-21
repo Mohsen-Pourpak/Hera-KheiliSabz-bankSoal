@@ -739,7 +739,7 @@ class CreateTest extends React.Component {
                     <Button
                       variant="contained"
                       color={
-                        this.state.tab === "general" ? "primary" : "secondary"
+                        this.state.tab === "general" ? "خیلی سبز" : "secondary"
                       }
                       onClick={() => this.setState({ tab: "general" })}
                       style={{
