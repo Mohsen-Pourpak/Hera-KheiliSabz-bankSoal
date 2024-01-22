@@ -159,9 +159,11 @@ const style = {
     width: "60px",
     height: "30px",
     margin: "0px",
+    fontSize: "20px",
   },
 
   leftDetailDivs: {
+    fontSize: "20px",
     textAlign: "center",
     border: "1px solid #000",
     width: "60px",
@@ -1435,29 +1437,196 @@ class CreateTest extends React.Component {
                       نمایش کل سوالات آزمون های قبل
                     </div>
                     <div style={{ height: 10 }} />
-                    <div
-                      onClick={() =>
-                        this.setState({ randomize: uuidv4() }, () =>
-                          this.getQuestions(),
-                        )
-                      }
-                      style={style.randomFilter}
-                    >
+                    <FilterBox title=" حذف سوالات آزمون های قبل">
                       {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
-                      حذف سوالات آزمون های قبل ⏱
-                    </div>
-                    <div style={{ height: 10 }} />
-                    <div
-                      onClick={() =>
-                        this.setState({ randomize: uuidv4() }, () =>
-                          this.getQuestions(),
-                        )
-                      }
-                      style={style.randomFilter}
-                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          width: "100%",
+                          marginBottom: 10,
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div>از :</div>
+                          <div
+                            style={{
+                              ...style.randomFilter,
+                              padding: 5,
+                              marginRight: 10,
+                            }}
+                          >
+                            <DatePicker
+                              okLabel="تأیید"
+                              cancelLabel="لغو"
+                              InputProps={{
+                                disableUnderline: true,
+                              }}
+                              hideTabs={true}
+                              mode="24h"
+                              ampm={false}
+                              labelFunc={date =>
+                                date ? date.format("jYYYY/jMM/jDD") : ""
+                              }
+                              value={this.state.startTime}
+                              onChange={e =>
+                                this.setState(
+                                  { startTime: e },
+                                  () =>
+                                    this.state.endTime && this.getQuestions(),
+                                )
+                              }
+                            />
+                          </div>
+                        </div>
+                        <div style={{ height: 10 }} />
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div>تا :</div>
+                          <div
+                            style={{
+                              ...style.randomFilter,
+                              padding: 5,
+                              marginRight: 10,
+                            }}
+                          >
+                            <DatePicker
+                              okLabel="تأیید"
+                              cancelLabel="لغو"
+                              style={{ cursor: "pointer" }}
+                              InputProps={{
+                                disableUnderline: true,
+                                style: {
+                                  textAlign: "center",
+                                  cursor: "pointer",
+                                },
+                              }}
+                              mode="24h"
+                              ampm={false}
+                              hideTabs={true}
+                              labelFunc={date =>
+                                date ? date.format("jYYYY/jMM/jDD") : ""
+                              }
+                              value={this.state.endTime}
+                              onChange={e =>
+                                this.setState(
+                                  { endTime: e },
+                                  () =>
+                                    this.state.startTime && this.getQuestions(),
+                                )
+                              }
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </FilterBox>
+                     <FilterBox title="نمایش سوالات آزمون های قبل">
                       {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
-                      نمایش سوالات آزمون های قبل ⏱
-                    </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          width: "100%",
+                          marginBottom: 10,
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div>از :</div>
+                          <div
+                            style={{
+                              ...style.randomFilter,
+                              padding: 5,
+                              marginRight: 10,
+                            }}
+                          >
+                            <DatePicker
+                              okLabel="تأیید"
+                              cancelLabel="لغو"
+                              InputProps={{
+                                disableUnderline: true,
+                              }}
+                              hideTabs={true}
+                              mode="24h"
+                              ampm={false}
+                              labelFunc={date =>
+                                date ? date.format("jYYYY/jMM/jDD") : ""
+                              }
+                              value={this.state.startTime}
+                              onChange={e =>
+                                this.setState(
+                                  { startTime: e },
+                                  () =>
+                                    this.state.endTime && this.getQuestions(),
+                                )
+                              }
+                            />
+                          </div>
+                        </div>
+                        <div style={{ height: 10 }} />
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div>تا :</div>
+                          <div
+                            style={{
+                              ...style.randomFilter,
+                              padding: 5,
+                              marginRight: 10,
+                            }}
+                          >
+                            <DatePicker
+                              okLabel="تأیید"
+                              cancelLabel="لغو"
+                              style={{ cursor: "pointer" }}
+                              InputProps={{
+                                disableUnderline: true,
+                                style: {
+                                  textAlign: "center",
+                                  cursor: "pointer",
+                                },
+                              }}
+                              mode="24h"
+                              ampm={false}
+                              hideTabs={true}
+                              labelFunc={date =>
+                                date ? date.format("jYYYY/jMM/jDD") : ""
+                              }
+                              value={this.state.endTime}
+                              onChange={e =>
+                                this.setState(
+                                  { endTime: e },
+                                  () =>
+                                    this.state.startTime && this.getQuestions(),
+                                )
+                              }
+                            />
+                          </div>
+                        </div>
+                      </div>
+                     </FilterBox>
+
+                    
                     <div style={{ height: 10 }} />
                     <div
                       onClick={() =>
