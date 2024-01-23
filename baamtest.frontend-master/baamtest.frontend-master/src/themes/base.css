@@ -235,7 +235,7 @@ mjx-c::before {
 .sp-3balls:before,
 .sp-3balls:after {
   border-radius: 50%;
-  background-color: #ffea00;
+  background-color: #000000;
   width: 18px;
   height: 18px;
   transform-origin: center center;
@@ -1089,7 +1089,7 @@ caption {
   height: 30px;
   display: flex;
   justify-content: flex-start;
-  border: 1px solid #FFFF00;
+  border: 1px solid #c2c2c0;
   background: #fff;
 }
 
