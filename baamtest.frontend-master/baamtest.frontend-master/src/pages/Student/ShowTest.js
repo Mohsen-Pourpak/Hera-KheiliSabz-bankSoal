@@ -9,6 +9,7 @@ import {
   Box,
 } from "@material-ui/core";
 import { DatePicker } from "@material-ui/pickers";
+import TextField from "@material-ui/core/TextField"
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
@@ -27,6 +28,7 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 import Pagination from "../../components/Form/Pagination";
 import MyMath from "../../components/Form/MyMath";
 import FilterBox from "../../components/FilterBox";
+import FilterTime from "../../components/FilterTime/timeSlider";
 import { FilterBoxTextField } from "../../components/Form/TextField";
 import Textarea from "../../components/Form/Textarea";
 
@@ -278,9 +280,9 @@ const style = {
     cursor: "pointer",
   },
   sortFilter: {
-    backgroundColor: "transparent",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
+    backgroundColor: "#CBF2CF",
+    border: "1px solid #CBF2CF",
+    color: "#000",
     height: 40,
     flex: 1,
     borderRadius: 50,
@@ -290,9 +292,9 @@ const style = {
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#3d82a4",
-    border: "1px solid #3d82a4",
-    color: "#fff",
+    backgroundColor: "#C87474",
+    border: "1px solid #C87474",
+    color: "#000",
     height: 40,
     flex: 1,
     borderRadius: 50,
@@ -329,6 +331,7 @@ class CreateTest extends React.Component {
       page: 1,
       sortFilter: null,
       sortBySaved: false,
+      showRandomly: false,
       className: "",
       hidden: "hidden",
 
@@ -1122,6 +1125,7 @@ class CreateTest extends React.Component {
 
   render() {
     const classes = this.props.classes;
+    let { showRandomly } = this.state;
     return (
       <div ref={this.myRef}>
         <AddTopic
@@ -1407,16 +1411,36 @@ class CreateTest extends React.Component {
                 </div>
                 <FilterBox title="نمایش سوالات">
                   <div>
-                    {/* هنوز عملکرد چینش پیش فرض را دارد. باید اصلاح شود  */}
                     <div
                       onClick={() =>
-                        this.setState({ randomize: null }, () =>
-                          this.getQuestions(),
+                        this.setState(
+                          {
+                            repeatState: 1,
+                            repetitive: false,
+                            startTime: undefined,
+                            endTime: undefined,
+                          },
+                          () => this.getQuestions(),
                         )
                       }
-                      style={style.randomFilter}
+                      style={
+                        this.state.repeatState === 1
+                          ? {
+                              ...style.sortFilterActive,
+                              padding: 10,
+                              width: "100%",
+                            }
+                          : { ...style.sortFilter, padding: 10, width: "100%" }
+                      }
                     >
-                      حذف کل سوالات آزمون های قبل
+                      حذف کل سوالات ازمون های قبل
+                      {this.state.repeatState === 1 && (
+                        <img
+                          src={CheckRadioIcon}
+                          style={{ height: 20, marginRight: 10 }}
+                          alt=""
+                        />
+                      )}
                     </div>
                     <div style={{ height: 10 }} />
 
@@ -1437,7 +1461,7 @@ class CreateTest extends React.Component {
                       نمایش کل سوالات آزمون های قبل
                     </div>
                     <div style={{ height: 10 }} />
-                    <FilterBox title=" حذف سوالات آزمون های قبل">
+                    <FilterTime title="حذف سوالات آزمون های قبل ⏱">
                       {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
                       <div
                         style={{
@@ -1462,6 +1486,7 @@ class CreateTest extends React.Component {
                               marginRight: 10,
                             }}
                           >
+                            
                             <DatePicker
                               okLabel="تأیید"
                               cancelLabel="لغو"
@@ -1530,8 +1555,8 @@ class CreateTest extends React.Component {
                           </div>
                         </div>
                       </div>
-                    </FilterBox>
-                     <FilterBox title="نمایش سوالات آزمون های قبل">
+                    </FilterTime>
+                    <FilterTime title="نمایش سوالات آزمون های قبل ⏱">
                       {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
                       <div
                         style={{
@@ -1600,7 +1625,7 @@ class CreateTest extends React.Component {
                               cancelLabel="لغو"
                               style={{ cursor: "pointer" }}
                               InputProps={{
-                                disableUnderline: true,
+                                disableUnderline: false,
                                 style: {
                                   textAlign: "center",
                                   cursor: "pointer",
@@ -1624,9 +1649,8 @@ class CreateTest extends React.Component {
                           </div>
                         </div>
                       </div>
-                     </FilterBox>
+                    </FilterTime>
 
-                    
                     <div style={{ height: 10 }} />
                     <div
                       onClick={() =>
@@ -1645,7 +1669,7 @@ class CreateTest extends React.Component {
                     </div>
                   </div>
                 </FilterBox>
-                <FilterBox title="جست و جو">
+                <FilterBox title="جستجو در سوال">
                   <FilterBoxTextField
                     title="صورت سوال"
                     value={
@@ -1700,8 +1724,14 @@ class CreateTest extends React.Component {
                     </Button>
                   </Box>
                 </FilterBox>
-                <FilterBox title="ترتیب سوال ها">
-                  <div>
+                <FilterBox title="چیدمان سوال">
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      width: "100%",
+                    }}
+                  >
                     <div
                       onClick={() =>
                         this.setState({ randomize: null }, () =>
@@ -1710,7 +1740,7 @@ class CreateTest extends React.Component {
                       }
                       style={style.randomFilter}
                     >
-                      چینش پیش فرض
+                      پیش فرض
                     </div>
                     <div style={{ height: 10 }} />
                     <div
@@ -1721,26 +1751,33 @@ class CreateTest extends React.Component {
                       }
                       style={style.randomFilter}
                     >
-                      چینش تصادفی
+                      تصادفی
                     </div>
                     <div style={{ height: 10 }} />
                     <div
-                      onClick={() =>
-                        this.setState(
-                          { sortBySaved: !this.state.sortBySaved },
-                          () => this.getQuestions(),
-                        )
-                      }
+                      onClick={() => this.sortFilter("asc")}
                       style={
-                        this.state.sortBySaved
-                          ? style.randomFilterActive
+                        this.state.sortFilter === "asc"
+                          ? style.sortFilterActive
                           : style.randomFilter
                       }
                     >
-                      براساس سوالات ذخیره شده
+                      آسان به سخت
                     </div>
                     <div style={{ height: 10 }} />
                     <div
+                      onClick={() => this.sortFilter("des")}
+                      style={
+                        this.state.sortFilter === "des"
+                          ? style.sortFilterActive
+                          : style.randomFilter
+                      }
+                    >
+                      سخت به آسان
+                    </div>
+                    <div style={{ height: 10 }} />
+                    {/* این عملکرد به بخش "نمایش سوالات" انتقال یافت 👇  */}
+                    {/* <div
                       onClick={() =>
                         this.setState(
                           { justSaved: !this.state.justSaved },
@@ -1754,38 +1791,22 @@ class CreateTest extends React.Component {
                       }
                     >
                       نمایش سوالات ذخیره شده
-                    </div>
+                    </div> */}
                   </div>
                 </FilterBox>
-                <FilterBox title="سطح دشواری">
+                <FilterBox title="گزینش سطح سختی">
                   <div
                     style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
                       width: "100%",
-                      marginBottom: 10,
-                      gap: 10,
+                      justifyContent: "space-between",
                     }}
                   >
-                    <div
-                      onClick={() => this.sortFilter("asc")}
-                      style={
-                        this.state.sortFilter === "asc"
-                          ? style.sortFilterActive
-                          : style.sortFilter
-                      }
-                    >
-                      آسان به سخت
-                    </div>
-                    <div
-                      onClick={() => this.sortFilter("des")}
-                      style={
-                        this.state.sortFilter === "des"
-                          ? style.sortFilterActive
-                          : style.sortFilter
-                      }
-                    >
-                      سخت به آسان
+                    <div style={style.sortFilter}>
+                      {/* عملکرد این قسمت هنوز نوشته نشده.  */}
+                      خیلی آسان
                     </div>
                     <div
                       onClick={() => this.handleDifficultyId(1)}
@@ -1817,9 +1838,21 @@ class CreateTest extends React.Component {
                     >
                       سخت
                     </div>
+                    <div style={style.sortFilter}>
+                      {/* عملکرد هندل کردن این قسمت هنوز نوشته نشده  */}
+                      خیلی سخت
+                    </div>
                   </div>
                 </FilterBox>
-                <FilterBox title="گزینش بازۀ پاسخگویی">
+                <FilterBox title="گزینش منبع">
+                  {/* هنوز عملکری نداره و باید اضافه شد  */}
+                  <div>انتخاب منبع سوال</div>
+                </FilterBox>
+                <FilterBox title="گزینش نوع سوال">
+                  {/* هنوز عملکردی نداره و باید اضافه بشه  */}
+                  <div>گزینش نوع سوال</div>
+                </FilterBox>
+                <FilterBox title="گزینش زمان پاسخگویی">
                   <div
                     style={{
                       display: "flex",

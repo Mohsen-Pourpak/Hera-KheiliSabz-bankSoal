@@ -5,7 +5,7 @@ const secondary = "#FF0000";
 const warning = "#FFC260";
 const success = "#3CD4A0";
 const info = "#9013FE";
-const inherit = "#fff";
+const inherit = "#000";
 
 const lightenRate = 7.5;
 const darkenRate = 15;
@@ -90,7 +90,7 @@ export default {
   overrides: {
     MuiBackdrop: {
       root: {
-        backgroundColor: "#FFD700",
+        backgroundColor: "#FDFFBA",
       },
     },
     MuiMenu: {
