@@ -182,7 +182,7 @@ class RegisterTest extends React.Component {
               this.setState({ selectedList });
             }}
             style={{
-              backgroundColor: "#fe5f55",
+              backgroundColor: "#FF0000",
               cursor: "pointer",
               width: 45,
               borderRadius: 30,
@@ -418,7 +418,7 @@ class RegisterTest extends React.Component {
                         background: "#fff",
                         height: 45,
                         borderRadius: 50,
-                        border: "1px solid #fe5f55",
+                        border: "1px solid #FF0000",
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -432,7 +432,7 @@ class RegisterTest extends React.Component {
                           alignItems: "center",
                           padding: "0 15px",
                           borderRadius: 50,
-                          background: "#fe5f55",
+                          background: "#FF0000",
                           height: 45,
                         }}
                       >
@@ -477,7 +477,7 @@ class RegisterTest extends React.Component {
                         background: "#fff",
                         height: 45,
                         borderRadius: 50,
-                        border: "1px solid #fe5f55",
+                        border: "1px solid #FF0000",
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -491,7 +491,7 @@ class RegisterTest extends React.Component {
                           alignItems: "center",
                           padding: "0 15px",
                           borderRadius: 50,
-                          background: "#fe5f55",
+                          background: "#FF0000",
                           height: 45,
                           width: '180px',
                           marginLeft: '40px',
@@ -540,7 +540,7 @@ class RegisterTest extends React.Component {
                         background: "#fff",
                         height: 45,
                         borderRadius: 50,
-                        border: "1px solid #fe5f55",
+                        border: "1px solid #FF0000",
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -554,7 +554,7 @@ class RegisterTest extends React.Component {
                           alignItems: "center",
                           padding: "0 15px",
                           borderRadius: 50,
-                          background: "#fe5f55",
+                          background: "#FF0000",
                           height: 45,
                           width: '180px',
                           marginLeft: '40px',
@@ -594,7 +594,7 @@ class RegisterTest extends React.Component {
                       style={{
                         flexDirection: "row",
                         display: "flex",
-                        background: "#fe5f55",
+                        background: "#FF0000",
                         color: "#fff",
                         height: 45,
                         marginBottom: 20,

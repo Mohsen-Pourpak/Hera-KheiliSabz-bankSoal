@@ -313,7 +313,7 @@ export default function AddTopic({
       <div
         style={{
           padding: 20,
-          backgroundColor: "rgba(62, 124, 154, 0.59)",
+          backgroundColor: "rgba(203, 242, 207, 0.95)",
         }}
       >
         <Grid container item xs={12}>

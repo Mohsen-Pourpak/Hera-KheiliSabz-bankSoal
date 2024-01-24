@@ -56,7 +56,7 @@ export const FilterBoxTextField = ({
           padding: "0 15px",
           borderRadius: 25,
           justifyContent: "center",
-          backgroundColor: "#7AD3FF",
+          backgroundColor: "#CBF2CF",
         }}
       >
         {title}

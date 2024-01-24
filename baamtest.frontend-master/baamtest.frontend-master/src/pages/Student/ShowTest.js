@@ -9,7 +9,7 @@ import {
   Box,
 } from "@material-ui/core";
 import { DatePicker } from "@material-ui/pickers";
-import TextField from "@material-ui/core/TextField"
+import TextField from "@material-ui/core/TextField";
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
@@ -156,16 +156,16 @@ const style = {
   },
 
   rightDetailDivs: {
+    fontSize: "15px",
     textAlign: "center",
     border: "1px solid #000",
     width: "60px",
     height: "30px",
     margin: "0px",
-    fontSize: "20px",
   },
 
   leftDetailDivs: {
-    fontSize: "20px",
+    fontSize: "15px",
     textAlign: "center",
     border: "1px solid #000",
     width: "60px",
@@ -174,6 +174,7 @@ const style = {
   },
 
   leftDetailDivExpand: {
+    fontSize: "20px",
     textAlign: "center",
     border: "1px solid #000",
     height: "30px",
@@ -182,6 +183,7 @@ const style = {
   },
 
   rightDetailDivExpand: {
+    fontSize: "20px",
     textAlign: "center",
     border: "1px solid #000",
     height: "30px",
@@ -199,7 +201,7 @@ const style = {
     marginBottom: 0,
   },
   actionButton: {
-    backgroundColor: "#119C04",
+    backgroundColor: "#228B22",
     color: "#fff",
     width: "fit-content",
     height: 35,
@@ -233,7 +235,7 @@ const style = {
     marginBottom: 30,
   },
   box: {
-    backgroundColor: "#119C04",
+    backgroundColor: "#228B22",
     color: "#fff",
     width: "fit-content",
     height: 25,
@@ -254,8 +256,8 @@ const style = {
     flexDirection: "row",
   },
   randomFilter: {
-    backgroundColor: "#fff",
-    color: "#3d82a4",
+    backgroundColor: "#CBF2CF",
+    color: "#000",
     width: "auto",
     height: 40,
     flex: 1,
@@ -267,7 +269,7 @@ const style = {
     cursor: "pointer",
   },
   randomFilterActive: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#C87474",
     color: "#fff",
     width: "auto",
     height: 40,
@@ -1411,6 +1413,38 @@ class CreateTest extends React.Component {
                 </div>
                 <FilterBox title="نمایش سوالات">
                   <div>
+                  <div
+                    onClick={() =>
+                      this.setState({ repetitive: true, repeatState: 2 }, () =>
+                        this.getQuestions(),
+                      )
+                    }
+                    style={
+                      this.state.repeatState === 2
+                        ? {
+                            ...style.sortFilterActive,
+                            padding: 10,
+                            marginTop: 10,
+                            width: "100%",
+                          }
+                        : {
+                            ...style.sortFilter,
+                            padding: 10,
+                            marginTop: 10,
+                            width: "100%",
+                          }
+                    }
+                  >
+                    انتخاب همه
+                    {this.state.repeatState === 2 && (
+                      <img
+                        src={CheckRadioIcon}
+                        style={{ height: 20, marginRight: 10 }}
+                        alt=""
+                      />
+                    )}
+                  </div>
+                  <div style={{ height: 20 }} />
                     <div
                       onClick={() =>
                         this.setState(
@@ -1442,7 +1476,7 @@ class CreateTest extends React.Component {
                         />
                       )}
                     </div>
-                    <div style={{ height: 10 }} />
+                    <div style={{ height: 20 }} />
 
                     <div
                       onClick={() =>
@@ -1460,7 +1494,7 @@ class CreateTest extends React.Component {
                       {/* هنوز عملکرد بر اساس سوالات ذخیره شده را دارد، باید اصلاح شود.  */}
                       نمایش کل سوالات آزمون های قبل
                     </div>
-                    <div style={{ height: 10 }} />
+                    <div style={{ height: 20 }} />
                     <FilterTime title="حذف سوالات آزمون های قبل ⏱">
                       {/*  هنوز عملکرد چینش تصادفی  را دارد. باید اصلاح شود  */}
                       <div
@@ -1486,7 +1520,6 @@ class CreateTest extends React.Component {
                               marginRight: 10,
                             }}
                           >
-                            
                             <DatePicker
                               okLabel="تأیید"
                               cancelLabel="لغو"
@@ -1510,7 +1543,7 @@ class CreateTest extends React.Component {
                             />
                           </div>
                         </div>
-                        <div style={{ height: 10 }} />
+                        <div style={{ height: 20 }} />
                         <div
                           style={{
                             display: "flex",
@@ -1604,7 +1637,7 @@ class CreateTest extends React.Component {
                             />
                           </div>
                         </div>
-                        <div style={{ height: 10 }} />
+                        <div style={{ height: 20 }} />
                         <div
                           style={{
                             display: "flex",
@@ -1651,7 +1684,7 @@ class CreateTest extends React.Component {
                       </div>
                     </FilterTime>
 
-                    <div style={{ height: 10 }} />
+                    <div style={{ height: 5 }} />
                     <div
                       onClick={() =>
                         this.setState(
@@ -1846,14 +1879,202 @@ class CreateTest extends React.Component {
                 </FilterBox>
                 <FilterBox title="گزینش منبع">
                   {/* هنوز عملکری نداره و باید اضافه شد  */}
-                  <div>انتخاب منبع سوال</div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      آزمون خیلی سبز
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      کنکور خیلی سبز
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      کتاب خیلی سبز
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      تألیفی
+                    </div>
+                  </div>
                 </FilterBox>
                 <FilterBox title="گزینش نوع سوال">
                   {/* هنوز عملکردی نداره و باید اضافه بشه  */}
-                  <div>گزینش نوع سوال</div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      width: "100%",
+                    }}
+                  >
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      تستی
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      تشریحی
+                    </div>
+                  </div>
                 </FilterBox>
                 <FilterBox title="گزینش زمان پاسخگویی">
                   <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      width: "100%",
+                    }}
+                  >
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      "0 - "30
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      "30 - "60
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      "60 - "90
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      "90 - "120
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      "120 - "150
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                      }}
+                    >
+                      "150 - "180
+                    </div>
+                  </div>
+                  {/* <div
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -2034,7 +2255,7 @@ class CreateTest extends React.Component {
                         alt=""
                       />
                     )}
-                  </div>
+                  </div> */}
                 </FilterBox>
               </div>
               <Grid direction="column" item xs={9} style={{ marginRight: 20 }}>
@@ -2109,7 +2330,7 @@ class CreateTest extends React.Component {
                         count={this.state.pageCount}
                         page={this.state.page}
                         onChange={this.handleChangePage}
-                        bgColor="#fff"
+                        bgColor="#CBF2CF"
                       />
                     </div>{" "}
                   </div>
