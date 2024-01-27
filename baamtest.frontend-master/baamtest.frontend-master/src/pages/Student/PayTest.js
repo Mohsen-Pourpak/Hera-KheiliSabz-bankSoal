@@ -24,7 +24,7 @@ const Mask = ({ image, size }) => (
 const styles = {
     trItem: {
         backgroundColor: '#f4faff',
-        color: '#3d82a4',
+        color: '#000',
         display: 'flex',
         fontSize: 14,
         alignItems: 'center',
@@ -199,8 +199,8 @@ class RegisterTest extends React.Component {
                                     حداقل میزان مجاز برای خرید معادل ۱,۰۰۰ تومان است
                                 </div> */}
                                     <div style={{ flexDirection: 'row', marginRight: "50%", display: 'flex', background: '#fff', height: 45, borderRadius: 50, width: '50%', alignItems: 'center', justifyContent: 'space-between' }}>
-                                        <div style={{ flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#fe5f55', height: 45 }}>
-                                            موجودی شما
+                                        <div style={{ flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#FF0000', height: 45 }}>
+                                            موجودی اعتبار شما
                                         </div>
                                         <div style={{ flex: 1, textAlign: 'center' }}>
                                             {toFA((this.state.credit).toLocaleString())} تومان
@@ -209,7 +209,7 @@ class RegisterTest extends React.Component {
                                 </div>
                                 <div style={{ flex: 4 }} />
                                 <div style={{ background: '#fff', borderRadius: 20, flex: 3, height: '100%', padding: 10 }}>
-                                    <div style={{ ...styles.trItem, padding: 15, background: '#3d82a4', color: '#fff', marginBottom: 10 }}>مبلغ قابل پرداخت تومان</div>
+                                    <div style={{ ...styles.trItem, padding: 15, background: '#228B22', color: '#fff', marginBottom: 10 }}>مبلغ قابل پرداخت تومان</div>
                                     <div style={{ ...styles.trItem, padding: 15 }}>{toFA(this.state.exam.questionsIdsAndNumbers.length * QUESTION_PRICE).toLocaleString()}</div>
                                 </div>
                             </div>
@@ -236,7 +236,7 @@ class RegisterTest extends React.Component {
                                     </Grid>
                                 </div>
                                 <div style={{ flexDirection: 'row', marginRight: 20, display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between' }}>
-                                    <div style={{ flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45 }}>
+                                    <div style={{ flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#228B22', height: 45 }}>
                                         کد تخفیف
                                     </div>
                                     <div style={{ flex: 1, textAlign: 'center', width: 200 }}>
@@ -249,7 +249,7 @@ class RegisterTest extends React.Component {
                                         }</span>
                                     </div>
                                 </div>
-                                {this.state.headId !== 'none' && <div style={{ fontSize: 17, color: '#3d82a4', paddingTop: 15, marginRight: 20 }}>
+                                {this.state.headId !== 'none' && <div style={{ fontSize: 17, color: '#000', paddingTop: 15, marginRight: 20 }}>
                                     آیا از پرداختن با شارژ "{this.state.heads.filter(el => el.id === this.state.headId)[0].title}" اطمینان دارید؟
                                 </div>}</>}
                             <div style={{ flex: 1 }} />
@@ -259,7 +259,7 @@ class RegisterTest extends React.Component {
                                 </div>
                             </div>}
                             <div>
-                                <div onClick={this.finalRegisterExam} style={{ flexDirection: 'row', display: 'flex', background: '#3d82a4', color: '#fff', borderRadius: 50, padding: '15px 20px', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                                <div onClick={this.finalRegisterExam} style={{ flexDirection: 'row', display: 'flex', background: '#228B22', color: '#fff', borderRadius: 50, padding: '15px 20px', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                                     تایید و کم شدن از شارژ
                                 </div>
                             </div>

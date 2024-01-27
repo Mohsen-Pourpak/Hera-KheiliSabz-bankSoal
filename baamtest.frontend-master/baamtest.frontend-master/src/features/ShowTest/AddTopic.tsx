@@ -309,7 +309,7 @@ export default function AddTopic({
   }, [state.fieldId, state.gradeId, state.search]);
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
+    <Dialog open={open} onClose={onClose} maxWidth="md" >
       <div
         style={{
           padding: 20,
@@ -404,10 +404,10 @@ export default function AddTopic({
                   }}
                 />
               </Grid>
-              <SelectedList
+              {/* <SelectedList
                 onChange={list => setTopicsSelection(list)}
                 selectedList={topicsSelection}
-              />
+              /> */}
               <Grid direction="row" justify="center" container spacing={1}>
                 <Grid item md={4} xs={6}>
                   <Button

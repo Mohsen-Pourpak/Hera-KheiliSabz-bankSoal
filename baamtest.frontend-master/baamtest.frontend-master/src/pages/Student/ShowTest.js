@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import { DatePicker } from "@material-ui/pickers";
 import TextField from "@material-ui/core/TextField";
+import { withStyles } from "@material-ui/core/styles";
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
@@ -1316,7 +1317,7 @@ class CreateTest extends React.Component {
                         display: "flex",
                         background: "#495867",
                         height: 40,
-                        borderRadius: 50,
+                        borderRadius: 40,
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -1413,38 +1414,39 @@ class CreateTest extends React.Component {
                 </div>
                 <FilterBox title="نمایش سوالات">
                   <div>
-                  <div
-                    onClick={() =>
-                      this.setState({ repetitive: true, repeatState: 2 }, () =>
-                        this.getQuestions(),
-                      )
-                    }
-                    style={
-                      this.state.repeatState === 2
-                        ? {
-                            ...style.sortFilterActive,
-                            padding: 10,
-                            marginTop: 10,
-                            width: "100%",
-                          }
-                        : {
-                            ...style.sortFilter,
-                            padding: 10,
-                            marginTop: 10,
-                            width: "100%",
-                          }
-                    }
-                  >
-                    انتخاب همه
-                    {this.state.repeatState === 2 && (
-                      <img
-                        src={CheckRadioIcon}
-                        style={{ height: 20, marginRight: 10 }}
-                        alt=""
-                      />
-                    )}
-                  </div>
-                  <div style={{ height: 20 }} />
+                    <div
+                      onClick={() =>
+                        this.setState(
+                          { repetitive: true, repeatState: 2 },
+                          () => this.getQuestions(),
+                        )
+                      }
+                      style={
+                        this.state.repeatState === 2
+                          ? {
+                              ...style.sortFilterActive,
+                              padding: 10,
+                              marginTop: 10,
+                              width: "100%",
+                            }
+                          : {
+                              ...style.sortFilter,
+                              padding: 10,
+                              marginTop: 10,
+                              width: "100%",
+                            }
+                      }
+                    >
+                      انتخاب همه
+                      {this.state.repeatState === 2 && (
+                        <img
+                          src={CheckRadioIcon}
+                          style={{ height: 20, marginRight: 10 }}
+                          alt=""
+                        />
+                      )}
+                    </div>
+                    <div style={{ height: 20 }} />
                     <div
                       onClick={() =>
                         this.setState(
@@ -1520,7 +1522,7 @@ class CreateTest extends React.Component {
                               marginRight: 10,
                             }}
                           >
-                            <DatePicker
+                            {/* <DatePicker
                               okLabel="تأیید"
                               cancelLabel="لغو"
                               InputProps={{
@@ -1540,7 +1542,19 @@ class CreateTest extends React.Component {
                                     this.state.endTime && this.getQuestions(),
                                 )
                               }
-                            />
+                            /> */}
+                            <form noValidate>
+                              <TextField
+                                id="datetime-local"
+                                label="زمان شروع حذف را انتخاب کنید:"
+                                type="datetime-local"
+                                defaultValue="0000-00-00T00:00"
+                                className={classes.textField}
+                                InputLabelProps={{
+                                  shrink: true,
+                                }}
+                              />
+                            </form>
                           </div>
                         </div>
                         <div style={{ height: 20 }} />
@@ -1559,7 +1573,7 @@ class CreateTest extends React.Component {
                               marginRight: 10,
                             }}
                           >
-                            <DatePicker
+                            {/* <DatePicker
                               okLabel="تأیید"
                               cancelLabel="لغو"
                               style={{ cursor: "pointer" }}
@@ -1584,7 +1598,19 @@ class CreateTest extends React.Component {
                                     this.state.startTime && this.getQuestions(),
                                 )
                               }
-                            />
+                            /> */}
+                            <form noValidate>
+                              <TextField
+                                id="datetime-local"
+                                label="زمان پایان حذف را انتخاب کنید:"
+                                type="datetime-local"
+                                defaultValue="0000-00-00T00:00"
+                                className={classes.textField}
+                                InputLabelProps={{
+                                  shrink: true,
+                                }}
+                              />
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -1614,7 +1640,7 @@ class CreateTest extends React.Component {
                               marginRight: 10,
                             }}
                           >
-                            <DatePicker
+                            {/* <DatePicker
                               okLabel="تأیید"
                               cancelLabel="لغو"
                               InputProps={{
@@ -1634,7 +1660,19 @@ class CreateTest extends React.Component {
                                     this.state.endTime && this.getQuestions(),
                                 )
                               }
-                            />
+                            /> */}
+                            <form noValidate>
+                              <TextField
+                                id="datetime-local"
+                                label="ابتدای بازۀ نمایش را انتخاب کنید:"
+                                type="datetime-local"
+                                defaultValue="0000-00-00T00:00"
+                                className={classes.textField}
+                                InputLabelProps={{
+                                  shrink: true,
+                                }}
+                              />
+                            </form>
                           </div>
                         </div>
                         <div style={{ height: 20 }} />
@@ -1653,7 +1691,7 @@ class CreateTest extends React.Component {
                               marginRight: 10,
                             }}
                           >
-                            <DatePicker
+                            {/* <DatePicker
                               okLabel="تأیید"
                               cancelLabel="لغو"
                               style={{ cursor: "pointer" }}
@@ -1678,7 +1716,19 @@ class CreateTest extends React.Component {
                                     this.state.startTime && this.getQuestions(),
                                 )
                               }
-                            />
+                            /> */}
+                            <form noValidate>
+                              <TextField
+                                id="datetime-local"
+                                label=" پایان بازۀ نمایش را انتخاب کنید:"
+                                type="datetime-local"
+                                defaultValue="0000-00-00T00:00"
+                                className={classes.textField}
+                                InputLabelProps={{
+                                  shrink: true,
+                                }}
+                              />
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -2315,7 +2365,7 @@ class CreateTest extends React.Component {
                       marginBottom: "10px",
                       height: "70px",
                       width: "100%",
-                      backgroundColor: "red",
+                      backgroundColor: "white",
                       borderRadius: "20px",
                     }}
                   >

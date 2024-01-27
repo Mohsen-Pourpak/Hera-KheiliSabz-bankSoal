@@ -45,7 +45,7 @@ const ActionButton = ({ Icon, onClick, title }) => {
   return (
     <Tooltip title={title}>
       <IconButton
-        color="inherit"
+        color="primary"
         aria-controls="profile-menu"
         onClick={onClick}
       >
@@ -58,7 +58,7 @@ const ActionButton = ({ Icon, onClick, title }) => {
 const styles = {
   trItem: {
     backgroundColor: "#f4faff",
-    color: "#3d82a4",
+    color: "#000",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -67,7 +67,7 @@ const styles = {
     padding: "15px 10px",
   },
   thItem: {
-    color: "#3d82a4",
+    color: "#228B22",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -283,13 +283,14 @@ class ManagementTest extends React.Component {
                 }}
                 title="ویرایش"
               />
-              <ActionButton
+              {/* آیکون آزمون اشتراکی  */}
+              {/* <ActionButton
                 Icon={Share}
                 onClick={() => {
                   this.setState({ open: true, selected: item });
                 }}
                 title="اشتراک"
-              />
+              /> */}
               <ActionButton
                 Icon={Print}
                 onClick={() => {
@@ -480,7 +481,7 @@ class ManagementTest extends React.Component {
               container
               style={{
                 padding: 10,
-                backgroundColor: "rgb(255 255 255 / 40%)",
+                backgroundColor: "#E0DBC0",
                 borderRadius: 20,
               }}
             >
@@ -727,7 +728,8 @@ class ManagementTest extends React.Component {
             </Grid>
           </Grid>
         )}
-        {this.state.open && (
+        {/* عملکرد آزمون اشتراکی  */}
+        {/* {this.state.open && (
           <Dialog
             maxWidth="xs"
             onBackdropClick={this.handleClose}
@@ -791,7 +793,7 @@ class ManagementTest extends React.Component {
               </Grid>
             </div>
           </Dialog>
-        )}
+        )} */}
 
         {this.state.openPercent && (
           <Dialog
