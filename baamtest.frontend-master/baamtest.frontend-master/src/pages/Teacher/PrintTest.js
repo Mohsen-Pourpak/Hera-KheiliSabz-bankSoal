@@ -4,9 +4,12 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 // import Image2 from "../../images/test/paper.jpg";
-import ImageSimple from "../../images/test/Simple WB.jpg";
-import ImageFantasy from "../../images/test/Fantasy WB.jpg";
-import ImageNastaliq from "../../images/test/Nastaliq WB.jpg";
+// import ImageSimple from "../../images/test/Simple WB.jpg";
+// import ImageFantasy from "../../images/test/Fantasy WB.jpg";
+// import ImageNastaliq from "../../images/test/Nastaliq WB.jpg";
+import ImageSimple from "../../images/test/kheilisabz1-edited.jpg";
+import ImageFantasy from "../../images/test/kheilisabz2-edited.jpg";
+import ImageNastaliq from "../../images/test/kheilisabz3-edited.jpg";
 
 // const style = {
 //   sortFilter: {
@@ -111,7 +114,7 @@ class PrintTest extends React.Component {
             }}
           >
             <div style={{ width: "100%", marginBottom: -15 }}>
-              <PageTitle title="طرح های پیش فرض" size="h2" color="#3d82a4" />
+              <PageTitle title="طرح های پیش فرض" size="h2" color="#000" />
             </div>
             <Grid direction="column" container item xs={12}>
               <Grid

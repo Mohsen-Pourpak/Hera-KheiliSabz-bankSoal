@@ -30,6 +30,7 @@ import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import Textarea from "../../components/Form/Textarea";
 import TextField from "../../components/Form/TextField";
+import FilterBox from "../../components/FilterBox";
 
 // import Hard from "../../images/test/hard.svg";
 // import Normal from "../../images/test/normal.svg";
@@ -1516,7 +1517,25 @@ class EditTest extends React.Component {
                   >
                     <div
                       style={style.circleButton}
-                      onClick={() => this.selectQuestion(item)}
+                      onClick={() => {
+                        let selectedList = this.state.selectedList;
+                        if (isSelected) {
+                          let newList = selectedList.filter(
+                            el => el.id !== item.id,
+                          );
+                          this.setState({ selectedList: newList });
+                        } else {
+                          this.setState({
+                            selectedList: [
+                              ...selectedList,
+                              {
+                                id: item.id,
+                                level: levelId,
+                              },
+                            ],
+                          });
+                        }
+                      }}
                     >
                       {isSelected ? (
                         <Remove style={{ fill: "#fe5f55" }} />
@@ -1921,60 +1940,36 @@ class EditTest extends React.Component {
                     this.state.filter1 ? " close" : ""
                   }`}
                 >
-                  <div
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      width: "100%",
-                      margin: "-15px 0",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                    }}
-                  >
+                  <FilterBox title="چینش سوالات بر اساس: ">
                     <div
                       style={{
-                        color: "#555",
-                        fontSize: 17,
-                        padding: "0 17px",
-                        textAlign: "center",
+                        display: "flex",
+                        width: "100%",
                       }}
                     >
-                      چینش سوالات بر اساس:
+                      <div
+                        onClick={() => this.sortFilter("asc")}
+                        style={
+                          this.state.sortFilter === "asc"
+                            ? style.sortFilterActive
+                            : style.sortFilter
+                        }
+                      >
+                        آسان به سخت
+                      </div>
+                      <div style={{ flex: 0.1 }} />
+                      <div
+                        onClick={() => this.sortFilter("des")}
+                        style={
+                          this.state.sortFilter === "des"
+                            ? style.sortFilterActive
+                            : style.sortFilter
+                        }
+                      >
+                        سخت به آسان
+                      </div>
                     </div>
-                    <div
-                      className="filter-minimize"
-                      onClick={() =>
-                        this.setState({ filter1: !this.state.filter1 })
-                      }
-                    >
-                      {this.state.filter1 ? "+" : "-"}
-                    </div>
-                  </div>
-                  <div
-                    style={{ display: "flex", width: "100%", marginBottom: 10 }}
-                  >
-                    <div
-                      onClick={() => this.sortFilter("asc")}
-                      style={
-                        this.state.sortFilter === "asc"
-                          ? style.sortFilterActive
-                          : style.sortFilter
-                      }
-                    >
-                      آسان به سخت
-                    </div>
-                    <div style={{ flex: 0.1 }} />
-                    <div
-                      onClick={() => this.sortFilter("des")}
-                      style={
-                        this.state.sortFilter === "des"
-                          ? style.sortFilterActive
-                          : style.sortFilter
-                      }
-                    >
-                      سخت به آسان
-                    </div>
-                  </div>
+                  </FilterBox>
                 </Grid>
 
                 <QuestionReplaceForm
@@ -1992,35 +1987,7 @@ class EditTest extends React.Component {
                     this.state.filter2 ? " close" : ""
                   }`}
                 >
-                  <div
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      width: "100%",
-                      margin: "-15px 0",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <div
-                      style={{
-                        color: "#555",
-                        fontSize: 17,
-                        padding: "0 17px",
-                        textAlign: "center",
-                      }}
-                    >
-                      بازه زمانی اجرا
-                    </div>
-                    <div
-                      className="filter-minimize"
-                      onClick={() =>
-                        this.setState({ filter2: !this.state.filter2 })
-                      }
-                    >
-                      {this.state.filter2 ? "+" : "-"}
-                    </div>
-                  </div>
+                 <FilterBox title="بازۀ زمانی امتحان">
                   <div
                     style={{
                       display: "flex",
@@ -2113,6 +2080,7 @@ class EditTest extends React.Component {
                       </div>
                     </div>
                   </div>
+                  </FilterBox>
                 </Grid>
               </Grid>
               <Grid direction="column" item xs={9}>

@@ -9,9 +9,12 @@ import {
 } from "@material-ui/core";
 
 import logoPlaceholder from "../../images/logo-p.png";
-import ImageSimple from "../../images/test/Simple WB.jpg";
-import ImageFantasy from "../../images/test/Fantasy WB.jpg";
-import ImageNastaliq from "../../images/test/Nastaliq WB.jpg"; // Page number center
+// import ImageSimple from "../../images/test/Simple WB.jpg";
+// import ImageFantasy from "../../images/test/Fantasy WB.jpg";
+// import ImageNastaliq from "../../images/test/Nastaliq WB.jpg"; // Page number center
+import ImageSimple from "../../images/test/kheilisabz1-edited.jpg";
+import ImageFantasy from "../../images/test/kheilisabz2-edited.jpg";
+import ImageNastaliq from "../../images/test/kheilisabz3-edited.jpg";
 import ImageSimpleWob from "../../images/test/Simple WoB.jpg";
 import ImageFantasyWob from "../../images/test/Fantasy Wob.jpg";
 import ImageNastaliqWob from "../../images/test/Nastaliq WoB.jpg"; // Page number center
