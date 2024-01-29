@@ -34,8 +34,8 @@ const Mask = ({ image, size }) => (
 const style = {
     sortFilter: {
         backgroundColor: 'transparent',
-        border: '1px solid #3d82a4',
-        color: '#3d82a4',
+        border: '1px solid #228B22',
+        color: '#228B22',
         width: 'max-content',
         height: 40,
         padding: '0 30px',
@@ -48,8 +48,8 @@ const style = {
         cursor: 'pointer'
     },
     sortFilterActive: {
-        backgroundColor: '#3d82a4',
-        border: '1px solid #3d82a4',
+        backgroundColor: '#228B22',
+        border: '1px solid #228B22',
         color: '#fff',
         width: 'max-content',
         padding: '0 30px',
@@ -65,8 +65,8 @@ const style = {
 
     sortFilter1: {
         backgroundColor: 'transparent',
-        border: '1px solid #fe5f55',
-        color: '#fe5f55',
+        border: '1px solid #FF0000',
+        color: '#FF0000',
         width: 'max-content',
         height: 40,
         padding: '0 50px',
@@ -78,8 +78,8 @@ const style = {
         cursor: 'pointer'
     },
     sortFilterActive1: {
-        backgroundColor: '#fe5f55',
-        border: '1px solid #fe5f55',
+        backgroundColor: '#FF0000',
+        border: '1px solid #FF0000',
         color: '#fff',
         width: 'max-content',
         padding: '0 50px',
@@ -367,23 +367,23 @@ class RegisterTest extends React.Component {
                         <div style={{flexDirection: 'row', display: 'flex', width: '100%'}}>
                             <div>
                                 <div style={{width: '100%'}}>
-                                    <PageTitle title="قوانین خرید" size="h2" color="#3d82a4" />
+                                    <PageTitle title="قوانین خرید" size="h2" color="#228B22" />
                                 </div>
                                 {this.state.isSchool ? <div style={{fontSize: '1rem', padding: '0 15px'}}>
                                 ۱_توجه داشته باشید ،شما در اشتراک خود می‌توانید یک مشاور به ازای هر پایه و یک دبیر به ازای هر درس در هر پایه، به صورت رایگان به عنوان زیرگروه خود اضافه کنید و لازم نیست برای آن هزینه ی مجدد بپردازید. <br />
                                 ۲_اگر مایل به زیر گروه گرفتن مشاور یا دبیر مازاد هستید ،می توانید در این بخش ، آن را انتخاب کنید و بعد از اتمام این فرآیند، در قسمت"مدیریت کلاس ها" ، "مدیریت مشاور ها " و " مدیریت دبیر ها " ،آن ها را سامان دهی کنید.<br />
                                 ۳_در صورت تمایل ، می توانید دانش آموزان خود را به عنوان زیرگروه اضافه کنید؛تنها کافیست تعداد آن ها را وارد کنید و پس از اتمام فرآیند،در قسمت "مدیریت کلاس ها" ،آن ها را کلاس بندی (گروه بندی) کنید.<br />
-                                ۴_ لازم به ذکر است بعد از انجام این بخش ، به ازای پرداخت شما برایتان ستاره ثبت می شود که در نهایت این ستاره ها می توانند به هدایای نفیسی از طرف بام تست به شما تبدیل شود؛برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
+                                ۴_ لازم به ذکر است بعد از انجام این بخش ، به ازای پرداخت شما برایتان ستاره ثبت می شود که در نهایت این ستاره ها می توانند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود؛برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
                                 </div> : this.state.isAdvisor ? <div style={{fontSize: '1rem', padding: '0 15px'}}>
                                 ۱_اگر مایل به زیر گروه گرفتن دبیر هستید ،می  توانید در این بخش ، آن را انتخاب کنید و بعد از اتمام این فرآیند،در قسمت "مدیریت کلاس ها" و "مدیریت دبیر ها" ، آن ها را سامان دهی کنید.<br />
                                 ۲_در صورت تمایل ، می توانید دانش آموزان خود را به عنوان زیرگروه اضافه کنید؛تنها کافیست تعداد آن ها را وارد کنید و پس از اتمام فرآیند،در قسمت "مدیریت کلاس ها" ،آن ها را کلاس بندی (گروه بندی) کنید.<br />
-                                ۳_ لازم به ذکر است بعد از انجام این بخش ، به ازای پرداخت شما برایتان ستاره ثبت می شود که در نهایت این ستاره ها می توانند به هدایای نفیسی از طرف بام تست به شما تبدیل شود؛برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
+                                ۳_ لازم به ذکر است بعد از انجام این بخش ، به ازای پرداخت شما برایتان ستاره ثبت می شود که در نهایت این ستاره ها می توانند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود؛برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
                                 </div> : <div style={{fontSize: '1rem', padding: '0 15px'}}>
                                 ۱_در صورت تمایل ، می توانید دانش آموزان خود را به عنوان زیرگروه اضافه کنید؛تنها کافیست تعداد آن ها را وارد کنید و پس از اتمام فرآیند،در قسمت "مدیریت کلاس ها" ،آن ها را کلاس بندی (گروه بندی) کنید.<br />
-                                ۲_ لازم به ذکر است بعد از انجام این بخش ، به ازای پرداخت شما برایتان ستاره ثبت می شود که در نهایت این ستاره ها می توانند به هدایای نفیسی از طرف بام تست به شما تبدیل شود؛برای اطلاعات بیشتر می‌توانید با بخش پشت     
+                                ۲_ لازم به ذکر است بعد از انجام این بخش ، به ازای پرداخت شما برایتان ستاره ثبت می شود که در نهایت این ستاره ها می توانند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود؛برای اطلاعات بیشتر می‌توانید با بخش پشت     
                                 </div>}
                             </div>
-                            <img src={Image5} style={{height: 200}} />
+                            {/* <img src={Image5} style={{height: 200}} /> */}
                         </div>
                     </Grid>
                 </Grid>
@@ -437,7 +437,7 @@ class RegisterTest extends React.Component {
                 <Grid direction="column" alignItems="flex-start" spacing={3} justify="flex-start" container style={{padding: 20, marginTop: 40, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
                     <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'space-between',}}>
                         <div style={{flexDirection: 'row', display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45}}>
+                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#228B22', height: 45}}>
                                 تعداد
                             </div>
                             <div style={{flex: 1, textAlign: 'center', width: 100}}>
@@ -452,7 +452,7 @@ class RegisterTest extends React.Component {
                             </div>
                         </div>
                         <div style={{flexDirection: 'row', marginRight: 20, display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45}}>
+                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#228B22', height: 45}}>
                                 کد تخفیف
                             </div>
                             <div style={{flex: 1, textAlign: 'center', width: 200}}>
@@ -466,13 +466,13 @@ class RegisterTest extends React.Component {
                             </div>
                         </div>
                         <div style={{marginRight: 20}}>
-                            <div onClick={this.getPricePack} style={{flexDirection: 'row', display: 'flex', height: 45, background: '#fe5f55', color: '#fff', borderRadius: 50, padding: '15px 20px', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
+                            <div onClick={this.getPricePack} style={{flexDirection: 'row', display: 'flex', height: 45, background: '#FF0000', color: '#fff', borderRadius: 50, padding: '15px 20px', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
                                 محاسبه قیمت
                             </div>
                         </div>
                         <div style={{flex: 1}} />
                         <div style={{flexDirection: 'row', display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45}}>
+                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#228B22', height: 45}}>
                                 قیمت
                             </div>
                             <div style={{flex: 1, textAlign: 'center', width: 200}}>
@@ -481,7 +481,7 @@ class RegisterTest extends React.Component {
                         </div>
                         <div style={{flex: 1}} />
                         <div style={{}}>
-                            <div onClick={this.finalActivate} style={{flexDirection: 'row', display: 'flex', background: '#fe5f55', color: '#fff', borderRadius: 50, padding: '15px 20px', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
+                            <div onClick={this.finalActivate} style={{flexDirection: 'row', display: 'flex', background: '#FF0000', color: '#fff', borderRadius: 50, padding: '15px 20px', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>
                                 ثبت نهایی
                             </div>
                         </div>

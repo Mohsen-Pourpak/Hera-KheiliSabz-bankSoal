@@ -75,31 +75,33 @@ const schoolMenus = [{
     //   link: "/dashboard/test/shared-test",
     // }
   ],
-}, {
-  id: 2,
-  label: "اشتراک",
-  link: "/dashboard/subscription",
-  icon: BaseIcon(Pack),
-  activeIcon: BaseIcon(ActivePack),
-  children: [
-    // {
-    //   label: "اشتراک",
-    //   link: "/dashboard/subscription",
-    // },
-    {
-      label: "افزایش اعتبار",
-      link: "/dashboard/subscription-credit",
-    },
-    {
-      label: "رسید پرداخت",
-      link: "/dashboard/subscription-purchase-invoices",
-    },
-    {
-      label: "تراکنش ها",
-      link: "/dashboard/subscription-all-wallet",
-    }
-  ],
-}, {
+},
+//  {
+//   id: 2,
+//   label: "اشتراک",
+//   link: "/dashboard/subscription",
+//   icon: BaseIcon(Pack),
+//   activeIcon: BaseIcon(ActivePack),
+//   children: [
+//     // {
+//     //   label: "اشتراک",
+//     //   link: "/dashboard/subscription",
+//     // },
+//     {
+//       label: "افزایش اعتبار",
+//       link: "/dashboard/subscription-credit",
+//     },
+//     {
+//       label: "رسید پرداخت",
+//       link: "/dashboard/subscription-purchase-invoices",
+//     },
+//     {
+//       label: "تراکنش ها",
+//       link: "/dashboard/subscription-all-wallet",
+//     }
+//   ],
+// }, 
+{
   id: 3,
   label: "زیرگروه",
   link: "/dashboard/group",
@@ -133,13 +135,14 @@ const schoolMenus = [{
   link: "/dashboard/questions-report",
   icon: BaseIcon(Questions),
   activeIcon: BaseIcon(ActiveQuestions)
-}, {
-  id: 6,
-  label: "دعوت از دوستان",
-  link: "/dashboard/invitation",
-  icon: BaseIcon(Friends),
-  activeIcon: BaseIcon(ActiveFriends)
-}
+}, 
+// {
+//   id: 6,
+//   label: "دعوت از دوستان",
+//   link: "/dashboard/invitation",
+//   icon: BaseIcon(Friends),
+//   activeIcon: BaseIcon(ActiveFriends)
+// }
 ];
 
 const advisorsMenus = [{

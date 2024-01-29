@@ -108,7 +108,7 @@ export default function ExamHeading({
             boxShadow: "none",
           }}
         >
-          {withoutBaamtestLogo ? "ایجاد نوشته بام تست" : "حذف نوشته بام تست"}
+          {withoutBaamtestLogo ? "ایجاد نوشته خیلی سبز" : "حذف نوشته خیلی سبز"}
         </Button>
         <FilterBoxTextField
           title="عنوان آزمون"

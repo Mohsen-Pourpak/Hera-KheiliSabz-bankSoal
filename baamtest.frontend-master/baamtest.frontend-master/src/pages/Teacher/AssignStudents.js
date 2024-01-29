@@ -21,7 +21,7 @@ import AssignModal from "../../features/Modals/AssignModal";
 const styles = {
   trItem: {
     backgroundColor: "#f4faff",
-    color: "#3d82a4",
+    color: "#000",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -30,7 +30,7 @@ const styles = {
     padding: "15px 10px",
   },
   thItem: {
-    color: "#3d82a4",
+    color: "#000",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -394,7 +394,7 @@ class CreateTest extends React.Component {
               <PageTitle
                 title="لطفا قبل از بارگذاری اکسل به نکات زیر توجه فرمایید :"
                 size="h2"
-                color="#3d82a4"
+                color="#FF0000"
               />
             </div>
             <div style={{ fontSize: "1rem", padding: "0 15px" }}>

@@ -10,7 +10,7 @@ import { getQuestionProblemReports } from '../../api/services/question';
 const styles = {
     trItem: {
         backgroundColor: '#f4faff',
-        color: '#3d82a4',
+        color: '#000',
         display: 'flex',
         fontSize: 14,
         alignItems: 'center',
@@ -19,7 +19,7 @@ const styles = {
         padding: '15px 10px'
     },
     thItem : {
-        color: '#3d82a4',
+        color: '#000',
         display: 'flex',
         fontSize: 14,
         alignItems: 'center',

@@ -7,7 +7,7 @@ import { DeleteSweep } from "@material-ui/icons";
 // import mask from '../../images/mask.svg'
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
-import Image2 from "../../images/test/Untitled-1.jpg";
+// import Image2 from "../../images/test/Untitled-1.jpg";
 import { grades, fields } from "../../api/services/tags";
 import { toast } from "react-toastify";
 import * as qs from "qs";
@@ -622,10 +622,12 @@ class RegisterTest extends React.Component {
                   padding: "15px 15px",
                   overflow: "scroll",
                   backgroundSize: "cover",
-                  backgroundImage: `url(${Image2})`,
+                  // backgroundImage: `url(${Image2})`,
                   marginRight: 10,
                   marginTop: 5,
                   width: "100%",
+                  boxShadow: "1px 2px 11px -3px #00000075",
+
                 }}
               >
                 <div

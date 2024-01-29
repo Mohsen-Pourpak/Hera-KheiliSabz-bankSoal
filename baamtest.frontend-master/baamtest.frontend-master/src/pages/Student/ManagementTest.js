@@ -309,7 +309,8 @@ class ManagementTest extends React.Component {
                 }}
                 title="اجرا"
               />
-              <ActionButton
+              {/* آیکون پاسخ برگ  */}
+              {/* <ActionButton
                 Icon={InsertDriveFile}
                 onClick={() => {
                   this.props.history.push({
@@ -317,7 +318,7 @@ class ManagementTest extends React.Component {
                   });
                 }}
                 title="پاسخ برگ"
-              />
+              /> */}
               <ActionButton
                 Icon={Description}
                 onClick={async () => {

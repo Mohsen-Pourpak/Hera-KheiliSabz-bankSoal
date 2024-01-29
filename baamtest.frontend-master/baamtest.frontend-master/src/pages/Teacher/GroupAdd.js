@@ -122,7 +122,7 @@ class GroupAdd extends React.Component {
                 <>
                     <Grid item sm={12} spacing={1} justify='space-between' alignItems="center" className='inputContainer' style={{padding: '10px 5px', width: 'calc(100% - 10px)', marginTop: 5, marginRight: 5}}>
                         <Grid item style={{marginRight: 20}}>
-                            <SubdirectoryArrowLeft style={{fill: '#fe5f55'}} />
+                            <SubdirectoryArrowLeft style={{fill: '#FF0000'}} />
                         </Grid>
                         <Grid item style={{padding: 0, flex: 1}}>
                             <div style={{color: '#3d82a4', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.fullName}</div>
@@ -143,7 +143,7 @@ class GroupAdd extends React.Component {
                                     let selectedList = this.state.selectedList.filter(it => (it !== item.id))
                                     this.setState({selectedList})
                                 }
-                            }} style={{backgroundColor: isSelected ? '#fe5f55' : '#3d82a4', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
+                            }} style={{backgroundColor: isSelected ? '#FF0000' : '#228B22', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
                                 <div style={{color: '#fff', fontSize: 13, textAlign: 'center'}}>{isSelected ? '- حذف' : '+ افزودن'}</div>
                             </div>
                         </Grid>
@@ -175,7 +175,7 @@ class GroupAdd extends React.Component {
                     <div onClick={() => {
                         let selectedList = this.state.selectedList.filter(el => el !== item)
                         this.setState({selectedList})
-                    }} style={{backgroundColor: '#fe5f55', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
+                    }} style={{backgroundColor: '#FF0000', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
                         <DeleteSweep style={{fill: '#fff'}} />
                     </div>
                 </div>
@@ -264,7 +264,7 @@ class GroupAdd extends React.Component {
                     </Grid>
                     <Grid direction="column" container item xs={6}>
                         
-                        <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{padding: '15px 15px', overflow: 'scroll', backgroundSize: 'cover', backgroundImage: `url(${Image2})`, marginRight: 10, marginTop: 5, width: '100%'}}>
+                        <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{padding: '15px 15px', overflow: 'scroll', backgroundSize: 'cover', marginRight: 10, marginTop: 5, width: '100%', boxShadow: "1px 2px 11px -3px #00000075",}}>
                             <div style={{flexDirection: 'column', display: 'flex', width: '100%', alignItems: 'center', height: 400}}>
                                 {this.renderSelectedList(this.state.selectedList)}
                             </div>

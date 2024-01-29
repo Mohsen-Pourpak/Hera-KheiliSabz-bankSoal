@@ -89,7 +89,7 @@ class Group extends React.Component {
                     
                     {!item_.subTopics || item_.subTopics.length === 0 ? (
                         <Grid item style={{marginRight: 20}}>
-                            <SubdirectoryArrowLeft style={{fill: '#fe5f55'}} />
+                            <SubdirectoryArrowLeft style={{fill: '#FF0000'}} />
                         </Grid>
                     ) : (
                         <Grid item>
@@ -99,7 +99,7 @@ class Group extends React.Component {
                         </Grid>
                     )}
                     <Grid item style={{padding: 0, flex: 1}}>
-                        <div style={{color: '#3d82a4', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item_.title}</div>
+                        <div style={{color: '#000', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item_.title}</div>
                     </Grid>
                     <Grid item>
                         <div onClick={() => {
@@ -123,7 +123,7 @@ class Group extends React.Component {
                                 let selectedList = this.state.selectedList.filter(it => (it.id !== item_.id) && (it.title !== item_.title))
                                 this.setState({selectedList})
                             }
-                        }} style={{backgroundColor: isSelected ? '#fe5f55' : '#3d82a4', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
+                        }} style={{backgroundColor: isSelected ? '#FF0000' : '#228B22', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
                             <div style={{color: '#fff', fontSize: 13, textAlign: 'center'}}>{isSelected ? '- حذف' : '+ افزودن'}</div>
                         </div>
                     </Grid>
@@ -172,7 +172,7 @@ class Group extends React.Component {
                                     let selectedList = this.state.selectedList.filter(it => (it.id !== item.id) && (it.title !== item.title))
                                     this.setState({selectedList})
                                 }
-                            }} style={{backgroundColor: isSelected ? '#fe5f55' : '#3d82a4', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
+                            }} style={{backgroundColor: isSelected ? '#FF0000' : '#228B22', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
                                 <div style={{color: '#fff', fontSize: 13, textAlign: 'center'}}>{isSelected ? '- حذف' : '+ افزودن'}</div>
                             </div>
                         </Grid>
@@ -213,10 +213,10 @@ class Group extends React.Component {
                 <div style={{backgroundColor: '#0000006b', display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, borderRadius: 35, padding: '10px 15px', textAlign: 'right', marginLeft: 5}}>
                     <div style={{color: '#fff', fontSize: 17, textAlign: 'right'}}>{item.title}</div>
                     <div style={{flex: 1}} />
-                    <div onClick={() => this.props.history.push({ pathname: `/dashboard/group-edit/${item.id}` })} style={{backgroundColor: '#3d82a4', cursor: 'pointer', width: 45, marginLeft: 10, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
+                    <div onClick={() => this.props.history.push({ pathname: `/dashboard/group-edit/${item.id}` })} style={{backgroundColor: '#228B22', cursor: 'pointer', width: 45, marginLeft: 10, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
                         <Edit style={{fill: '#fff'}} />
                     </div>
-                    <div onClick={() => this.removeGroup(item)} style={{backgroundColor: '#fe5f55', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
+                    <div onClick={() => this.removeGroup(item)} style={{backgroundColor: '#FF0000', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
                         <DeleteSweep style={{fill: '#fff'}} />
                     </div>
                 </div>
@@ -254,9 +254,9 @@ class Group extends React.Component {
                         </Grid>
                     </Grid>
                     <Grid direction="column" container item xs={7}>
-                        <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{padding: '15px 15px', overflow: 'scroll', marginRight: 10, backgroundColor: 'rgb(61 130 164 / 60%)', marginTop: 5, width: '100%'}}>
+                        <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{padding: '15px 15px', overflow: 'scroll', marginRight: 10, backgroundColor: 'rgb(255 218 185 / 80%)', marginTop: 5, width: '100%'}}>
                             <div style={{flexDirection: 'column', display: 'flex', width: '100%', alignItems: 'center', height: 400, justifyContent: this.state.selectedList.length !== 0 ? 'flex-start' : 'center'}}>
-                                {this.state.selectedList.length === 0 ? <div style={{color: 'rgb(255 255 255 / 50%)', fontSize: '2rem'}}>شما هنوز کلاس ایجاد نکرده اید</div> : this.renderSelectedList(this.state.selectedList)}
+                                {this.state.selectedList.length === 0 ? <div style={{color: 'rgb(0 0 0 / 50%)', fontSize: '2rem'}}>شما هنوز کلاس ایجاد نکرده اید</div> : this.renderSelectedList(this.state.selectedList)}
                             </div>
                         </Grid>
                     </Grid>

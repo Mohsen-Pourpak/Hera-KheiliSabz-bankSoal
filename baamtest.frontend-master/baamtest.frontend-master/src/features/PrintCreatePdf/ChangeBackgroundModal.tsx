@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Dialog } from "@material-ui/core";
 import styled from "styled-components";
 
-import ImageSimple from "../../images/test/Simple WB.jpg";
-import ImageFantasy from "../../images/test/Fantasy WB.jpg";
-import ImageNastaliq from "../../images/test/Nastaliq WB.jpg";
+import ImageSimple from "../../images/test/kheilisabz1-edited.jpg";
+import ImageFantasy from "../../images/test/kheilisabz2-edited.jpg";
+import ImageNastaliq from "../../images/test/kheilisabz3-edited.jpg";
+
 
 interface PrintBackgroundProps {
   active: boolean;

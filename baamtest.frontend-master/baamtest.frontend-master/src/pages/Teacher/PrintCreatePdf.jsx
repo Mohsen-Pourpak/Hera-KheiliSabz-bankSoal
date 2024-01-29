@@ -8,20 +8,20 @@ import {
   Button,
 } from "@material-ui/core";
 
-import logoPlaceholder from "../../images/logo-p.png";
+import logoPlaceholder from "../../images/لوگو-خیلی-سبز.png";
 // import ImageSimple from "../../images/test/Simple WB.jpg";
 // import ImageFantasy from "../../images/test/Fantasy WB.jpg";
 // import ImageNastaliq from "../../images/test/Nastaliq WB.jpg"; // Page number center
 import ImageSimple from "../../images/test/kheilisabz1-edited.jpg";
 import ImageFantasy from "../../images/test/kheilisabz2-edited.jpg";
 import ImageNastaliq from "../../images/test/kheilisabz3-edited.jpg";
-import ImageSimpleWob from "../../images/test/Simple WoB.jpg";
-import ImageFantasyWob from "../../images/test/Fantasy Wob.jpg";
-import ImageNastaliqWob from "../../images/test/Nastaliq WoB.jpg"; // Page number center
-import ImageFantasyPage2 from "../../images/test/Fantasy-Wb-page2.jpg";
-import ImageFantasyWobPage2 from "../../images/test/Fantasy-Wob-page2.jpg";
-import ImageNastaliqPage2 from "../../images/test/Nastaliq-WB-page2.jpg"; // Page number center
-import ImageNastaliqWobPage2 from "../../images/test/Nastaliq-WoB-page2.jpg"; // Page number center
+import ImageSimpleWob from "../../images/test/3.png";
+import ImageFantasyWob from "../../images/test/2.png";
+import ImageNastaliqWob from "../../images/test/1.png"; // Page number center
+import ImageFantasyPage2 from "../../images/test/2.png";
+import ImageFantasyWobPage2 from "../../images/test/2.png";
+import ImageNastaliqPage2 from "../../images/test/1.png"; // Page number center
+import ImageNastaliqWobPage2 from "../../images/test/1.png"; // Page number center
 
 import { getTest } from "../../api/services/exam";
 import { toFA } from "../../utils/Utils";
@@ -722,8 +722,8 @@ class CreateTest extends React.Component {
               borderRadius: 20,
             }}
           >
-            <Grid container spacing={1} style={{ padding: "0 10px" }}>
-              <Grid item xs={12} sm={4} style={{ alignItems: "flex-start" }}>
+            <Grid container spacing={3} style={{ padding: "0 10px"}}>
+              <Grid item xs={8} spacing={2} sm={4} style={{ alignItems: "flex-start"}}>
                 <div
                   style={{
                     position: "sticky",
@@ -848,7 +848,7 @@ class CreateTest extends React.Component {
               <Grid
                 direction="column"
                 item
-                xs={12}
+                xs={4}
                 sm={8}
                 style={{ alignItems: "flex-end" }}
                 ref={this.questionListWrapper}

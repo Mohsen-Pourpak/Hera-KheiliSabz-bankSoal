@@ -43,7 +43,7 @@ const ActionButton = ({ Icon, onClick, title }) => {
 const styles = {
   trItem: {
     backgroundColor: "#f4faff",
-    color: "#3d82a4",
+    color: "#000",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -52,7 +52,7 @@ const styles = {
     padding: "15px 10px",
   },
   thItem: {
-    color: "#3d82a4",
+    color: "#000",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -222,12 +222,12 @@ class GroupAdd extends React.Component {
             }}
           >
             <Grid item style={{ marginRight: 20 }}>
-              <SubdirectoryArrowLeft style={{ fill: "#fe5f55" }} />
+              <SubdirectoryArrowLeft style={{ fill: "#FF0000" }} />
             </Grid>
             <Grid item style={{ padding: 0, flex: 1 }}>
               <div
                 style={{
-                  color: "#3d82a4",
+                  color: "#000",
                   fontWeight: "bold",
                   fontSize: 18,
                   padding: "0 17px",
@@ -258,7 +258,7 @@ class GroupAdd extends React.Component {
                   }
                 }}
                 style={{
-                  backgroundColor: isSelected ? "#fe5f55" : "#3d82a4",
+                  backgroundColor: isSelected ? "#FF0000" : "#228B22",
                   borderRadius: 30,
                   cursor: "pointer",
                   padding: "5px 15px",
@@ -337,7 +337,7 @@ class GroupAdd extends React.Component {
               this.setState({ selectedList });
             }}
             style={{
-              backgroundColor: "#fe5f55",
+              backgroundColor: "#FF0000",
               cursor: "pointer",
               width: 45,
               borderRadius: 30,
@@ -414,7 +414,7 @@ class GroupAdd extends React.Component {
               style={{
                 backgroundColor: "#f4faff",
                 justifyContent: "center",
-                color: "#3d82a4",
+                color: "#000",
                 display: "flex",
                 fontSize: 15,
                 alignItems: "center",
@@ -612,10 +612,11 @@ class GroupAdd extends React.Component {
                       padding: "15px 15px",
                       overflow: "scroll",
                       backgroundSize: "cover",
-                      backgroundImage: `url(${Image2})`,
+                      // backgroundImage: `url(${Image2})`,
                       marginRight: 10,
                       marginTop: 5,
                       width: "100%",
+                      boxShadow: "1px 2px 11px -3px #00000075",
                     }}
                   >
                     <div
@@ -660,7 +661,7 @@ class GroupAdd extends React.Component {
                   <PageTitle
                     title="آزمون های ثبت شده این کلاس"
                     size="h2"
-                    color="#3d82a4"
+                    color="#000"
                   />
                 </div>
                 <Grid direction="column" container item xs={12}>
