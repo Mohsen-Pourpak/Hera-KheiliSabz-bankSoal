@@ -685,7 +685,7 @@ class CreateTest extends React.Component {
           <p>سپس دکمه اعمال را فشار دهید</p>
         </div>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#FFD700" }}
+          style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >

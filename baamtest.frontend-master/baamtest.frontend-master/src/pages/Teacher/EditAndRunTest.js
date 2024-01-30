@@ -290,7 +290,7 @@ class AddToGroup extends React.Component {
         const classes = this.props.classes
         return (
             <>
-            <Backdrop style={{zIndex: 1000000, color: '#FFD700'}} open={this.state.progress} onClick={() => console.log('clicked')}>
+            <Backdrop style={{zIndex: 1000000, color: '#228b22'}} open={this.state.progress} onClick={() => console.log('clicked')}>
                 <CircularProgress color="inherit" />
             </Backdrop>
                 <PageTitle title="مدیریت آزمون - اجرای آزمون" />

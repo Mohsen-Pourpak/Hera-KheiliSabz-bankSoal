@@ -1,5 +1,10 @@
 import React from "react";
-import { CircularProgress, Grid, Backdrop } from "@material-ui/core";
+import {
+  CircularProgress,
+  Grid,
+  Backdrop,
+  LinearProgress,
+} from "@material-ui/core";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import {
   HighlightOff,
@@ -14,7 +19,7 @@ import { getExamResult } from "../../api/services/exam";
 
 const style = {
   questionNum: {
-    border: "1px solid #fff",
+    border: "1px solid #000",
     borderRadius: 60,
     height: 30,
     width: 30,
@@ -22,10 +27,12 @@ const style = {
     alignItems: "center",
     display: "flex",
     margin: "10px 10px",
-    color: "#fff",
+    color: "#000",
     position: "absolute",
     float: "inline-start",
     fontSize: 19,
+    paddingTop: "5px",
+    paddingLeft: "3px",
   },
   answerIcon: {
     borderRadius: 60,
@@ -68,7 +75,7 @@ const style = {
     backgroundColor: "#495867",
   },
   correctOption: {
-    backgroundColor: "#fe5f55",
+    backgroundColor: "#495867",
     color: "#fff",
     width: "fit-content",
     height: 30,
@@ -161,7 +168,15 @@ class CreateTest extends React.Component {
         borderColor: optionColorActive,
       };
       let labelColor =
-        levelId === 1 ? "#3EC592" : levelId === 2 ? "#FB963A" : "#C83E43";
+        levelId === 1
+          ? "#bae4bc"
+          : levelId === 2
+          ? "#94ce95"
+          : levelId === 3
+          ? "#6eb76f"
+          : levelId === 4
+          ? "#48a148"
+          : "#228b22";
       let answerColor = isEmpty ? "#ffbf00" : isCorrect ? "#28cc2d" : "#d2222d";
       let AnswerIcon = isEmpty
         ? RemoveCircleOutline
@@ -181,8 +196,10 @@ class CreateTest extends React.Component {
               alignItems: "flex-start",
               width: "calc(100% - 10px)",
               maxWidth: "80%",
-              marginTop: 5,
+              marginTop: "20px",
+              marginBottom: "15px",
               marginRight: 5,
+              boxShadow: "1px 2px 11px -3px #00000075",
             }}
           >
             <div style={style.questionNum}>{toFA(idx + 1)}</div>
@@ -318,7 +335,7 @@ class CreateTest extends React.Component {
                   spacing={3}
                   justify="flex-start"
                   container
-                  style={{ padding: "20px 20px 0 20px", margin: 0 }}
+                  style={{ padding: "20px 0px 0 20px", margin: 0 }}
                 >
                   <div style={{ overflow: "hidden", width: "100%" }}>
                     <MyMath value={item.answer} />
@@ -340,7 +357,7 @@ class CreateTest extends React.Component {
     return (
       <>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#FFD700" }}
+          style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >
@@ -356,7 +373,8 @@ class CreateTest extends React.Component {
               justify="center"
               container
               style={{
-                padding: 20,
+                padding: "20px",
+                margin: "40px",
                 backgroundColor: "rgb(255 255 255 / 40%)",
                 borderRadius: 20,
               }}

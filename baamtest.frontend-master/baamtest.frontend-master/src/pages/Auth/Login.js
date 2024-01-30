@@ -76,7 +76,7 @@ function Login(props) {
   }
   return (
     <Grid container className={classes.container}>
-      <Backdrop style={{ zIndex: 1000000, color: '#FFD700' }} open={isLoading} onClick={() => console.log('clicked')}>
+      <Backdrop style={{ zIndex: 1000000, color: '#228b22' }} open={isLoading} onClick={() => console.log('clicked')}>
         <CircularProgress color="inherit" />
       </Backdrop>
       <div className={classes.logotypeContainer}>

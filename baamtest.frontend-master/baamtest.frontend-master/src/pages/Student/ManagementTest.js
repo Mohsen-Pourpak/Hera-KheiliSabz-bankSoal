@@ -463,7 +463,7 @@ class ManagementTest extends React.Component {
     return (
       <>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#FFD700" }}
+          style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >

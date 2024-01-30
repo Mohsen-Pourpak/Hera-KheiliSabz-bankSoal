@@ -245,7 +245,7 @@ class CreateTest extends React.Component {
         <PageTitle title="مدیریت مشاورها" />
         {this.state.progress && (
           <Backdrop
-            style={{ zIndex: 1000000, color: "#FFD700" }}
+            style={{ zIndex: 1000000, color: "#228b22" }}
             open={this.state.progress}
             onClick={() => console.log("clicked")}
           >
@@ -254,7 +254,7 @@ class CreateTest extends React.Component {
         )}
         {this.state.isLoading ? (
           <Backdrop
-            style={{ zIndex: 1000000, color: "#FFF000" }}
+            style={{ zIndex: 1000000, color: "#228b22" }}
             open={this.state.isLoading}
             onClick={() => console.log("clicked")}
           >

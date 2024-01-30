@@ -11,6 +11,7 @@ import { toFA } from "../../utils/Utils";
 import Countdown from "react-countdown";
 
 import MyMath from "../../components/Form/MyMath";
+import FilterBox from "../../components/FilterBox";
 
 // const imagem =
 //   "https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg";
@@ -170,7 +171,7 @@ class CreateTest extends React.Component {
             borderRadius: 50,
             width: 250,
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "center",
           }}
         >
           <div
@@ -180,9 +181,10 @@ class CreateTest extends React.Component {
               flex: 1,
               color: "#fff",
               alignItems: "center",
+              justifyContent: "center",
               padding: "0 15px",
               borderRadius: 50,
-              background: "#fe5f55",
+              background: "#228b22",
               height: 45,
             }}
           >
@@ -274,7 +276,15 @@ class CreateTest extends React.Component {
       let isThreeActive = this.state.answers[`question__${item.id}`] === 3;
       let isFourActive = this.state.answers[`question__${item.id}`] === 4;
       let labelColor =
-        levelId === 1 ? "#3EC592" : levelId === 2 ? "#FB963A" : "#C83E43";
+        levelId === 1
+          ? "#bae4bc"
+          : levelId === 2
+          ? "#94ce95"
+          : levelId === 3
+          ? "#6eb76f"
+          : levelId === 4
+          ? "#48a148"
+          : "#228b22";
       return (
         <>
           <Grid
@@ -290,6 +300,7 @@ class CreateTest extends React.Component {
               // maxWidth: "80%",
               marginTop: 5,
               marginRight: 5,
+              boxShadow: "1px 2px 11px -3px #00000075",
             }}
           >
             <div style={style.questionNum}>{toFA(idx + 1)}</div>
@@ -468,7 +479,7 @@ class CreateTest extends React.Component {
     return (
       <>
         <Backdrop
-          style={{ zIndex: 1000000, color: "#FFD700" }}
+          style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >
@@ -476,8 +487,21 @@ class CreateTest extends React.Component {
         </Backdrop>
         <PageTitle title="آزمون آنلاین" />
         {!this.state.progress && (
-          <Grid container item xs={12} style={{ padding: "0 10px" }}>
+          <Grid
+            container
+            item
+            xs={12}
+            style={{
+              padding: 20,
+              backgroundColor: "rgb(255 255 255 / 40%)",
+              borderTopRightRadius: "35px",
+            }}
+          >
+            <Grid item xs={12} style={{ height: "50px" }}></Grid>
+
+            {/* 
             <Grid
+              item
               direction="column"
               alignItems="flex-start"
               spacing={3}
@@ -486,7 +510,7 @@ class CreateTest extends React.Component {
               style={{
                 padding: 20,
                 backgroundColor: "rgb(255 255 255 / 40%)",
-                borderRadius: 20,
+                borderTopRightRadius: "35px",
               }}
             >
               {this.state.time && (
@@ -498,15 +522,81 @@ class CreateTest extends React.Component {
                   />
                 </div>
               )}
-              <div
-                style={{
-                  alignSelf: "center",
-                  textAlign: "center",
-                  maxWidth: "80%",
-                }}
-              >
-                {this.renderQuestionsList(this.state.questionsList)}
-              </div>
+              <Grid direction="column" justifyContent="center" xs={4}>
+                <FilterBox title="گزینش منبع">
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      آزمون خیلی سبز
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      کنکور خیلی سبز
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      کتاب خیلی سبز
+                    </div>
+                    <div
+                      style={{
+                        margin: "10px",
+                        height: "30px",
+                        width: "40%",
+                        backgroundColor: "#CBF2CF",
+                        borderRadius: "50px",
+                        textAlign: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      تألیفی
+                    </div>
+                  </div>
+                </FilterBox>
+              </Grid>
+              <Grid direction="column" justifyContent="center" xs={8}>
+                <div
+                  style={{
+                    alignSelf: "center",
+                    textAlign: "center",
+                    maxWidth: "80%",
+                  }}
+                >
+                  {this.renderQuestionsList(this.state.questionsList)}
+                </div>
+              </Grid>
             </Grid>
             <Grid
               direction="row"
@@ -534,7 +624,8 @@ class CreateTest extends React.Component {
                   پایان
                 </Button>
               </Grid>
-            </Grid>
+            </Grid> 
+            */}
           </Grid>
         )}
       </>

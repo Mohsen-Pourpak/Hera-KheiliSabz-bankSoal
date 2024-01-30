@@ -1,8 +1,9 @@
 @font-face {
   font-family: bkoodak;
-  src: url(../fonts/B-Koodak-Web.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
   font-weight: normal;
   font-style: normal;
+  font-size: 22px;
 }
 
 @font-face {
@@ -13,59 +14,70 @@
 @font-face {
   font-family: "Yekan";
   font-weight: bold;
-  src: url(../fonts/Yekan_Bakh_FA_06_Bold.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: "Yekan";
   font-weight: normal;
-  src: url(../fonts/Yekan_Bakh_FA_04_Regular.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: "Aviny";
-  src: url(../fonts/aviny.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: "danaFaNum";
-  src: url(../fonts/dana-fanum.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: B-Zar;
-  src: url(../fonts/B-Zar.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: B-Nazanin;
-  src: url(../fonts/B-Nazanin.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: Traffic;
-  src: url(../fonts/Traffic.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: B-Yekan;
-  src: url(../fonts/Yekan.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: Yagut;
-  src: url(../fonts/Yagut.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: iransans;
   /* src: url(../fonts/iransans-web.ttf); */
-  src: url(../fonts/IRANSansWeb.woff2);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @font-face {
   font-family: Lotus;
-  src: url(../fonts/Lotus.ttf);
+  src: url(../fonts/Dana-Regular.ttf);
+  font-size: 22px;
 }
 
 @media all {
@@ -376,7 +388,7 @@ div::-moz-selection {
 }
 
 .MuiCircularProgress-colorPrimary {
-  color: white !important;
+  color: rgb(13, 116, 24) !important;
 }
 
 /* .MathJax, .mjx-utext, .my-math {
@@ -556,7 +568,7 @@ body {
 .section-45 {
   margin: 0 6vw;
   margin-top: 14vw;
-  border: 0.3vw dashed #FFFF00;
+  border: 0.3vw dashed #ffff00;
   border-radius: 3vw;
 }
 
@@ -1022,11 +1034,11 @@ caption {
 }
 
 .main-comp {
-  background-color: #fff;
+  background-color: rgb(204, 247, 207);
   background-size: 100%;
   flex: 1 1;
   padding: 25px;
-  border-top-right-radius: 50px;
+  border-top-right-radius: 0px;
   height: 100% !important;
   position: fixed !important;
   overflow-y: scroll !important;
@@ -1076,12 +1088,12 @@ caption {
   height: 1vw;
   margin: 1vw !important;
   opacity: 1;
-  border: 0.1vw solid #FFFF00;
+  border: 0.1vw solid #ffff00;
   background: #00000000;
 }
 
 .swiper-pagination-bullet-active {
-  background: #FFFF00;
+  background: #ffff00;
 }
 
 .swiper-pagination-bullet-active::after {
@@ -1096,7 +1108,7 @@ caption {
 .swiper-pagination-bullet-active::after::after {
   width: 5px;
   height: 5px;
-  background: #FFFF00;
+  background: #ffff00;
 }
 
 .none {

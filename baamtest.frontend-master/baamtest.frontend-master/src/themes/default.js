@@ -90,7 +90,7 @@ export default {
   overrides: {
     MuiBackdrop: {
       root: {
-        backgroundColor: "#FDFFBA",
+        backgroundColor: "#CBF2CF",
       },
     },
     MuiMenu: {
