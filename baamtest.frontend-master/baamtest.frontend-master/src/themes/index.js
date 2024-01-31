@@ -4,6 +4,9 @@ import { createMuiTheme } from "@material-ui/core";
 
 const overrides = {
   typography: {
+    background: {
+      default: "#000",
+    },
     h1: {
       fontSize: "3rem",
     },

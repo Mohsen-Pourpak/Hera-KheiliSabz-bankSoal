@@ -3,81 +3,82 @@
   src: url(../fonts/Dana-Regular.ttf);
   font-weight: normal;
   font-style: normal;
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: Dana;
   src: url(../fonts/Dana-Regular.ttf);
+  font-size: 30px;
 }
 
 @font-face {
   font-family: "Yekan";
   font-weight: bold;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: "Yekan";
   font-weight: normal;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: "Aviny";
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: "danaFaNum";
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: B-Zar;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: B-Nazanin;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: Traffic;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: B-Yekan;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: Yagut;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: iransans;
   /* src: url(../fonts/iransans-web.ttf); */
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @font-face {
   font-family: Lotus;
   src: url(../fonts/Dana-Regular.ttf);
-  font-size: 22px;
+  font-size: 30px;
 }
 
 @media all {
@@ -732,6 +733,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   background-color: transparent !important;
 }
+
 
 .makeStyles-inputContainer-21 .MuiSvgIcon-root {
   font-size: 1.8rem !important;

@@ -40,6 +40,7 @@ const style = {
     borderRadius: 60,
     height: 30,
     width: 30,
+    paddingTop: "10px",
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
@@ -301,6 +302,7 @@ class CreateTest extends React.Component {
               marginTop: 5,
               marginRight: 5,
               boxShadow: "1px 2px 11px -3px #00000075",
+              fontSize: "20px"
             }}
           >
             <div style={style.questionNum}>{toFA(idx + 1)}</div>
@@ -493,139 +495,37 @@ class CreateTest extends React.Component {
             xs={12}
             style={{
               padding: 20,
+              borderRadius: "30px",
               backgroundColor: "rgb(255 255 255 / 40%)",
-              borderTopRightRadius: "35px",
+              alignItems: "flex-start",
+              display: "flex",
             }}
           >
-            <Grid item xs={12} style={{ height: "50px" }}></Grid>
-
-            {/* 
-            <Grid
-              item
-              direction="column"
-              alignItems="flex-start"
-              spacing={3}
-              justify="flex-start"
-              container
+            <div
               style={{
-                padding: 20,
-                backgroundColor: "rgb(255 255 255 / 40%)",
-                borderTopRightRadius: "35px",
+                position: "sticky",
+                top: -15,
+                flex: 1,
+                minWidth: 270,
+                maxHeight: `calc(100vh - 80px)`,
+                overflowY: "auto",
+                scrollbarWidth: "thin",
+                textAlign: "center",
               }}
             >
-              {this.state.time && (
-                <div style={{ marginBottom: 20 }}>
-                  <Countdown
-                    date={this.state.startTime + this.state.time * 60 * 1000}
-                    renderer={this.renderer}
-                    onComplete={this.correctionExam}
-                  />
-                </div>
-              )}
-              <Grid direction="column" justifyContent="center" xs={4}>
-                <FilterBox title="گزینش منبع">
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <div
-                      style={{
-                        margin: "10px",
-                        height: "30px",
-                        width: "40%",
-                        backgroundColor: "#CBF2CF",
-                        borderRadius: "50px",
-                        textAlign: "center",
-                        cursor: "pointer",
-                      }}
-                    >
-                      آزمون خیلی سبز
-                    </div>
-                    <div
-                      style={{
-                        margin: "10px",
-                        height: "30px",
-                        width: "40%",
-                        backgroundColor: "#CBF2CF",
-                        borderRadius: "50px",
-                        textAlign: "center",
-                        cursor: "pointer",
-                      }}
-                    >
-                      کنکور خیلی سبز
-                    </div>
-                    <div
-                      style={{
-                        margin: "10px",
-                        height: "30px",
-                        width: "40%",
-                        backgroundColor: "#CBF2CF",
-                        borderRadius: "50px",
-                        textAlign: "center",
-                        cursor: "pointer",
-                      }}
-                    >
-                      کتاب خیلی سبز
-                    </div>
-                    <div
-                      style={{
-                        margin: "10px",
-                        height: "30px",
-                        width: "40%",
-                        backgroundColor: "#CBF2CF",
-                        borderRadius: "50px",
-                        textAlign: "center",
-                        cursor: "pointer",
-                      }}
-                    >
-                      تألیفی
-                    </div>
-                  </div>
-                </FilterBox>
-              </Grid>
-              <Grid direction="column" justifyContent="center" xs={8}>
-                <div
-                  style={{
-                    alignSelf: "center",
-                    textAlign: "center",
-                    maxWidth: "80%",
-                  }}
-                >
-                  {this.renderQuestionsList(this.state.questionsList)}
-                </div>
-              </Grid>
-            </Grid>
+              <FilterBox title="زمان باقیمانده"></FilterBox>
+              <FilterBox title="مشخصات آزمون"></FilterBox>
+              <FilterBox title="وضعیت پاسخگویی"></FilterBox>
+            </div>
             <Grid
-              direction="row"
-              justify="center"
-              style={{ marginTop: 30 }}
-              container
-              spacing={2}
+              className="render-questions"
+              direction="column"
+              item
+              xs={10}
+              style={{ marginRight: 20 }}
             >
-              <Grid item xs={2}>
-                <Button
-                  onClick={() => {
-                    this.correctionExam();
-                  }}
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                  className={classes.createAccountButton}
-                  style={{
-                    fontSize: "1rem",
-                    textAlign: "center",
-                    fontFamily: "Dana",
-                  }}
-                >
-                  پایان
-                </Button>
-              </Grid>
-            </Grid> 
-            */}
+              {this.renderQuestionsList(this.state.questionsList)}
+            </Grid>
           </Grid>
         )}
       </>

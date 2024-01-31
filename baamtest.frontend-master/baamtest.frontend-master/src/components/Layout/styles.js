@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/styles";
 export default makeStyles(theme => ({
   root: {
     display: "flex",
-    maxWidth: "100vw",
+    maxWidth: "200vw",
     overflowX: "hidden",
-    backgroundColor: '#fff',
+    backgroundColor: '#CBF2CF',
   },
   content: {
     flexGrow: 1,
