@@ -21,7 +21,7 @@ export default makeStyles(theme => ({
     }),
   },
   mainComp: {
-    width: `calc(100vw - 70px)`,
+    width: '100vw',
   },
   mainCompShift: {
     width: `calc(100vw - 210px)`,

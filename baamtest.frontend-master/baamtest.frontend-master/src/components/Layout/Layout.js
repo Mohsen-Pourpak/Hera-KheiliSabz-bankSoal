@@ -10,6 +10,7 @@ import useInputStyles from "../../pages/Auth/styles";
 // components
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar";
+import TempDrawer from "../Sidebar/TempDrawer";
 
 // context
 import { useLayoutState } from "../../context/LayoutContext";
@@ -134,7 +135,7 @@ function Layout(props) {
         {info ? (
           <>
             <Header info={info} history={props.history} />
-            <Sidebar history={props.history} />
+            {/* <TempDrawer/> */}
             <div
               className={classnames(classes.content, {
                 [classes.contentShift]: layoutState.isSidebarOpened,
@@ -686,7 +687,7 @@ function Layout(props) {
             style={{ background: "#3d82a4", height: "100vh", width: "100vw" }}
           >
             <Backdrop
-              style={{ zIndex: 1000000, color: "#FFD700" }}
+              style={{ zIndex: 1000000, color: "#228b22" }}
               open={!info}
             >
               <CircularProgress
