@@ -45,430 +45,430 @@ import Group from "../../images/sidbar-icons/group-w-icon.svg";
 import ActiveQuestions from "../../images/sidbar-icons/questions-icon.svg";
 import Questions from "../../images/sidbar-icons/questions-w-icon.svg";
 
-// const BaseIcon = (icon) => {
-//   return <img src={icon} style={{width: 18}} />
-// }
+const BaseIcon = (icon) => {
+  return <img src={icon} style={{width: 18}} />
+}
 
-// const schoolMenus = [{
-//   id: 0,
-//   label: "پیشخوان",
-//   link: "/dashboard/pishkhan",
-//   icon: BaseIcon(Pishkhan),
-//   activeIcon: BaseIcon(ActivePishkhan)
-// }, {
-//   id: 1,
-//   label: "آزمون ها",
-//   link: "/dashboard/test",
-//   icon: BaseIcon(Tests),
-//   activeIcon: BaseIcon(ActiveTests),
+const schoolMenus = [{
+  id: 0,
+  label: "پیشخوان",
+  link: "/dashboard/pishkhan",
+  icon: BaseIcon(Pishkhan),
+  activeIcon: BaseIcon(ActivePishkhan)
+}, {
+  id: 1,
+  label: "آزمون ها",
+  link: "/dashboard/test",
+  icon: BaseIcon(Tests),
+  activeIcon: BaseIcon(ActiveTests),
+  children: [
+    {
+      label: "ساخت آزمون",
+      link: "/dashboard/test/create",
+    },
+    {
+      label: "مدیریت آزمون",
+      link: "/dashboard/test/management",
+    },
+    {
+      label: "آزمون درانتظارتایید",
+      link: "/dashboard/test/not-accepted",
+    }
+    // {
+    //   label: "آزمون اشتراکی",
+    //   link: "/dashboard/test/shared-test",
+    // }
+  ],
+},
+//  {
+//   id: 2,
+//   label: "اشتراک",
+//   link: "/dashboard/subscription",
+//   icon: BaseIcon(Pack),
+//   activeIcon: BaseIcon(ActivePack),
 //   children: [
-//     {
-//       label: "ساخت آزمون",
-//       link: "/dashboard/test/create",
-//     },
-//     {
-//       label: "مدیریت آزمون",
-//       link: "/dashboard/test/management",
-//     },
-//     {
-//       label: "آزمون درانتظارتایید",
-//       link: "/dashboard/test/not-accepted",
-//     }
 //     // {
-//     //   label: "آزمون اشتراکی",
-//     //   link: "/dashboard/test/shared-test",
-//     // }
+//     //   label: "اشتراک",
+//     //   link: "/dashboard/subscription",
+//     // },
+//     {
+//       label: "افزایش اعتبار",
+//       link: "/dashboard/subscription-credit",
+//     },
+//     {
+//       label: "رسید پرداخت",
+//       link: "/dashboard/subscription-purchase-invoices",
+//     },
+//     {
+//       label: "تراکنش ها",
+//       link: "/dashboard/subscription-all-wallet",
+//     }
 //   ],
 // },
-// //  {
-// //   id: 2,
-// //   label: "اشتراک",
-// //   link: "/dashboard/subscription",
-// //   icon: BaseIcon(Pack),
-// //   activeIcon: BaseIcon(ActivePack),
-// //   children: [
-// //     // {
-// //     //   label: "اشتراک",
-// //     //   link: "/dashboard/subscription",
-// //     // },
-// //     {
-// //       label: "افزایش اعتبار",
-// //       link: "/dashboard/subscription-credit",
-// //     },
-// //     {
-// //       label: "رسید پرداخت",
-// //       link: "/dashboard/subscription-purchase-invoices",
-// //     },
-// //     {
-// //       label: "تراکنش ها",
-// //       link: "/dashboard/subscription-all-wallet",
-// //     }
-// //   ],
-// // },
+{
+  id: 3,
+  label: "زیرگروه",
+  link: "/dashboard/group",
+  icon: BaseIcon(Group),
+  activeIcon: BaseIcon(ActiveGroup),
+  children: [
+    {
+      label: "مدیریت کلاس ها",
+      link: "/dashboard/group",
+    },
+    {
+      label: "خرید زیرگروه",
+      link: "/dashboard/group-buy",
+    },
+    {
+      label: "مدیریت دبیرها",
+      link: "/dashboard/group-management-teachers",
+    },
+    {
+      label: "مدیریت مشاورها",
+      link: "/dashboard/group-management-advisors",
+    },
+    {
+      label: "مدیریت دانش آموزان",
+      link: "/dashboard/group-management-students",
+    }
+  ],
+}, {
+  id: 5,
+  label: "گزارش خطای سوال",
+  link: "/dashboard/questions-report",
+  icon: BaseIcon(Questions),
+  activeIcon: BaseIcon(ActiveQuestions)
+},
 // {
-//   id: 3,
-//   label: "زیرگروه",
-//   link: "/dashboard/group",
-//   icon: BaseIcon(Group),
-//   activeIcon: BaseIcon(ActiveGroup),
-//   children: [
-//     {
-//       label: "مدیریت کلاس ها",
-//       link: "/dashboard/group",
-//     },
-//     {
-//       label: "خرید زیرگروه",
-//       link: "/dashboard/group-buy",
-//     },
-//     {
-//       label: "مدیریت دبیرها",
-//       link: "/dashboard/group-management-teachers",
-//     },
-//     {
-//       label: "مدیریت مشاورها",
-//       link: "/dashboard/group-management-advisors",
-//     },
-//     {
-//       label: "مدیریت دانش آموزان",
-//       link: "/dashboard/group-management-students",
-//     }
-//   ],
-// }, {
-//   id: 5,
-//   label: "گزارش خطای سوال",
-//   link: "/dashboard/questions-report",
-//   icon: BaseIcon(Questions),
-//   activeIcon: BaseIcon(ActiveQuestions)
-// },
-// // {
-// //   id: 6,
-// //   label: "دعوت از دوستان",
-// //   link: "/dashboard/invitation",
-// //   icon: BaseIcon(Friends),
-// //   activeIcon: BaseIcon(ActiveFriends)
-// // }
-// ];
-
-// const advisorsMenus = [{
-//   id: 0,
-//   label: "پیشخوان",
-//   link: "/dashboard/pishkhan",
-//   icon: BaseIcon(Pishkhan),
-//   activeIcon: BaseIcon(ActivePishkhan)
-// }, {
-//   id: 1,
-//   label: "آزمون ها",
-//   link: "/dashboard/test",
-//   icon: BaseIcon(Tests),
-//   activeIcon: BaseIcon(ActiveTests),
-//   children: [
-//     {
-//       label: "ساخت آزمون",
-//       link: "/dashboard/test/create",
-//     },
-//     {
-//       label: "مدیریت آزمون",
-//       link: "/dashboard/test/management",
-//     },
-//     {
-//       label: "آزمون درانتظارتایید",
-//       link: "/dashboard/test/not-accepted",
-//     }
-//     // {
-//     //   label: "آزمون اشتراکی",
-//     //   link: "/dashboard/test/shared-test",
-//     // }
-//   ],
-// }, {
-//   id: 2,
-//   label: "اشتراک",
-//   link: "/dashboard/subscription",
-//   icon: BaseIcon(Pack),
-//   activeIcon: BaseIcon(ActivePack),
-//   children: [
-//     // {
-//     //   label: "اشتراک",
-//     //   link: "/dashboard/subscription",
-//     // },
-//     {
-//       label: "افزایش اعتبار",
-//       link: "/dashboard/subscription-credit",
-//     },
-//     {
-//       label: "رسید پرداخت",
-//       link: "/dashboard/subscription-purchase-invoices",
-//     },
-//     {
-//       label: "تراکنش ها",
-//       link: "/dashboard/subscription-all-wallet",
-//     }
-//   ],
-// }, {
-//   id: 3,
-//   label: "زیرگروه",
-//   link: "/dashboard/group",
-//   icon: BaseIcon(Group),
-//   activeIcon: BaseIcon(ActiveGroup),
-//   children: [
-//     {
-//       label: "مدیریت کلاس ها",
-//       link: "/dashboard/group",
-//     },
-//     {
-//       label: "خرید زیرگروه",
-//       link: "/dashboard/group-buy",
-//     },
-//     {
-//       label: "مدیریت دبیرها",
-//       link: "/dashboard/group-management-teachers",
-//     },
-//     {
-//       label: "مدیریت دانش آموزان",
-//       link: "/dashboard/group-management-students",
-//     }
-//   ],
-// }, {
-//   id: 5,
-//   label: "گزارش خطای سوال",
-//   link: "/dashboard/questions-report",
-//   icon: BaseIcon(Questions),
-//   activeIcon: BaseIcon(ActiveQuestions)
-// }, {
 //   id: 6,
 //   label: "دعوت از دوستان",
 //   link: "/dashboard/invitation",
 //   icon: BaseIcon(Friends),
 //   activeIcon: BaseIcon(ActiveFriends)
 // }
-// ];
+];
 
-// const teacherMenus = [{
-//   id: 0,
-//   label: "پیشخوان",
-//   link: "/dashboard/pishkhan",
-//   icon: BaseIcon(Pishkhan),
-//   activeIcon: BaseIcon(ActivePishkhan)
-// }, {
-//   id: 1,
-//   label: "آزمون ها",
-//   link: "/dashboard/test",
-//   icon: BaseIcon(Tests),
-//   activeIcon: BaseIcon(ActiveTests),
-//   children: [
-//     {
-//       label: "ساخت آزمون",
-//       link: "/dashboard/test/create",
-//     },
-//     {
-//       label: "مدیریت آزمون",
-//       link: "/dashboard/test/management",
-//     }
-//     // {
-//     //   label: "آزمون اشتراکی",
-//     //   link: "/dashboard/test/shared-test",
-//     // }
-//   ],
-// }, {
-//   id: 2,
-//   label: "اشتراک",
-//   link: "/dashboard/subscription",
-//   icon: BaseIcon(Pack),
-//   activeIcon: BaseIcon(ActivePack),
-//   children: [
-//     // {
-//     //   label: "اشتراک",
-//     //   link: "/dashboard/subscription",
-//     // },
-//     {
-//       label: "افزایش اعتبار",
-//       link: "/dashboard/subscription-credit",
-//     },
-//     {
-//       label: "رسید پرداخت",
-//       link: "/dashboard/subscription-purchase-invoices",
-//     },
-//     {
-//       label: "تراکنش ها",
-//       link: "/dashboard/subscription-all-wallet",
-//     }
-//   ],
-// }, {
-//   id: 3,
-//   label: "زیرگروه",
-//   link: "/dashboard/group",
-//   icon: BaseIcon(Group),
-//   activeIcon: BaseIcon(ActiveGroup),
-//   children: [
-//     {
-//       label: "مدیریت کلاس ها",
-//       link: "/dashboard/group",
-//     },
-//     {
-//       label: "خرید زیرگروه",
-//       link: "/dashboard/group-buy",
-//     },
-//     {
-//       label: "مدیریت دانش آموزان",
-//       link: "/dashboard/group-management-students",
-//     }
-//   ],
-// }, {
-//   id: 5,
-//   label: "گزارش خطای سوال",
-//   link: "/dashboard/questions-report",
-//   icon: BaseIcon(Questions),
-//   activeIcon: BaseIcon(ActiveQuestions)
-// }, {
-//   id: 6,
-//   label: "دعوت از دوستان",
-//   link: "/dashboard/invitation",
-//   icon: BaseIcon(Friends),
-//   activeIcon: BaseIcon(ActiveFriends)
-// }
-// ];
+const advisorsMenus = [{
+  id: 0,
+  label: "پیشخوان",
+  link: "/dashboard/pishkhan",
+  icon: BaseIcon(Pishkhan),
+  activeIcon: BaseIcon(ActivePishkhan)
+}, {
+  id: 1,
+  label: "آزمون ها",
+  link: "/dashboard/test",
+  icon: BaseIcon(Tests),
+  activeIcon: BaseIcon(ActiveTests),
+  children: [
+    {
+      label: "ساخت آزمون",
+      link: "/dashboard/test/create",
+    },
+    {
+      label: "مدیریت آزمون",
+      link: "/dashboard/test/management",
+    },
+    {
+      label: "آزمون درانتظارتایید",
+      link: "/dashboard/test/not-accepted",
+    }
+    // {
+    //   label: "آزمون اشتراکی",
+    //   link: "/dashboard/test/shared-test",
+    // }
+  ],
+}, {
+  id: 2,
+  label: "اشتراک",
+  link: "/dashboard/subscription",
+  icon: BaseIcon(Pack),
+  activeIcon: BaseIcon(ActivePack),
+  children: [
+    // {
+    //   label: "اشتراک",
+    //   link: "/dashboard/subscription",
+    // },
+    {
+      label: "افزایش اعتبار",
+      link: "/dashboard/subscription-credit",
+    },
+    {
+      label: "رسید پرداخت",
+      link: "/dashboard/subscription-purchase-invoices",
+    },
+    {
+      label: "تراکنش ها",
+      link: "/dashboard/subscription-all-wallet",
+    }
+  ],
+}, {
+  id: 3,
+  label: "زیرگروه",
+  link: "/dashboard/group",
+  icon: BaseIcon(Group),
+  activeIcon: BaseIcon(ActiveGroup),
+  children: [
+    {
+      label: "مدیریت کلاس ها",
+      link: "/dashboard/group",
+    },
+    {
+      label: "خرید زیرگروه",
+      link: "/dashboard/group-buy",
+    },
+    {
+      label: "مدیریت دبیرها",
+      link: "/dashboard/group-management-teachers",
+    },
+    {
+      label: "مدیریت دانش آموزان",
+      link: "/dashboard/group-management-students",
+    }
+  ],
+}, {
+  id: 5,
+  label: "گزارش خطای سوال",
+  link: "/dashboard/questions-report",
+  icon: BaseIcon(Questions),
+  activeIcon: BaseIcon(ActiveQuestions)
+}, {
+  id: 6,
+  label: "دعوت از دوستان",
+  link: "/dashboard/invitation",
+  icon: BaseIcon(Friends),
+  activeIcon: BaseIcon(ActiveFriends)
+}
+];
 
-// const studentMenus = [{
-//   id: 0,
-//   label: "پیشخوان",
-//   link: "/dashboard/pishkhan",
-//   icon: BaseIcon(Pishkhan),
-//   activeIcon: BaseIcon(ActivePishkhan)
-// }, {
-//   id: 1,
-//   label: "آزمون ها",
-//   link: "/dashboard/test",
-//   icon: BaseIcon(Tests),
-//   activeIcon: BaseIcon(ActiveTests),
-//   children: [
-//     {
-//       label: "ساخت آزمون",
-//       link: "/dashboard/test/create",
-//     },
-//     {
-//       label: "مدیریت آزمون",
-//       link: "/dashboard/test/management",
-//     }
-//     // {
-//     //   label: "آزمون اشتراکی",
-//     //   link: "/dashboard/test/shared-test",
-//     // },
-//   ],
-// }, {
-//   id: 2,
-//   label: "خرید پک سوال",
-//   link: "/dashboard/packages",
-//   icon: BaseIcon(Pack),
-//   activeIcon: BaseIcon(ActivePack),
-//   children: [
-//     {
-//       label: "خرید پک سوال",
-//       link: "/dashboard/packages",
-//     },
-//     {
-//       label: "افزایش اعتبار",
-//       link: "/dashboard/packages-credit",
-//     },
-//     {
-//       label: "رسید پرداخت",
-//       link: "/dashboard/packages-purchase-invoices",
-//     },
-//     {
-//       label: "تراکنش ها",
-//       link: "/dashboard/packages-all-wallet",
-//     }
-//   ],
-// }, {
-//   id: 4,
-//   label: "دعوت از دوستان",
-//   link: "/dashboard/invitation",
-//   icon: BaseIcon(Friends),
-//   activeIcon: BaseIcon(ActiveFriends)
-// }
-// ];
+const teacherMenus = [{
+  id: 0,
+  label: "پیشخوان",
+  link: "/dashboard/pishkhan",
+  icon: BaseIcon(Pishkhan),
+  activeIcon: BaseIcon(ActivePishkhan)
+}, {
+  id: 1,
+  label: "آزمون ها",
+  link: "/dashboard/test",
+  icon: BaseIcon(Tests),
+  activeIcon: BaseIcon(ActiveTests),
+  children: [
+    {
+      label: "ساخت آزمون",
+      link: "/dashboard/test/create",
+    },
+    {
+      label: "مدیریت آزمون",
+      link: "/dashboard/test/management",
+    }
+    // {
+    //   label: "آزمون اشتراکی",
+    //   link: "/dashboard/test/shared-test",
+    // }
+  ],
+}, {
+  id: 2,
+  label: "اشتراک",
+  link: "/dashboard/subscription",
+  icon: BaseIcon(Pack),
+  activeIcon: BaseIcon(ActivePack),
+  children: [
+    // {
+    //   label: "اشتراک",
+    //   link: "/dashboard/subscription",
+    // },
+    {
+      label: "افزایش اعتبار",
+      link: "/dashboard/subscription-credit",
+    },
+    {
+      label: "رسید پرداخت",
+      link: "/dashboard/subscription-purchase-invoices",
+    },
+    {
+      label: "تراکنش ها",
+      link: "/dashboard/subscription-all-wallet",
+    }
+  ],
+}, {
+  id: 3,
+  label: "زیرگروه",
+  link: "/dashboard/group",
+  icon: BaseIcon(Group),
+  activeIcon: BaseIcon(ActiveGroup),
+  children: [
+    {
+      label: "مدیریت کلاس ها",
+      link: "/dashboard/group",
+    },
+    {
+      label: "خرید زیرگروه",
+      link: "/dashboard/group-buy",
+    },
+    {
+      label: "مدیریت دانش آموزان",
+      link: "/dashboard/group-management-students",
+    }
+  ],
+}, {
+  id: 5,
+  label: "گزارش خطای سوال",
+  link: "/dashboard/questions-report",
+  icon: BaseIcon(Questions),
+  activeIcon: BaseIcon(ActiveQuestions)
+}, {
+  id: 6,
+  label: "دعوت از دوستان",
+  link: "/dashboard/invitation",
+  icon: BaseIcon(Friends),
+  activeIcon: BaseIcon(ActiveFriends)
+}
+];
 
-// function Sidebar({ location, history }) {
-//   var classes = useStyles();
-//   var theme = useTheme();
+const studentMenus = [{
+  id: 0,
+  label: "پیشخوان",
+  link: "/dashboard/pishkhan",
+  icon: BaseIcon(Pishkhan),
+  activeIcon: BaseIcon(ActivePishkhan)
+}, {
+  id: 1,
+  label: "آزمون ها",
+  link: "/dashboard/test",
+  icon: BaseIcon(Tests),
+  activeIcon: BaseIcon(ActiveTests),
+  children: [
+    {
+      label: "ساخت آزمون",
+      link: "/dashboard/test/create",
+    },
+    {
+      label: "مدیریت آزمون",
+      link: "/dashboard/test/management",
+    }
+    // {
+    //   label: "آزمون اشتراکی",
+    //   link: "/dashboard/test/shared-test",
+    // },
+  ],
+}, {
+  id: 2,
+  label: "خرید پک سوال",
+  link: "/dashboard/packages",
+  icon: BaseIcon(Pack),
+  activeIcon: BaseIcon(ActivePack),
+  children: [
+    {
+      label: "خرید پک سوال",
+      link: "/dashboard/packages",
+    },
+    {
+      label: "افزایش اعتبار",
+      link: "/dashboard/packages-credit",
+    },
+    {
+      label: "رسید پرداخت",
+      link: "/dashboard/packages-purchase-invoices",
+    },
+    {
+      label: "تراکنش ها",
+      link: "/dashboard/packages-all-wallet",
+    }
+  ],
+}, {
+  id: 4,
+  label: "دعوت از دوستان",
+  link: "/dashboard/invitation",
+  icon: BaseIcon(Friends),
+  activeIcon: BaseIcon(ActiveFriends)
+}
+];
 
-//   const [currentStorage, SyncWithLocalStorage] = useState(localStorage || {});
+function Sidebar({ location, history }) {
+  var classes = useStyles();
+  var theme = useTheme();
 
-//   window.addEventListener("storage", e => {
-//     SyncWithLocalStorage(localStorage);
-//   });
+  const [currentStorage, SyncWithLocalStorage] = useState(localStorage || {});
 
-//   var user_type = currentStorage.getItem('userType')
-//   var structure = user_type === 'School' ? schoolMenus : user_type === 'Teacher' ? teacherMenus : user_type === 'Advisor' ? advisorsMenus : studentMenus
+  window.addEventListener("storage", e => {
+    SyncWithLocalStorage(localStorage);
+  });
 
-//   // global
-//   var { isSidebarOpened } = useLayoutState();
-//   var layoutDispatch = useLayoutDispatch();
+  var user_type = currentStorage.getItem('userType')
+  var structure = user_type === 'School' ? schoolMenus : user_type === 'Teacher' ? teacherMenus : user_type === 'Advisor' ? advisorsMenus : studentMenus
 
-//   // local
-//   var [isPermanent, setPermanent] = useState(true);
+  // global
+  var { isSidebarOpened } = useLayoutState();
+  var layoutDispatch = useLayoutDispatch();
 
-//   useEffect(function() {
-//     window.addEventListener("resize", handleWindowWidthChange);
-//     handleWindowWidthChange();
-//     return function cleanup() {
-//       window.removeEventListener("resize", handleWindowWidthChange);
-//     };
-//   });
+  // local
+  var [isPermanent, setPermanent] = useState(true);
 
-//   return (
-//     <Drawer
-//       variant={isPermanent ? "permanent" : "temporary"}
-//       className={classNames(classes.drawer, {
-//         [classes.drawerOpen]: isSidebarOpened,
-//         [classes.drawerClose]: !isSidebarOpened,
-//       })}
-//       classes={{
-//         paper: classNames({
-//           [classes.drawerOpen]: isSidebarOpened,
-//           [classes.drawerClose]: !isSidebarOpened,
-//         }),
-//       }}
-//       open={isSidebarOpened}
-//       anchor={'top'}
-//     >
-//       <div className={classes.toolbar}/>
-//       <div className={classes.mobileBackButton}>
-//         <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
-//           <ArrowBackIcon
-//             classes={{
-//               root: classNames(classes.headerIcon, classes.headerIconCollapse),
-//             }}
-//           />
-//         </IconButton>
-//       </div>
-//       <List className={classes.sidebarList}>
-//         <img onClick={() => history.push({ pathname: '/home' })} style={{cursor: 'pointer'}} src={logo} alt="logo" className={classNames(classes.drawer, {
-//           [classes.logoOpen]: isSidebarOpened,
-//           [classes.logoClose]: !isSidebarOpened,
-//         })} />
-//         {structure.map(link => (
-//           <SidebarLink
-//             key={link.id}
-//             location={location}
-//             isSidebarOpened={isSidebarOpened}
-//             {...link}
-//           />
-//         ))}
-//       </List>
-//     </Drawer>
-//   );
+  useEffect(function() {
+    window.addEventListener("resize", handleWindowWidthChange);
+    handleWindowWidthChange();
+    return function cleanup() {
+      window.removeEventListener("resize", handleWindowWidthChange);
+    };
+  });
 
-//   // ##################################################################
-//   function handleWindowWidthChange() {
-//     var windowWidth = window.innerWidth;
-//     var breakpointWidth = theme.breakpoints.values.md;
-//     var isSmallScreen = windowWidth < breakpointWidth;
+  return (
+    <Drawer
+      variant={isPermanent ? "permanent" : "temporary"}
+      className={classNames(classes.drawer, {
+        [classes.drawerOpen]: isSidebarOpened,
+        [classes.drawerClose]: !isSidebarOpened,
+      })}
+      classes={{
+        paper: classNames({
+          [classes.drawerOpen]: isSidebarOpened,
+          [classes.drawerClose]: !isSidebarOpened,
+        }),
+      }}
+      open={isSidebarOpened}
+      anchor={'top'}
+    >
+      <div className={classes.toolbar}/>
+      <div className={classes.mobileBackButton}>
+        <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
+          <ArrowBackIcon
+            classes={{
+              root: classNames(classes.headerIcon, classes.headerIconCollapse),
+            }}
+          />
+        </IconButton>
+      </div>
+      <List className={classes.sidebarList}>
+        <img onClick={() => history.push({ pathname: '/home' })} style={{cursor: 'pointer'}} src={logo} alt="logo" className={classNames(classes.drawer, {
+          [classes.logoOpen]: isSidebarOpened,
+          [classes.logoClose]: !isSidebarOpened,
+        })} />
+        {structure.map(link => (
+          <SidebarLink
+            key={link.id}
+            location={location}
+            isSidebarOpened={isSidebarOpened}
+            {...link}
+          />
+        ))}
+      </List>
+    </Drawer>
+  );
 
-//     if (isSmallScreen && isPermanent) {
-//       setPermanent(false);
-//     } else if (!isSmallScreen && !isPermanent) {
-//       setPermanent(true);
-//     }
-//   }
-// }
+  // ##################################################################
+  function handleWindowWidthChange() {
+    var windowWidth = window.innerWidth;
+    var breakpointWidth = theme.breakpoints.values.md;
+    var isSmallScreen = windowWidth < breakpointWidth;
 
-// export default withRouter(Sidebar);
+    if (isSmallScreen && isPermanent) {
+      setPermanent(false);
+    } else if (!isSmallScreen && !isPermanent) {
+      setPermanent(true);
+    }
+  }
+}
+
+export default withRouter(Sidebar);

@@ -50,6 +50,7 @@ import ActiveGroup from "../../images/sidbar-icons/group-icon.svg";
 import Group from "../../images/sidbar-icons/group-w-icon.svg";
 import ActiveQuestions from "../../images/sidbar-icons/questions-icon.svg";
 import Questions from "../../images/sidbar-icons/questions-w-icon.svg";
+import SidebarLink from "../Sidebar/components/SidebarLink/SidebarLink";
 
 const BaseIcon = icon => {
   return <img src={icon} style={{ width: 18 }} />;
@@ -411,31 +412,6 @@ const studentMenus = [
   },
 ];
 
-// function Sidebar({ location, history }) {
-//   var classes = useStyles();
-//   var theme = useTheme();
-
-//   const [currentStorage, SyncWithLocalStorage] = useState(localStorage || {});
-
-//   window.addEventListener("storage", e => {
-//     SyncWithLocalStorage(localStorage);
-//   });
-
-//   var user_type = currentStorage.getItem('userType')
-//   var structure = user_type === 'School' ? schoolMenus : user_type === 'Teacher' ? teacherMenus : user_type === 'Advisor' ? advisorsMenus : studentMenus
-
-//   // local
-//   var [isPermanent, setPermanent] = useState(true);
-
-//   useEffect(function() {
-//     window.addEventListener("resize", handleWindowWidthChange);
-//     handleWindowWidthChange();
-//     return function cleanup() {
-//       window.removeEventListener("resize", handleWindowWidthChange);
-//     };
-//   });
-// }
-
 export const CustomMenu = ({ open, anchorEl, onClose, children }) => {
   const classes = useStyles();
 
@@ -456,11 +432,13 @@ export const CustomMenu = ({ open, anchorEl, onClose, children }) => {
 
 export default function Header(props) {
   var classes = useStyles();
+  console.log(props);
 
   // global
   var layoutState = useLayoutState();
   var layoutDispatch = useLayoutDispatch();
   var userDispatch = useUserDispatch();
+  var { isSidebarOpened } = useLayoutState();
 
   // local
   var [name, setName] = useState("");
@@ -579,10 +557,10 @@ export default function Header(props) {
               }}
             >
               <img
-                // onClick={() => push({ pathname: "/home" })}
-                style={{ width: "50px", height: "40px" }}
+                style={{ width: "50px", height: "40px", cursor: "pointer" }}
                 src={logo}
                 alt="logo"
+                onClick={() => props.history.push({ pathname: "/home" })}
               />
               <Typography
                 variant="h6"
@@ -591,15 +569,15 @@ export default function Header(props) {
               >
                 داشبورد {userTypeStr} " {name} "
               </Typography>
-
-              <List>
-                <ListItem button>
-                  <ListItemIcon>
-                    <SendIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="آزمون ها" style={{ color: "#000" }} />
-                </ListItem>
-              </List>
+              <></>
+              {structure.map(link => (
+                <SidebarLink
+                  key={link.id}
+                  location={props.location}
+                  {...link}
+                  isSidebarOpened={isSidebarOpened}
+                />
+              ))}
 
               <div className={classes.grow} />
               {/* <div style={{ color: "black", marginLeft: 10 }}>

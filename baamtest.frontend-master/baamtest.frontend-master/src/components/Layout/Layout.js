@@ -97,6 +97,7 @@ const QuestionProblemReports = React.lazy(() =>
 const SamplePage = React.lazy(() => import("../../pages/Sample"));
 
 function Layout(props) {
+  console.log(props)
   var classes = useStyles();
   var inputClasses = useInputStyles();
   const [info, setInfo] = useState(null);
@@ -134,8 +135,8 @@ function Layout(props) {
       <>
         {info ? (
           <>
-            <Header info={info} history={props.history} />
-            {/* <TempDrawer/> */}
+            <Header info={info} history={props.history} location={props.location}/>
+            {/* <Sidebar history={props.history} /> */}
             <div
               className={classnames(classes.content, {
                 [classes.contentShift]: layoutState.isSidebarOpened,

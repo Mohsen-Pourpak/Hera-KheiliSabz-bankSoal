@@ -10,11 +10,12 @@ export default makeStyles(theme => ({
     "&:focus": {
       backgroundColor: '#FFD700',
     },
-    borderRadius: '30px 0 0 30px',
+    borderRadius: '30px 30px 30px 30px',
     padding: '7.5px 0px',
     left: 5,
-    width: 'calc(100% - 5px)',
-    zIndex: 200
+    width: '15%',
+    zIndex: 200,
+    marginLeft: "30px"
   },
   childrenLink: {
     textDecoration: "none",
@@ -25,11 +26,11 @@ export default makeStyles(theme => ({
     "&:focus": {
       backgroundColor: '#119C04',
     },
-    borderRadius: '0px 30px 30px 0',
+    borderRadius: '30px 30px 30px 30px',
     marginTop: "5px",
     padding: '5px 0px',
     left: 5,
-    width: 'calc(100% - 5px)',
+    width: '15%',
     zIndex: 200
   },
   linkActive: {
@@ -38,7 +39,7 @@ export default makeStyles(theme => ({
       backgroundColor: '#119C04',
     },
     left: 20,
-    width: 'calc(100% - 20px)',
+    width: '15%',
     zIndex: 200
   },
   linkNested: {
@@ -67,6 +68,7 @@ export default makeStyles(theme => ({
     fontSize: 14,
   },
   linkTextActive: {
+    opacity: 1,
     color: '#000',
   },
   linkTextHidden: {
