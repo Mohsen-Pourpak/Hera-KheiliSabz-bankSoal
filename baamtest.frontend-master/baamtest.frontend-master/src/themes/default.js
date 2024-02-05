@@ -151,7 +151,7 @@ export default {
     },
     MuiListItemText: {
       root: {
-        textAlign: "right",
+        textAlign: "center",
       },
     },
     MUIDataTable: {

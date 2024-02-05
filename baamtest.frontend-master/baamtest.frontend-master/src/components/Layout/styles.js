@@ -24,7 +24,7 @@ export default makeStyles(theme => ({
     width: '100vw',
   },
   mainCompShift: {
-    width: `calc(100vw - 210px)`,
+    width: `100%`,
     transition: theme.transitions.create(["width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,

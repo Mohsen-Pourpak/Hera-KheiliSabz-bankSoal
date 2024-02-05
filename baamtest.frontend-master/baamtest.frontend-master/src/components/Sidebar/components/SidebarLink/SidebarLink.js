@@ -128,7 +128,7 @@ export default function SidebarLink({
           unmountOnExit
           className={classes.nestedList}
         >
-          <List component="div">
+          <List component="div" style={{position: "absolute", marginRight: "-210px"}}>
             {children.map(childrenLink => (
               <ListItem
                 button
@@ -144,10 +144,10 @@ export default function SidebarLink({
                 disableRipple
               >
                 <ListItemText
-                  style={{paddingRight: 50, color: '#000'}}
+                  style={{textAlign: "center", color: '#000', paddingRight: "15px", paddingLeft: "15px"}}
                   classes={{
                     primary: classnames(classes.linkText, {
-                      [classes.linkText]: isLinkActive,
+                      [classes.childernLinkText]: isLinkActive,
                       [classes.linkTextHidden]: !isSidebarOpened,
                     }),
                   }}

@@ -5,14 +5,16 @@ export default makeStyles(theme => ({
     textDecoration: "none",
     "&:hover": {
       textDecoration: "underline",
-      backgroundColor: '#FFD700',
+      backgroundColor: '#66A4E2',
     },
     "&:focus": {
-      backgroundColor: '#FFD700',
+      backgroundColor: '#328BE5',
     },
+    backgroundColor: "#A0B4C8",
     borderRadius: '30px 30px 30px 30px',
-    padding: '7.5px 0px',
-    left: 5,
+    padding: '19px 0px',
+    left: 0,
+    height: "40px",
     width: '15%',
     zIndex: 200,
     marginLeft: "30px"
@@ -29,8 +31,8 @@ export default makeStyles(theme => ({
     borderRadius: '30px 30px 30px 30px',
     marginTop: "5px",
     padding: '5px 0px',
-    left: 5,
-    width: '15%',
+    left: 0,
+    width: '100%',
     zIndex: 200
   },
   linkActive: {
@@ -38,6 +40,7 @@ export default makeStyles(theme => ({
     "&:hover, &:focus": {
       backgroundColor: '#119C04',
     },
+    height: "40px",
     left: 20,
     width: '15%',
     zIndex: 200
@@ -66,6 +69,10 @@ export default makeStyles(theme => ({
     color: '#000',
     transition: theme.transitions.create(["opacity", "color"]),
     fontSize: 14,
+  },
+  childernLinkText: {
+    color: "#fff",
+    paddingLeft: "10px"
   },
   linkTextActive: {
     opacity: 1,
