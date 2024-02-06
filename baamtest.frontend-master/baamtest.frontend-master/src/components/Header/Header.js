@@ -569,16 +569,16 @@ export default function Header(props) {
               >
                 داشبورد {userTypeStr} " {name} "
               </Typography>
-              <></>
-              {structure.map(link => (
-                <SidebarLink
-                  key={link.id}
-                  location={props.location}
-                  {...link}
-                  isSidebarOpened={isSidebarOpened}
-                />
-              ))}
-
+              <>
+                {structure.map(link => (
+                  <SidebarLink
+                    key={link.id}
+                    location={props.location}
+                    {...link}
+                    isSidebarOpened={isSidebarOpened}
+                  />
+                ))}
+              </>
               <div className={classes.grow} />
               {/* <div style={{ color: "black", marginLeft: 10 }}>
                 {`کیف پول شما: ${balance} تومان`}{' '}|{' '}{`ستاره: ${star}`}<span style={{ fontSize: 10 }}>.{starDecimal}</span>

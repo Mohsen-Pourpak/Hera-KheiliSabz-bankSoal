@@ -11,6 +11,8 @@ import {
 import { Inbox as InboxIcon } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+import { ExpandMore, ExpandLess } from "@material-ui/icons";
+
 // import ActiveLink from "../../../../images/sidbar-icons/active-link.svg";
 
 // styles
@@ -28,7 +30,7 @@ export default function SidebarLink({
   isSidebarOpened,
   nested,
   type,
-  activeIcon
+  activeIcon,
 }) {
   var classes = useStyles();
 
@@ -36,6 +38,13 @@ export default function SidebarLink({
 
   // local
   var [isOpen, setIsOpen] = useState(false);
+
+  const [open, setOpen] = useState(false);
+
+  const onClickHandler = () => {
+    setOpen(!open);
+  };
+
   var isLinkActive =
     link &&
     (location.pathname === link || location.pathname.indexOf(link) !== -1);
@@ -73,7 +82,13 @@ export default function SidebarLink({
             [classes.linkIconActive]: isLinkActive,
           })}
         >
-          {nested ? <Dot color={"#000" && "#000"} /> : isLinkActive ? activeIcon : icon}
+          {nested ? (
+            <Dot color={"#000" && "#000"} />
+          ) : isLinkActive ? (
+            activeIcon
+          ) : (
+            icon
+          )}
         </ListItemIcon>
         <ListItemText
           classes={{
@@ -92,6 +107,7 @@ export default function SidebarLink({
     <>
       <ListItem
         button
+        onClick={onClickHandler}
         component={link && Link}
         to={link}
         className={classes.link}
@@ -108,7 +124,13 @@ export default function SidebarLink({
             [classes.linkIconActive]: isLinkActive,
           })}
         >
-          {nested ? <Dot color={isLinkActive && "primary"} /> : isLinkActive ? activeIcon : icon}
+          {nested ? (
+            <Dot color={isLinkActive && "primary"} />
+          ) : isLinkActive ? (
+            activeIcon
+          ) : (
+            icon
+          )}
         </ListItemIcon>
         <ListItemText
           classes={{
@@ -118,17 +140,30 @@ export default function SidebarLink({
             }),
           }}
           primary={label}
-        />
+        >
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemText>
         {/* {isLinkActive && <img src={ActiveLink} style={{height: 124, position: 'absolute', left: 0, marginTop: -7}} />} */}
       </ListItem>
       {children && (
         <Collapse
-          in={isLinkActive && isSidebarOpened}
+          in={open && isLinkActive}
           timeout="auto"
           unmountOnExit
           className={classes.nestedList}
         >
-          <List component="div" style={{position: "absolute", marginRight: "-210px"}}>
+          <List
+            component="div"
+            style={{
+              position: "absolute",
+              marginRight: "-210px",
+              backgroundColor: "#C6CFC3",
+              zIndex: 200,
+              marginTop: "1.3rem",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+            }}
+          >
             {children.map(childrenLink => (
               <ListItem
                 button
@@ -144,7 +179,12 @@ export default function SidebarLink({
                 disableRipple
               >
                 <ListItemText
-                  style={{textAlign: "center", color: '#000', paddingRight: "15px", paddingLeft: "15px"}}
+                  style={{
+                    textAlign: "center",
+                    color: "#000",
+                    paddingRight: "15px",
+                    paddingLeft: "15px",
+                  }}
                   classes={{
                     primary: classnames(classes.linkText, {
                       [classes.childernLinkText]: isLinkActive,

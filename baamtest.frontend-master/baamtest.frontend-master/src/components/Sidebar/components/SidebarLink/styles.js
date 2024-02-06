@@ -10,7 +10,7 @@ export default makeStyles(theme => ({
     "&:focus": {
       backgroundColor: '#328BE5',
     },
-    backgroundColor: "#A0B4C8",
+    // backgroundColor: "#A0B4C8",
     borderRadius: '30px 30px 30px 30px',
     padding: '19px 0px',
     left: 0,
@@ -28,7 +28,7 @@ export default makeStyles(theme => ({
     "&:focus": {
       backgroundColor: '#119C04',
     },
-    borderRadius: '30px 30px 30px 30px',
+    borderRadius: '1rem',
     marginTop: "5px",
     padding: '5px 0px',
     left: 0,
@@ -71,7 +71,7 @@ export default makeStyles(theme => ({
     fontSize: 14,
   },
   childernLinkText: {
-    color: "#fff",
+    color: "#000",
     paddingLeft: "10px"
   },
   linkTextActive: {
