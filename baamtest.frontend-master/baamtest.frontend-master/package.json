@@ -20,6 +20,7 @@
     "@material-ui/styles": "^4.3.0",
     "apexcharts": "^3.26.0",
     "axios": "^0.21.4",
+    "bootstrap": "^4.6.2",
     "classnames": "^2.2.6",
     "export-from-json": "^1.4.0",
     "get-orientation": "^1.1.2",

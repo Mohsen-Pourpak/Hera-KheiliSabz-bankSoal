@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  ClickAwayListener,
   Collapse,
   Divider,
   List,
@@ -41,13 +42,18 @@ export default function SidebarLink({
 
   const [open, setOpen] = useState(false);
 
-  const onClickHandler = () => {
-    setOpen(!open);
-  };
-
-  var isLinkActive =
+  const isLinkActive =
     link &&
     (location.pathname === link || location.pathname.indexOf(link) !== -1);
+
+  const headerLinkOnClickHandler = () => {
+      setOpen(!open)
+  }
+  const headerLinksClickAwayHandler = () => {
+    if (isLinkActive) {
+      setOpen(!open)
+    }
+  }
 
   if (type === "title")
     return (
@@ -65,6 +71,7 @@ export default function SidebarLink({
   if (!children)
     return (
       <ListItem
+        // onClick={headerLinksOnClickHandler}
         button
         component={link && Link}
         to={link}
@@ -75,7 +82,6 @@ export default function SidebarLink({
             [classes.linkNested]: nested,
           }),
         }}
-        disableRipple
       >
         <ListItemIcon
           className={classnames(classes.linkIcon, {
@@ -107,8 +113,8 @@ export default function SidebarLink({
     <>
       <ListItem
         button
-        onClick={onClickHandler}
         component={link && Link}
+        onClick={headerLinkOnClickHandler}
         to={link}
         className={classes.link}
         classes={{
@@ -117,7 +123,6 @@ export default function SidebarLink({
             [classes.linkNested]: nested,
           }),
         }}
-        disableRipple
       >
         <ListItemIcon
           className={classnames(classes.linkIcon, {
@@ -141,7 +146,7 @@ export default function SidebarLink({
           }}
           primary={label}
         >
-          {open ? <ExpandLess /> : <ExpandMore />}
+            {open ? <ExpandMore/> : <ExpandLess/>}
         </ListItemText>
         {/* {isLinkActive && <img src={ActiveLink} style={{height: 124, position: 'absolute', left: 0, marginTop: -7}} />} */}
       </ListItem>

@@ -82,7 +82,7 @@ export default makeStyles(theme => ({
     opacity: 0,
   },
   nestedList: {
-    paddingRight: theme.spacing(2) + 30,
+    paddingRight: theme.spacing(2) + 30
   },
   sectionTitle: {
     marginRight: theme.spacing(4.5),
