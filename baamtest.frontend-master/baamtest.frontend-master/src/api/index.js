@@ -4,10 +4,10 @@ import * as qs from "qs";
 import { toast } from "react-toastify";
 import { useUserDispatch, signOut } from "../context/UserContext";
 
-export const BASE_URL = "https://baamtestapi.paas.kheylisabz.sadrazkh.ir";
+export const BASE_URL = "https://bametest-backend.liara.run";
 
 const client = axios.create({
-  baseURL: "https://baamtestapi.paas.kheylisabz.sadrazkh.ir",
+  baseURL: "https://bametest-backend.liara.run",
 });
 
 let USER_TOKEN = localStorage.getItem("userToken");
