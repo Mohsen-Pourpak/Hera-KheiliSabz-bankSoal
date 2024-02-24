@@ -440,7 +440,7 @@ function Sidebar({ location, history }) {
           />
         </IconButton>
       </div>
-      <List className={classes.sidebarList}>
+      <List style={{display: "flex", alignContent: "flex-end", margin:"400px"}}>
         <img onClick={() => history.push({ pathname: '/home' })} style={{cursor: 'pointer'}} src={logo} alt="logo" className={classNames(classes.drawer, {
           [classes.logoOpen]: isSidebarOpened,
           [classes.logoClose]: !isSidebarOpened,

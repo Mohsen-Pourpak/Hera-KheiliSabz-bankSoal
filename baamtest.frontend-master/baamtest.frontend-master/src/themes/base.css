@@ -1,84 +1,123 @@
 @font-face {
   font-family: bkoodak;
-  src: url(../fonts/Dana-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
   font-weight: normal;
   font-style: normal;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 @font-face {
   font-family: Dana;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: "Yekan";
   font-weight: bold;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: "Yekan";
   font-weight: normal;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: "Aviny";
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: "danaFaNum";
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: B-Zar;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: B-Nazanin;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: Traffic;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: B-Yekan;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: Yagut;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: iransans;
   /* src: url(../fonts/iransans-web.ttf); */
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @font-face {
   font-family: Lotus;
-  src: url(../fonts/Dana-Regular.ttf);
-  font-size: 30px;
+  src: url(../fonts/Vazir-Regular.ttf);
+  src: url(../fonts/Vazir-Regular.eot),
+  url(../fonts/Vazir-Regular.woff),
+  url(../fonts/Vazir-Regular.woff2);
+  font-size: 10px;
 }
 
 @media all {
@@ -1036,7 +1075,7 @@ caption {
 }
 
 .main-comp {
-  background-color: rgb(204, 247, 207);
+  background-color: rgb(237, 237, 237);
   background-size: 100%;
   flex: 1 1;
   padding: 25px;

@@ -47,13 +47,11 @@ export default function SidebarLink({
     (location.pathname === link || location.pathname.indexOf(link) !== -1);
 
   const headerLinkOnClickHandler = () => {
-      setOpen(!open)
-  }
+    setOpen(!open);
+  };
   const headerLinksClickAwayHandler = () => {
-    if (isLinkActive) {
-      setOpen(!open)
-    }
-  }
+    setOpen(!open);
+  };
 
   if (type === "title")
     return (
@@ -111,45 +109,56 @@ export default function SidebarLink({
 
   return (
     <>
-      <ListItem
-        button
-        component={link && Link}
-        onClick={headerLinkOnClickHandler}
-        to={link}
-        className={classes.link}
-        classes={{
-          root: classnames(classes.linkRoot, {
-            [classes.linkActive]: isLinkActive && !nested,
-            [classes.linkNested]: nested,
-          }),
+      <ClickAwayListener
+        onClickAway={() => {
+          setOpen(false);
         }}
       >
-        <ListItemIcon
-          className={classnames(classes.linkIcon, {
-            [classes.linkIconActive]: isLinkActive,
-          })}
-        >
-          {nested ? (
-            <Dot color={isLinkActive && "primary"} />
-          ) : isLinkActive ? (
-            activeIcon
-          ) : (
-            icon
-          )}
-        </ListItemIcon>
-        <ListItemText
+        <ListItem
+          button
+          component={link && Link}
+          onClick={headerLinkOnClickHandler}
+          to={link}
+          className={classes.link}
           classes={{
-            primary: classnames(classes.linkText, {
-              [classes.linkTextActive]: isLinkActive,
-              [classes.linkTextHidden]: !isSidebarOpened,
+            root: classnames(classes.linkRoot, {
+              [classes.linkActive]: isLinkActive && !nested,
+              [classes.linkNested]: nested,
             }),
           }}
-          primary={label}
         >
-            {open ? <ExpandMore/> : <ExpandLess/>}
-        </ListItemText>
-        {/* {isLinkActive && <img src={ActiveLink} style={{height: 124, position: 'absolute', left: 0, marginTop: -7}} />} */}
-      </ListItem>
+          <ListItemIcon
+            className={classnames(classes.linkIcon, {
+              [classes.linkIconActive]: isLinkActive,
+            })}
+          >
+            {nested ? (
+              <Dot color={isLinkActive && "primary"} />
+            ) : isLinkActive ? (
+              activeIcon
+            ) : (
+              icon
+            )}
+          </ListItemIcon>
+          <ListItemText
+            classes={{
+              primary: classnames(classes.linkText, {
+                [classes.linkTextActive]: isLinkActive,
+                [classes.linkTextHidden]: !isSidebarOpened,
+              }),
+            }}
+            primary={label}
+          ></ListItemText>
+
+          {open ? (
+            <ExpandLess color="secondary" />
+          ) : (
+            <ExpandMore color="secondary" />
+          )}
+
+          {/* {isLinkActive && <img src={ActiveLink} style={{height: 124, position: 'absolute', left: 0, marginTop: -7}} />} */}
+        </ListItem>
+      </ClickAwayListener>
       {children && (
         <Collapse
           in={open && isLinkActive}
@@ -161,12 +170,13 @@ export default function SidebarLink({
             component="div"
             style={{
               position: "absolute",
-              marginRight: "-210px",
+              marginRight: "-200px",
               backgroundColor: "#C6CFC3",
               zIndex: 200,
               marginTop: "1.3rem",
-              paddingLeft: "10px",
-              paddingRight: "10px",
+              borderRadius: "0.4rem"
+              // paddingLeft: "10px",
+              // paddingRight: "10px",
             }}
           >
             {children.map(childrenLink => (
@@ -175,6 +185,7 @@ export default function SidebarLink({
                 component={link && Link}
                 to={childrenLink.link}
                 className={classes.childrenLink}
+                onClick={headerLinkOnClickHandler}
                 classes={{
                   root: classnames(classes.linkRoot, {
                     [classes.linkRoot]: isLinkActive && !nested,

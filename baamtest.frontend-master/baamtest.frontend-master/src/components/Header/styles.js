@@ -23,9 +23,9 @@ export default makeStyles(theme => ({
     boxShadow: '2px 2px 10px #99B68F'
   },
   toolbar: {
-    backgroundColor: "#CBF2CF",
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
+    backgroundColor: "#e4fee6",
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
   },
   hide: {
     display: "none",

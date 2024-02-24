@@ -4,14 +4,14 @@ export default makeStyles(theme => ({
   link: {
     textDecoration: "none",
     "&:hover": {
-      textDecoration: "underline",
-      backgroundColor: '#66A4E2',
+      textDecoration: "none",
+      backgroundColor: '#A3BC57',
     },
     "&:focus": {
-      backgroundColor: '#328BE5',
+      backgroundColor: '#A3BC57',
     },
     // backgroundColor: "#A0B4C8",
-    borderRadius: '30px 30px 30px 30px',
+    borderRadius: '10px 10px 10px 10px',
     padding: '19px 0px',
     left: 0,
     height: "40px",
@@ -21,14 +21,14 @@ export default makeStyles(theme => ({
   },
   childrenLink: {
     textDecoration: "none",
-    backgroundColor: "#75F256",
+    backgroundColor: "#C6CFC3",
     "&:hover": {
-      backgroundColor: '#FFD700',
+      backgroundColor: '#A3BC57',
     },
     "&:focus": {
-      backgroundColor: '#119C04',
+      backgroundColor: '#A3BC57',
     },
-    borderRadius: '1rem',
+
     marginTop: "5px",
     padding: '5px 0px',
     left: 0,
@@ -41,7 +41,7 @@ export default makeStyles(theme => ({
       backgroundColor: '#119C04',
     },
     height: "40px",
-    left: 20,
+    // marginLeft: "50px",
     width: '15%',
     zIndex: 200
   },

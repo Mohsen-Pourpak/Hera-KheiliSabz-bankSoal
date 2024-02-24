@@ -583,9 +583,9 @@ export default function Header(props) {
               {/* <div style={{ color: "black", marginLeft: 10 }}>
                 {`کیف پول شما: ${balance} تومان`}{' '}|{' '}{`ستاره: ${star}`}<span style={{ fontSize: 10 }}>.{starDecimal}</span>
               </div> */}
-              <div style={{ color: "black", marginLeft: 10 }}>
-                {`کیف پول شما: ${balance} تومان`}
-              </div>
+              <Typography variant="h6" color="secondary">
+                {`اعتبار شما: ${balance} تومان`}
+              </Typography>
 
               <Mask image={avatar} size={55} />
 

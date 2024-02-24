@@ -121,7 +121,9 @@ export function ExamFieldsRadio({
     <>
       <div
         style={{
-          boxShadow: "10px 20px 40px",
+          width: "250px",
+          height: "250px",
+          boxShadow: " 1px 2px 10px",
           marginRight: "200px",
           backgroundColor: "#FFDAB9",
           padding: "10px",
@@ -129,14 +131,16 @@ export function ExamFieldsRadio({
           alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          rowGap: "20px",
-          borderRadius: "2%"
+          rowGap: "5px",
+          borderRadius: "0.6rem",
         }}
       >
         <NormalInput
           style={{
             padding: "10px",
-            width: "300px",
+            width: "200px",
+            borderRadius: "0.5rem",
+            height: "50px"
           }}
           placeholder="نام آزمون"
           value={title}
@@ -152,7 +156,7 @@ export function ExamFieldsRadio({
             setGradeFilter(false);
           }}
           value={gradesLabel}
-          style={{ width: "100%", padding: "10px" }}
+          style={{ width: "200px", padding: "10px", borderRadius: "0.5rem", height: "50px",  }}
           input={
             <NormalInput style={{ padding: "0.5em" }} placeholder="پایه" />
           }
@@ -199,7 +203,7 @@ export function ExamFieldsRadio({
         <Select
           id="filedSelect"
           value={fieldsLabel}
-          style={{ width: "100%", padding: "10px" }}
+          style={{ width: "200px", height: "50px", padding: "10px", borderRadius: "0.5rem" }}
           open={fieldFilter}
           onOpen={() => {
             setFieldFilter(true);
@@ -255,14 +259,15 @@ export function ExamFieldsRadio({
           size="small"
           style={{
             display: "flex",
-            width: "100%",
+            width: "150px",
             fontSize: "0.9rem",
             textAlign: "center",
             fontFamily: "Dana",
             height: 45,
-            borderRadius: 0,
+            borderRadius: "0.5rem",
             backgroundColor: "#3CB371",
             color: "black",
+            marginBottom: "20px"
           }}
         >
           اعمال
