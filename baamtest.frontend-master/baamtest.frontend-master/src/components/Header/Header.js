@@ -2,13 +2,9 @@ import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
-  IconButton,
   Menu,
   Fade,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+
 } from "@material-ui/core";
 
 import SendIcon from "@material-ui/icons/Send";
@@ -24,7 +20,7 @@ import useStyles from "./styles";
 
 // components
 import { Typography } from "../Wrappers/Wrappers";
-import mask from "../../images/mask.svg";
+import mask from "../../images/circulMask.svg";
 import logo from "../../images/لوگو-خیلی-سبز.png";
 
 // context
@@ -494,12 +490,13 @@ export default function Header(props) {
   const Mask = ({ image, size }) => (
     <div
       style={{
-        height: size,
-        width: size,
+        height: '71px',
+        width: '85px',
         maskImage: `url("${mask}")`,
         WebkitMaskImage: `url("${mask}")`,
-        maskSize: size,
-        WebkitMaskSize: size,
+        maskSize: 100,
+        WebkitMaskSize: 100,
+        maskRepeat: "no-repeat"
       }}
     >
       <img src={image} style={{ width: size }} alt="" />
@@ -563,7 +560,7 @@ export default function Header(props) {
                 onClick={() => props.history.push({ pathname: "/home" })}
               />
               <Typography
-                variant="h6"
+                variant="h1"
                 weight="medium"
                 className={classes.logotype}
               >
@@ -583,11 +580,11 @@ export default function Header(props) {
               {/* <div style={{ color: "black", marginLeft: 10 }}>
                 {`کیف پول شما: ${balance} تومان`}{' '}|{' '}{`ستاره: ${star}`}<span style={{ fontSize: 10 }}>.{starDecimal}</span>
               </div> */}
-              <Typography variant="h6" color="secondary">
-                {`اعتبار شما: ${balance} تومان`}
+              <Typography variant="h1" color="secondary">
+                {`اعتبار: ${balance} تومان`}
               </Typography>
 
-              <Mask image={avatar} size={55} />
+              <Mask image={avatar} size={65} />
 
               {/* <IconButton
                 aria-haspopup="true"

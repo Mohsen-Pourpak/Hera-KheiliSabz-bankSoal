@@ -5,6 +5,7 @@ import {
   Button,
   MenuItem,
   CircularProgress,
+  LinearProgress,
   Backdrop,
 } from "@material-ui/core";
 import { SubdirectoryArrowLeft, DeleteSweep } from "@material-ui/icons";
@@ -666,7 +667,7 @@ class CreateTest extends React.Component {
     const classes = this.props.classes;
     return (
       <>
-        <PageTitle title="ساخت آزمون - انتخاب مباحث" />
+        <PageTitle title="ساخت آزمون - انتخاب مباحث"/>
         <hr />
         <div
           style={{
@@ -679,17 +680,17 @@ class CreateTest extends React.Component {
             fontSize: 30,
           }}
         >
-          <p>
+          <p style={{fontSize: "1.3rem", textAlign: "center"}}>
             لطفا نام آزمون، پایه(ها) و رشته(های) مورد نظر خود را انتخاب کنید
           </p>
-          <p>سپس دکمه اعمال را فشار دهید</p>
+          <p style={{fontSize: "1.3rem", textAlign: "center"}}>سپس دکمه اعمال را فشار دهید</p>
         </div>
         <Backdrop
           style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >
-          <CircularProgress color="inherit" />
+          <LinearProgress color="inherit" />
         </Backdrop>
         <Grid container item xs={12} style={{ padding: "0 10px" }}>
           <Grid
@@ -704,8 +705,8 @@ class CreateTest extends React.Component {
               borderRadius: 20,
             }}
           >
-            <Grid direction="column" container item md={4} xs={12} style={{marginLeft: "60px"}}>
-              <Grid direction="row" container spacing={1}>
+            <Grid direction="column" container item md={4} xs={6} style={{marginLeft: "60px"}}>
+              <Grid direction="row" container spacing={1} style={{width: `calc(100% - 245px)`}}>
                 {/* FLAG */}
                 {/* <ExamFields 
                   changeInput={this.changeInput}
@@ -734,12 +735,13 @@ class CreateTest extends React.Component {
               container
               item
               md={6}
-              xs={12}
+              xs={6}
               style={{
-                boxShadow: "10px 20px 60px",
+                width: "200px",
+                boxShadow: "1px 2px 10px",
                 padding: "25px",
-                borderRadius: "2%",
-                backgroundColor: "#FFDAB9",
+                borderRadius: "1.3rem",
+                backgroundColor: "#F1ECCF",
                 marginRight: "60px"
               }}
             >
@@ -791,12 +793,12 @@ class CreateTest extends React.Component {
                     ) ? (
                       <div
                         style={{
-                          backgroundColor: "#F08080",
+                          backgroundColor: "#F1ECCF",
                           padding: "20px",
                           marginBottom: "65px",
                         }}
                       >
-                        "کتابی موجود نیست" :(
+                        در حال بارگیری کتاب ها ...
                       </div>
                     ) : (
                       // : "لطفا یک پایه و رشته تحصیلی انتخاب کنید"}
@@ -806,14 +808,15 @@ class CreateTest extends React.Component {
                           // backgroundColor: "#FFDAB9",
                           justifyContent: "center",
                           alignItems: "center",
-                          height: "500px",
-                          width: "700px",
+                          height: "auto",
+                          width: "250px",
                           display: "flex",
                           borderRadius: "0",
                           marginBottom: "100px",
+                          scrollBehavior: "auto"
                         }}
                       >
-                        <p>هنوز هیچ مبحثی برای نمایش انتخاب نشده.</p>
+                        <p style={{fontSize: "1.2rem", textAlign: "center"}}>هنوز هیچ مبحثی برای نمایش انتخاب نشده.</p>
                       </div>
                     )}
                   </div>
@@ -856,11 +859,11 @@ class CreateTest extends React.Component {
                     }}
                     fullWidth
                     variant="contained"
-                    color="primary"
                     size="large"
                     className={classes.createAccountButton}
                     style={{
-                      borderRadius: "2%",
+                      backgroundColor:"#84DFAA",
+                      borderRadius: "0.8rem",
                       fontSize: "1rem",
                       textAlign: "center",
                       fontFamily: "Dana",
@@ -935,14 +938,14 @@ class CreateTest extends React.Component {
                     }}
                     fullWidth
                     variant="contained"
-                    color="primary"
                     size="large"
                     className={classes.createAccountButton}
                     style={{
                       fontSize: "1rem",
                       textAlign: "center",
+                      backgroundColor:"#84DFAA",
                       fontFamily: "Dana",
-                      borderRadius: "2%",
+                      borderRadius: "0.8rem",
                     }}
                   >
                     انتخاب خودکار

@@ -171,7 +171,7 @@ export default function SidebarLink({
             style={{
               position: "absolute",
               marginRight: "-200px",
-              backgroundColor: "#C6CFC3",
+              backgroundColor: "#FFFFFF",
               zIndex: 200,
               marginTop: "1.3rem",
               borderRadius: "0.4rem"
@@ -192,7 +192,6 @@ export default function SidebarLink({
                     [classes.linkNested]: nested,
                   }),
                 }}
-                disableRipple
               >
                 <ListItemText
                   style={{

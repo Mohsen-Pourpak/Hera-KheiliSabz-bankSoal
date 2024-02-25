@@ -3,9 +3,10 @@ import { makeStyles } from "@material-ui/styles";
 export default makeStyles(theme => ({
   pageTitleContainer: {
     display: "flex",
-    justifyContent: "space-between",
+    textAlign: "center",
+    justifyContent: "center",
     marginBottom: theme.spacing(4),
-    marginTop: theme.spacing(-1),
+    marginTop: theme.spacing(2),
     marginLeft: theme.spacing(2),
   },
   typo: {

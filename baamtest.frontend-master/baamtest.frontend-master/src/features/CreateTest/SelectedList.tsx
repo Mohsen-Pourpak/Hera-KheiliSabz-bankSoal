@@ -18,7 +18,7 @@ export default function SelectedList({
       item
       sm={12}
       style={{
-        backgroundColor: "#FFE4B5",
+        backgroundColor: "#F1ECCF",
         width: "100%",
         padding: "30px",
         borderRadius: "20px",

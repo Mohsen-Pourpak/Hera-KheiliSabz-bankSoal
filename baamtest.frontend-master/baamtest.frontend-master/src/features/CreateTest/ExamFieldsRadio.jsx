@@ -125,7 +125,7 @@ export function ExamFieldsRadio({
           height: "250px",
           boxShadow: " 1px 2px 10px",
           marginRight: "200px",
-          backgroundColor: "#FFDAB9",
+          backgroundColor: "#F1ECCF",
           padding: "10px",
           justifyContent: "center",
           alignItems: "center",
@@ -140,7 +140,7 @@ export function ExamFieldsRadio({
             padding: "10px",
             width: "200px",
             borderRadius: "0.5rem",
-            height: "50px"
+            height: "50px",
           }}
           placeholder="نام آزمون"
           value={title}
@@ -156,7 +156,12 @@ export function ExamFieldsRadio({
             setGradeFilter(false);
           }}
           value={gradesLabel}
-          style={{ width: "200px", padding: "10px", borderRadius: "0.5rem", height: "50px",  }}
+          style={{
+            width: "200px",
+            padding: "10px",
+            borderRadius: "0.5rem",
+            height: "50px",
+          }}
           input={
             <NormalInput style={{ padding: "0.5em" }} placeholder="پایه" />
           }
@@ -182,7 +187,7 @@ export function ExamFieldsRadio({
               horizontal: "left",
             },
             transformOrigin: {
-              vertical: "bottom",
+              vertical: "left",
               horizontal: "right",
             },
             getContentAnchorEl: null,
@@ -203,7 +208,12 @@ export function ExamFieldsRadio({
         <Select
           id="filedSelect"
           value={fieldsLabel}
-          style={{ width: "200px", height: "50px", padding: "10px", borderRadius: "0.5rem" }}
+          style={{
+            width: "200px",
+            height: "50px",
+            padding: "10px",
+            borderRadius: "0.5rem",
+          }}
           open={fieldFilter}
           onOpen={() => {
             setFieldFilter(true);
@@ -264,10 +274,10 @@ export function ExamFieldsRadio({
             textAlign: "center",
             fontFamily: "Dana",
             height: 45,
-            borderRadius: "0.5rem",
-            backgroundColor: "#3CB371",
+            borderRadius: "0.8rem",
+            backgroundColor: "#84DFAA",
             color: "black",
-            marginBottom: "20px"
+            marginTop:"10px"
           }}
         >
           اعمال

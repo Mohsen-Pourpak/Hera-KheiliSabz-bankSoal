@@ -8,22 +8,22 @@ const overrides = {
       default: "#000",
     },
     h1: {
-      fontSize: "1rem",
+      fontSize: "1.3rem",
     },
     h2: {
-      fontSize: "0.5rem",
+      fontSize: "1.1rem",
     },
     h3: {
-      fontSize: "0.3rem",
+      fontSize: "1rem",
     },
     h4: {
-      fontSize: "0.275rem",
+      fontSize: "0.9rem",
     },
     h5: {
-      fontSize: "0.250rem",
+      fontSize: "0.8rem",
     },
     h6: {
-      fontSize: "0.225rem",
+      fontSize: "0.750rem",
     },
   },
 };

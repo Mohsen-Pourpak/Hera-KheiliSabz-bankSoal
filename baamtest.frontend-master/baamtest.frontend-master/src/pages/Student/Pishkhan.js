@@ -6,6 +6,7 @@ import {
   Button,
   Backdrop,
   CircularProgress,
+  LinearProgress,
   IconButton,
   Box,
   Divider,
@@ -13,7 +14,7 @@ import {
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { Bookmark, LocationOn, School, Edit, Add } from "@material-ui/icons";
 
-import mask from "../../images/mask.svg";
+import mask from "../../images/circulMask.svg";
 import "../../components/datePicker/DatePicker.css";
 import "../../themes/piskhan.css";
 import { Calendar } from "../../components/datePicker/Calendar";
@@ -41,9 +42,14 @@ const Mask = ({ image, size }) => (
       WebkitMaskImage: `url("${mask}")`,
       maskSize: "100%",
       WebkitMaskSize: "100%",
+      maskRepeat: "no-repeat",
     }}
   >
-    <img src={image} style={{ width: size }} alt="mask" />
+    <img
+      src={image}
+      style={{ width: 145, marginRight: "24px", marginTop: "-20px" }}
+      alt="mask"
+    />
   </div>
 );
 
@@ -175,14 +181,29 @@ class Pishkhan extends React.Component {
     const { selectedDay } = this.state;
     return (
       <>
-        <PageTitle title="پیشخوان" style={{fontSize: "30px", textAlign: "center"}} />
-        <Divider/>
+        <PageTitle
+          title="پیشخوان"
+          style={{ fontSize: "30px" }}
+        />
+        <Divider />
         {this.props.info ? (
           <>
-            <Grid direction="row" container spacing={3} style={{padding: "142px"}}>
-              <Grid item md={6} xs={6} direction="column" alignItems="center"> 
-                <div className="profile-box" style={{ boxShadow: "2px 25px 5px ", height: "200px", width: "500px"}}>
-                  <div className="profile-image" style={{marginTop: "-67px"}}>
+            <Grid
+              direction="row"
+              container
+              spacing={3}
+              style={{ padding: "142px" }}
+            >
+              <Grid item md={6} xs={6} direction="column" alignItems="center">
+                <div
+                  className="profile-box"
+                  style={{
+                    boxShadow: "2px 40px 5px ",
+                    height: "200px",
+                    width: "500px",
+                  }}
+                >
+                  <div className="profile-image" style={{ marginTop: "-67px" }}>
                     <Mask image={this.props.info.avatar} size={200} />
                   </div>
                   <div className="profile-details">
@@ -190,7 +211,7 @@ class Pishkhan extends React.Component {
                       <Bookmark />
                       <PageTitle
                         title={this.props.info.name}
-                        size="h2"
+                        size="h1"
                         color="#3d82a4"
                       />
                     </div>
@@ -198,13 +219,13 @@ class Pishkhan extends React.Component {
                       <School />
                       <PageTitle
                         title={getUserTypeStr(this.state.userType)}
-                        size="h2"
+                        size="h1"
                         color="#3d82a4"
                       />
                     </div>
                     <div className="item map">
                       <LocationOn />
-                      <PageTitle title="تهران" size="h3" color="#3d82a4" />
+                      <PageTitle title="تهران" size="h1" color="#3d82a4" />
                     </div>
                   </div>
                   <Button
@@ -217,9 +238,19 @@ class Pishkhan extends React.Component {
                     variant="contained"
                     size="large"
                     className="button"
-                    style={{fontSize:"0.4rem", color: "#000", backgroundColor: "#F1ECCF"}}
+                    style={{
+                      fontSize: "1.2rem",
+                      color: "#000",
+                      backgroundColor: "#F1ECCF",
+                    }}
                   >
-                    <Edit style={{ fontSize: "0.9rem", marginLeft: 5, color: "#000" }} />{" "}
+                    <Edit
+                      style={{
+                        fontSize: "1.2rem",
+                        marginLeft: 5,
+                        color: "#000",
+                      }}
+                    />{" "}
                     ویرایش
                   </Button>
                 </div>
@@ -227,7 +258,12 @@ class Pishkhan extends React.Component {
               <Grid item md={6} xs={6}>
                 <div
                   className="calendar-1"
-                  style={{ width: "100%", marginTop: -50, boxShadow: "2px 2px 5px", borderRadius:"0.5rem"}}
+                  style={{
+                    width: "100%",
+                    marginTop: -50,
+                    boxShadow: "2px 2px 5px",
+                    borderRadius: "0.5rem",
+                  }}
                 >
                   <div
                     style={{
@@ -253,7 +289,13 @@ class Pishkhan extends React.Component {
                       }}
                     />
                   </div>
-                  <div className="events" style={{backgroundColor: "#F1ECCF", borderRadius: "0.5rem"}}>
+                  <div
+                    className="events"
+                    style={{
+                      backgroundColor: "#F1ECCF",
+                      borderRadius: "0.5rem",
+                    }}
+                  >
                     {this.state.selectedDayPlan.length === 0 ? (
                       <div
                         style={{
@@ -414,7 +456,7 @@ class Pishkhan extends React.Component {
             open={this.state.isLoading}
             onClick={() => console.log("clicked")}
           >
-            <CircularProgress color="inherit" />
+            <LinearProgress color="inherit" />
           </Backdrop>
         )}
       </>
