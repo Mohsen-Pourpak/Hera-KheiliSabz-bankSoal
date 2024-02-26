@@ -429,8 +429,8 @@ class CreateTest extends React.Component {
                 style={{
                   color: "#000",
                   fontWeight: "bold",
-                  fontSize: 18,
-                  padding: "0 17px",
+                  fontSize: "10px",
+                  padding: "0px 17px",
                   textAlign: "center",
                 }}
               >

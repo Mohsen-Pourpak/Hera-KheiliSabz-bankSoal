@@ -560,13 +560,13 @@ export default function Header(props) {
                 onClick={() => props.history.push({ pathname: "/home" })}
               />
               <Typography
-                variant="h1"
+                variant="h2"
                 weight="medium"
                 className={classes.logotype}
               >
                 داشبورد {userTypeStr} " {name} "
               </Typography>
-              <>
+              <div style={{marginTop: "10px", display: 'flex', flexDirection: "row", alignItems: "center", textAlign: "center"}}>
                 {structure.map(link => (
                   <SidebarLink
                     key={link.id}
@@ -575,12 +575,12 @@ export default function Header(props) {
                     isSidebarOpened={isSidebarOpened}
                   />
                 ))}
-              </>
+              </div>
               <div className={classes.grow} />
               {/* <div style={{ color: "black", marginLeft: 10 }}>
                 {`کیف پول شما: ${balance} تومان`}{' '}|{' '}{`ستاره: ${star}`}<span style={{ fontSize: 10 }}>.{starDecimal}</span>
               </div> */}
-              <Typography variant="h1" color="secondary">
+              <Typography variant="h2" color="secondary">
                 {`اعتبار: ${balance} تومان`}
               </Typography>
 

@@ -371,7 +371,7 @@ class Pishkhan extends React.Component {
               >
                 <div
                   style={{
-                    background: "#FFFF00",
+                    background: "#F1ECCF",
                     flexDirection: "column",
                     padding: "0px 30px",
                     width: 400,
@@ -382,7 +382,7 @@ class Pishkhan extends React.Component {
                 >
                   <DialogTitle
                     id="simple-dialog-title"
-                    style={{ marginBottom: 15, backgroundColor: "#ADFF2F" }}
+                    style={{ marginBottom: 15, backgroundColor: "#84DFAA" }}
                   >{`${toFA(selectedDay.year)}/${toFA(
                     selectedDay.month,
                   )}/${toFA(selectedDay.day)}`}</DialogTitle>
@@ -431,7 +431,6 @@ class Pishkhan extends React.Component {
                     onClick={this.addEventAndClose}
                     fullWidth
                     variant="contained"
-                    color="primary"
                     size="large"
                     className={classes.createAccountButton}
                     style={{
@@ -441,6 +440,7 @@ class Pishkhan extends React.Component {
                       textAlign: "center",
                       fontFamily: "Dana",
                       marginTop: 20,
+                      backgroundColor: "#84DFAA",
                       marginBottom: 20,
                     }}
                   >

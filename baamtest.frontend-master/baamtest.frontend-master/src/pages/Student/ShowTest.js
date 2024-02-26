@@ -7,10 +7,9 @@ import {
   Backdrop,
   CircularProgress,
   Box,
+  LinearProgress,
 } from "@material-ui/core";
-import { DatePicker } from "@material-ui/pickers";
 import TextField from "@material-ui/core/TextField";
-import { withStyles } from "@material-ui/core/styles";
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
@@ -24,6 +23,8 @@ import {
   ExpandLess,
   Remove,
 } from "@material-ui/icons";
+
+import ApexCharts from "apexcharts";
 
 import PageTitle from "../../components/PageTitle/PageTitle";
 import Pagination from "../../components/Form/Pagination";
@@ -48,7 +49,6 @@ import {
 
 import { toFA, QUESTION_PRICE, PER_PAGE_QUESTIONS } from "../../utils/Utils";
 import AddTopic from "../../features/ShowTest/AddTopic";
-import zIndex from "@material-ui/core/styles/zIndex";
 
 const Point = ({ color }) => (
   <div
@@ -103,13 +103,14 @@ const style = {
     fontSize: 19,
   },
   questionNumContainer: {
-    top: 15,
+    top: 2,
     position: "relative",
     display: "flex",
     justifyContent: "flex-start",
     flexDirection: "row",
     width: "100%",
     zIndex: 1000,
+    fontSize: "0.8rem"
   },
   optionNum: {
     border: "1px solid #495867",
@@ -212,6 +213,7 @@ const style = {
     boxShadow: "0 0 5px -2px #000",
     marginRight: -30,
     marginTop: -10,
+    marginLeft: -2
   },
   circleButton: {
     height: 35,
@@ -647,7 +649,7 @@ class CreateTest extends React.Component {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={style.questionTitle}>
               {/* {toFA(item.lessonTitle)} | {item.topic} */}
-              <div
+              {/* <div
                 class="Question-rightSide-detailContainer"
                 style={{
                   backgroundColor: `${labelColor}`,
@@ -673,8 +675,8 @@ class CreateTest extends React.Component {
                 <div style={style.rightDetailDivs}>تستی ؟</div>
                 <div style={style.rightDetailDivs}>سبک</div>
                 <div style={style.rightDetailDivs}>مولف|منبع</div>
-              </div>
-              <div
+              </div> */}
+              {/* <div
                 class="Question-leftSide-detailContainer"
                 style={{
                   backgroundColor: `${labelColor}`,
@@ -699,7 +701,7 @@ class CreateTest extends React.Component {
                 <div id="right-div-expand" style={style.rightDetailDivExpand}>
                   زمان پاسخگویی
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <Grid
@@ -709,13 +711,13 @@ class CreateTest extends React.Component {
             className="inputContainer"
             style={{
               padding: 0,
-              background: `linear-gradient(0deg, #000 , ${labelColor} 60%)`,
+              background: `linear-gradient(0deg, ${labelColor} , ${labelColor})`,
               alignItems: "center",
               width: "calc(100% - 10px)",
               marginTop: 5,
               marginRight: 5,
               marginBottom: 20,
-              borderRadius: 0,
+              borderRadius: "1.2rem",
             }}
           >
             <Grid
@@ -733,6 +735,8 @@ class CreateTest extends React.Component {
                 borderWidth: "thin",
                 minHeight: 250,
                 paddingTop: "30px",
+                borderTopRightRadius: '1.2rem',
+                borderTopLeftRadius: '1.2rem'
               }}
             >
               {/* <div style={style.questionNumContainer}>
@@ -1161,20 +1165,21 @@ class CreateTest extends React.Component {
           style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
         >
-          <CircularProgress color="inherit" />
+          <LinearProgress color="inherit" />
         </Backdrop>
         <Backdrop
           style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.isLoading}
         >
-          <CircularProgress color="inherit" />
+          <LinearProgress color="inherit" />
         </Backdrop>
 
         {!this.state.progress && (
           <Grid container item xs={12} style={{ padding: "0 10px" }}>
             <div
               style={{
-                padding: 20,
+                paddingLeft: "7rem",
+                paddingRight: "7rem",
                 backgroundColor: "rgb(255 255 255 / 40%)",
                 borderRadius: 20,
                 alignItems: "flex-start",
@@ -1403,7 +1408,7 @@ class CreateTest extends React.Component {
                     color: "#fff",
                     height: 45,
                     marginBottom: 20,
-                    borderRadius: 50,
+                    borderRadius: "1.2rem",
                     width: "100%",
                     alignItems: "center",
                     justifyContent: "center",

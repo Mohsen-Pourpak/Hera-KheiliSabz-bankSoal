@@ -12,10 +12,10 @@ export default makeStyles(theme => ({
     },
     // backgroundColor: "#A0B4C8",
     borderRadius: '10px 10px 10px 10px',
-    padding: '19px 0px',
+    padding: '19px 13px',
     left: 0,
     height: "40px",
-    width: '15%',
+    width: '165px',
     zIndex: 200,
     marginLeft: "30px"
   },
@@ -41,7 +41,7 @@ export default makeStyles(theme => ({
       backgroundColor: '#119C04',
     },
     height: "40px",
-    width: '15%',
+    width: '165px',
     zIndex: 200,
   },
   linkNested: {
@@ -81,7 +81,7 @@ export default makeStyles(theme => ({
     opacity: 0,
   },
   nestedList: {
-    paddingRight: theme.spacing(2) + 30
+    paddingRight: "0px"
   },
   sectionTitle: {
     marginRight: theme.spacing(4.5),

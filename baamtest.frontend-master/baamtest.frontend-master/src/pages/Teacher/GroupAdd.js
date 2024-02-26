@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Grid, Button, Select, Input, MenuItem} from '@material-ui/core';
+import {Container, Grid, Button, Select, Input, MenuItem, Divider} from '@material-ui/core';
 import TextField from '../../components/Form/TextField'
 import PageTitle from "../../components/PageTitle/PageTitle";
 import {Bookmark, SubdirectoryArrowLeft, School, DeleteSweep} from '@material-ui/icons';
@@ -125,7 +125,7 @@ class GroupAdd extends React.Component {
                             <SubdirectoryArrowLeft style={{fill: '#FF0000'}} />
                         </Grid>
                         <Grid item style={{padding: 0, flex: 1}}>
-                            <div style={{color: '#3d82a4', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.fullName}</div>
+                            <div style={{color: '#000', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.fullName}</div>
                         </Grid>
                         <Grid item>
                             <div onClick={() => {
@@ -188,8 +188,9 @@ class GroupAdd extends React.Component {
         return (
             <>
                 <PageTitle title="ساخت کلاس جدید" />
+                <Divider/>
                 <Grid container item xs={12} style={{padding: '0 10px'}}>
-                    <Grid direction="row" alignItems="flex-start" spacing={3} justify="flex-start" container style={{padding: 20, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
+                    <Grid direction="row" alignItems="flex-start" spacing={3} justify="flex-start" container style={{margin: "30px", padding: 67, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
                     <Grid direction="column" container item xs={6}>
                         {/* <Grid direction="row" container spacing={3}>
                             <Grid item xs={7}>
@@ -268,6 +269,7 @@ class GroupAdd extends React.Component {
                             <div style={{flexDirection: 'column', display: 'flex', width: '100%', alignItems: 'center', height: 400}}>
                                 {this.renderSelectedList(this.state.selectedList)}
                             </div>
+                            
                         </Grid>
                         <Grid direction="row" justify="center" container spacing={2}>
                                 <Grid item xs={4}>

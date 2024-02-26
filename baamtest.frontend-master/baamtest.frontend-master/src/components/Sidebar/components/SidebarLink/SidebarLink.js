@@ -170,7 +170,7 @@ export default function SidebarLink({
             component="div"
             style={{
               position: "absolute",
-              marginRight: "-200px",
+              marginRight: "-150px",
               backgroundColor: "#FFFFFF",
               zIndex: 200,
               marginTop: "1.3rem",
