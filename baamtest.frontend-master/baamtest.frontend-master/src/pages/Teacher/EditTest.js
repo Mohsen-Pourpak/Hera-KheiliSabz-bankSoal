@@ -9,6 +9,7 @@ import {
   CircularProgress,
   Dialog,
   Tooltip,
+  Divider,
 } from "@material-ui/core";
 import {
   Add,
@@ -110,13 +111,14 @@ const style = {
     fontSize: 19,
   },
   questionNumContainer: {
-    top: 15,
+    top: 2,
     position: "relative",
     display: "flex",
     justifyContent: "flex-start",
     flexDirection: "row",
     width: "100%",
     zIndex: 1000,
+    fontSize: "0.8rem"
   },
   optionNum: {
     border: "1px solid #495867",
@@ -219,6 +221,7 @@ const style = {
     boxShadow: "0 0 5px -2px #000",
     marginRight: -30,
     marginTop: -10,
+    marginLeft: -2
   },
   circleButton: {
     height: 35,
@@ -1118,7 +1121,7 @@ class EditTest extends React.Component {
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <div style={style.questionTitle}>
                     {/* {toFA(item.lessonTitle)} | {item.topic} */}
-                    <div
+                    {/* <div
                       class="Question-rightSide-detailContainer"
                       style={{
                         backgroundColor: `${labelColor}`,
@@ -1176,7 +1179,7 @@ class EditTest extends React.Component {
                       >
                         زمان پاسخگویی
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <Grid
@@ -1186,13 +1189,13 @@ class EditTest extends React.Component {
                   className="inputContainer"
                   style={{
                     padding: 0,
-                    background: `linear-gradient(0deg, #000 , ${labelColor} 60%)`,
+                    background: `linear-gradient(0deg, ${labelColor} , ${labelColor} 60%)`,
                     alignItems: "center",
                     width: "calc(100% - 10px)",
                     marginTop: 5,
                     marginRight: 5,
                     marginBottom: 20,
-                    borderRadius: 0,
+                    borderRadius: "1.2rem",
                   }}
                 >
                   <Grid
@@ -1210,6 +1213,8 @@ class EditTest extends React.Component {
                       borderWidth: "thin",
                       minHeight: 250,
                       paddingTop: "30px",
+                      borderTopLeftRadius: "1.2rem",
+                      borderTopRightRadius: "1.2rem"
                     }}
                   >
                     {/* <div style={style.questionNumContainer}>
@@ -1224,8 +1229,7 @@ class EditTest extends React.Component {
                       justify="flex-start"
                       container
                       style={{
-                        paddingTop: "10px",
-                        paddingRight: "50px",
+                        padding: "20px"
 
                         margin: 0,
                         justifyContent: isEnglish ? "flex-end" : "flex-start",
@@ -1567,6 +1571,7 @@ class EditTest extends React.Component {
           <CircularProgress color="inherit" />
         </Backdrop>
         <PageTitle title="ساخت آزمون - ویرایش آزمون" />
+        <Divider/>
         {!this.state.progress && (
           <Grid container item xs={12} style={{ padding: "0 10px" }}>
             <Grid
@@ -1576,7 +1581,8 @@ class EditTest extends React.Component {
               justify="flex-start"
               container
               style={{
-                padding: 20,
+                margin: 63,
+                padding: 30,
                 backgroundColor: "rgb(255 255 255 / 40%)",
                 borderRadius: 20,
               }}
@@ -1781,8 +1787,7 @@ class EditTest extends React.Component {
                         سوال
                       </div>
                     </div>
-
-                    <div
+                    {/* <div
                       style={{
                         flexDirection: "row",
                         display: "flex",
@@ -1839,7 +1844,7 @@ class EditTest extends React.Component {
                       <Point color="#3EC592" />
                       <Line />
                       <Point color="#fff" />
-                    </div>
+                    </div> */}
                     <div
                       style={{
                         flexDirection: "row",

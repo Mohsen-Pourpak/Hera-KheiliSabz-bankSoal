@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Select, Input, MenuItem } from "@material-ui/core";
+import { Grid, Select, Input, MenuItem, Divider } from "@material-ui/core";
 import TextField from "../../components/Form/TextField";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { DeleteSweep } from "@material-ui/icons";
@@ -214,6 +214,7 @@ class RegisterTest extends React.Component {
     return (
       <>
         <PageTitle title="ساخت آزمون - ثبت آزمون" />
+        <Divider/>
         <Grid container item xs={12} style={{ padding: "0 10px" }}>
           <Grid
             direction="row"
@@ -222,7 +223,8 @@ class RegisterTest extends React.Component {
             justify="flex-start"
             container
             style={{
-              padding: 20,
+              margin: 40,
+              padding: 65,
               backgroundColor: "rgb(255 255 255 / 40%)",
               borderRadius: 20,
             }}
@@ -418,7 +420,7 @@ class RegisterTest extends React.Component {
                         background: "#fff",
                         height: 45,
                         borderRadius: 50,
-                        border: "1px solid #FF0000",
+                        border: "1px solid #228b22",
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -432,8 +434,9 @@ class RegisterTest extends React.Component {
                           alignItems: "center",
                           padding: "0 15px",
                           borderRadius: 50,
-                          background: "#FF0000",
+                          background: "#228b22",
                           height: 45,
+                          width: 180
                         }}
                       >
                         مدت زمان برگزاری آزمون
@@ -477,7 +480,7 @@ class RegisterTest extends React.Component {
                         background: "#fff",
                         height: 45,
                         borderRadius: 50,
-                        border: "1px solid #FF0000",
+                        border: "1px solid #228b22",
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -491,10 +494,11 @@ class RegisterTest extends React.Component {
                           alignItems: "center",
                           padding: "0 15px",
                           borderRadius: 50,
-                          background: "#FF0000",
+                          background: "#228b22",
                           height: 45,
                           width: '180px',
                           marginLeft: '40px',
+                          fontSize: "12px"
                         }}
                       >
                         تاریخ و زمان باز شدن آزمون
@@ -540,7 +544,7 @@ class RegisterTest extends React.Component {
                         background: "#fff",
                         height: 45,
                         borderRadius: 50,
-                        border: "1px solid #FF0000",
+                        border: "1px solid #228b22",
                         width: "100%",
                         alignItems: "center",
                         justifyContent: "space-between",
@@ -554,10 +558,11 @@ class RegisterTest extends React.Component {
                           alignItems: "center",
                           padding: "0 15px",
                           borderRadius: 50,
-                          background: "#FF0000",
+                          background: "#228b22",
                           height: 45,
                           width: '180px',
                           marginLeft: '40px',
+                          fontSize: "12px"
                         }}
                       >
                         تاریخ و زمان بسته شدن آزمون
@@ -594,7 +599,7 @@ class RegisterTest extends React.Component {
                       style={{
                         flexDirection: "row",
                         display: "flex",
-                        background: "#FF0000",
+                        background: "#228b22",
                         color: "#fff",
                         height: 45,
                         marginBottom: 20,

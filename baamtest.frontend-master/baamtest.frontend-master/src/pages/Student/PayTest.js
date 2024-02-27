@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Select, Input, MenuItem } from '@material-ui/core';
+import { Grid, Select, Input, MenuItem, Divider } from '@material-ui/core';
 import TextField from '../../components/Form/TextField'
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { DeleteSweep } from '@material-ui/icons';
@@ -161,8 +161,9 @@ class RegisterTest extends React.Component {
         return (
             <>
                 <PageTitle title="ساخت آزمون - تولید آزمون" />
+                <Divider/>
                 <Grid container item xs={12} style={{ padding: '0 10px' }}>
-                    <Grid direction="column" alignItems="flex-start" spacing={3} justify="flex-start" container style={{ padding: 20, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20 }}>
+                    <Grid direction="column" alignItems="flex-start" spacing={3} justify="flex-start" container style={{ margin: 40, padding: 60, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20 }}>
                         {this.state.exam && <Grid direction="column" container item xs={12}>
                             <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{ padding: '7.5px', margin: 0, width: '100%' }}>
                                 <div style={{ flexDirection: 'column', display: 'flex', alignItems: 'center', width: '100%' }}>

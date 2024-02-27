@@ -79,10 +79,9 @@ const Level = ({ image, right, percent }) => {
       }}
     >
       <img
-        style={{ position: "relative" }}
+        style={{ position: "relative", height: `${percent}%` }}
         src={image}
         alt=""
-        width={`${percent}%`}
       />
       {/* <div style={{height: (80*newPercent), width: (90*newPercent), backgroundImage: `url("${image}")`, backgroundSize: 'cover'}} /> */}
     </div>
@@ -1256,39 +1255,37 @@ class CreateTest extends React.Component {
                         سوال
                       </div>
                     </div>
-                    <div
+                    {/* <div
                       style={{
                         flexDirection: "row",
                         display: "flex",
                         width: "100%",
                         height: "100px",
-                        alignItems: "flex-end",
-                        justifyContent: "center",
-                        position: "relative",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        // position: "relative",
                       }}
                     >
-                      <div style={{ paddingRight: "55px" }}>
+                      <div >
                         <Level
                           image={Hard}
-                          right={100}
+                          right={10}
                           percent={
-                            this.levelPercent(3) +
-                            this.levelPercent(4) +
-                            this.levelPercent(5)
+                            this.levelPercent(3)
                           }
                         />
                       </div>
-                      <div style={{ paddingLeft: "55px" }}>
+                      <div >
                         <Level
                           image={Normal}
-                          right={100}
+                          right={10}
                           percent={this.levelPercent(2)}
                         />
                       </div>
-                      <div style={{ paddingLeft: "35px" }}>
+                      <div >
                         <Level
                           image={Easy}
-                          right={100}
+                          right={10}
                           percent={this.levelPercent(1)}
                         />
                       </div>
@@ -1315,7 +1312,7 @@ class CreateTest extends React.Component {
                       <Point color="#3EC592" />
                       <Line />
                       <Point color="#fff" />
-                    </div>
+                    </div> */}
                     <div
                       style={{
                         flexDirection: "row",
@@ -2340,8 +2337,8 @@ class CreateTest extends React.Component {
                         this.state.selectedTopics.findIndex(
                           d => d.id === t.id,
                         ) > -1
-                          ? "secondary"
-                          : "primary"
+                          ? "primary"
+                          : "secondary"
                       }
                       style={{
                         borderRadius: 0,
