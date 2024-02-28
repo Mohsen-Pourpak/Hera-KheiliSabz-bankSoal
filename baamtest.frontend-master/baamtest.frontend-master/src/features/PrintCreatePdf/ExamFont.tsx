@@ -60,13 +60,13 @@ export default function ExamFont({
   return (
     <FilterBox title="مشخصات ظاهری سوالات">
       <Box display="flex" flexDirection="column" width="100%" mb="10px">
-        <CustomSelect
+        {/* <CustomSelect
           label="فونت سوال و پاسخ"
           value={questionFont}
           onChange={v => setQuestionFont(v)}
         >
           {renderMenuItem(PRINT_FONTS)}
-        </CustomSelect>
+        </CustomSelect> */}
         <CustomSelect
           label="سایز سوال و پاسخ"
           value={questionSize}
@@ -74,13 +74,13 @@ export default function ExamFont({
         >
           {renderMenuItem(SIZE_FONTS)}
         </CustomSelect>
-        <CustomSelect
+        {/* <CustomSelect
           label="فونت سربرگ"
           value={headerFont}
           onChange={v => setHeaderFont(v)}
         >
           {renderMenuItem(PRINT_FONTS)}
-        </CustomSelect>
+        </CustomSelect> */}
         <CustomSelect
           label="سایز سربرگ"
           value={headerSize}
@@ -108,14 +108,14 @@ export default function ExamFont({
           value={questionStartNumber}
           onChange={v => setQuestionStartNumber(v)}
         />
-        <CustomSelect
+        {/* <CustomSelect
           disabled={!hasQuestionHeader || (Number(questionHeaderCount || "0") === 0)}
           label="فونت ریز سربرگ ها"
           value={miniHeaderFont}
           onChange={v => setMiniHeaderFont(v)}
         >
           {renderMenuItem(PRINT_FONTS)}
-        </CustomSelect>
+        </CustomSelect> */}
         <CustomSelect
           disabled={!hasQuestionHeader || (Number(questionHeaderCount || "0") === 0)}
           label="سایز ریز سربرگ ها"
@@ -129,7 +129,7 @@ export default function ExamFont({
 
           onClick={handleSubmit}
           style={{
-            backgroundColor: "#4F8EC6",
+            backgroundColor: "#228B22",
             color: "#000",
             marginTop: "auto",
             borderRadius: 50,

@@ -69,7 +69,7 @@ export default function ExamHeading({
           onClick={onSelectLogoClicked}
           startIcon={<CloudUpload />}
           style={{
-            backgroundColor: "#DEF6FF",
+            backgroundColor: "#EDEDED",
             color: "#000",
             borderRadius: 50,
             height: 40,
@@ -85,7 +85,7 @@ export default function ExamHeading({
           color="primary"
           onClick={handleOpenChangeBgModal}
           style={{
-            backgroundColor: "#DEF6FF",
+            backgroundColor: "#EDEDED",
             color: "#000",
             marginTop: 10,
             borderRadius: 50,
@@ -100,7 +100,7 @@ export default function ExamHeading({
           color="primary"
           onClick={handleDeleteBaamtestLogo}
           style={{
-            backgroundColor: "#DEF6FF",
+            backgroundColor: "#EDEDED",
             color: "#000",
             marginTop: 10,
             borderRadius: 50,
@@ -146,7 +146,7 @@ export default function ExamHeading({
           variant="contained"
           onClick={handleSubmit}
           style={{
-            backgroundColor: "#4F8EC6",
+            backgroundColor: "#228B22",
             color: "#000",
             borderRadius: 50,
             height: 40,

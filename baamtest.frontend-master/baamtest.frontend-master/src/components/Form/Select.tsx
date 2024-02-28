@@ -29,7 +29,7 @@ export default function CustomSelect({
         htmlFor="my-select"
         style={{
           padding: "4px 8px",
-          background: "#7AD3FF",
+          background: "#CBF2CF",
           borderRadius: 16,
           color: "#000",
           display: "flex",

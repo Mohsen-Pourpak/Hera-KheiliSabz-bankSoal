@@ -7,8 +7,8 @@ import { makeStyles } from "@material-ui/styles";
 const useStyles = makeStyles({
   sortFilter: {
     backgroundColor: "transparent",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
+    border: "1px solid #8AB668",
+    color: "#8AB668",
     width: "100%",
     textAlign: "center",
     borderRadius: 20,
@@ -19,8 +19,8 @@ const useStyles = makeStyles({
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#7AD3FF",
-    border: "1px solid #3d82a4",
+    backgroundColor: "#8AB668",
+    border: "1px solid #8AB668",
     color: "#fff",
     width: "100%",
     borderRadius: 20,
@@ -112,7 +112,7 @@ export default function ColumnBox({
           onClick={handleSubmit}
           style={{
             color: "#000",
-            backgroundColor: "#4F8EC6",
+            backgroundColor: "#228B22",
             borderRadius: 50,
             height: 40,
             marginTop: 5,

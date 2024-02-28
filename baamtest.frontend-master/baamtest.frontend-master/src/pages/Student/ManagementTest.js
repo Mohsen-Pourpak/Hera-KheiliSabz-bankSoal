@@ -10,6 +10,8 @@ import {
   MenuItem,
   IconButton,
   Dialog,
+  LinearProgress,
+  Divider,
 } from "@material-ui/core";
 import {
   Description,
@@ -467,11 +469,12 @@ class ManagementTest extends React.Component {
           open={this.state.progress}
           onClick={() => console.log("clicked")}
         >
-          <CircularProgress color="inherit" />
+          <LinearProgress color="inherit" />
         </Backdrop>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <PageTitle style={{ width: "fit-content" }} title="مدیریت آزمون" />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <PageTitle title="مدیریت آزمون" />
         </div>
+        <Divider/>
         {!this.state.progress && (
           <Grid container item xs={12} style={{ padding: "0 10px" }}>
             <Grid
@@ -481,8 +484,9 @@ class ManagementTest extends React.Component {
               justify="flex-start"
               container
               style={{
-                padding: 10,
-                backgroundColor: "#E0DBC0",
+                padding: 40,
+                margin: 60,
+                backgroundColor: "#F1ECCF",
                 borderRadius: 20,
               }}
             >

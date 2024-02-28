@@ -62,12 +62,18 @@ export default function EachQuestionSpace({
               padding: "0 15px",
               borderRadius: 25,
               justifyContent: "center",
-              background: "#3d82a4",
             }}
           >
             فاصله (mm)
           </div>
-          <div style={{ flex: 1, alignItems: "center", width: "100%" }}>
+          <div
+            style={{
+              flex: 1,
+              alignItems: "center",
+              width: "100%",
+              backgroundColor: "#CBF2CF",
+            }}
+          >
             <TextField
               placeholder="فاصله"
               value={qSpaceState}
@@ -104,7 +110,7 @@ export default function EachQuestionSpace({
               padding: "0 15px",
               borderRadius: 25,
               justifyContent: "center",
-              background: "#3d82a4",
+              backgroundColor: "#CBF2CF",
             }}
           >
             شماره شروع
@@ -129,7 +135,7 @@ export default function EachQuestionSpace({
           variant="contained"
           onClick={handleSubmit}
           style={{
-            backgroundColor: "#4F8EC6",
+            backgroundColor: "#228B22",
             color: "#000",
             marginTop: "auto",
             borderRadius: 50,

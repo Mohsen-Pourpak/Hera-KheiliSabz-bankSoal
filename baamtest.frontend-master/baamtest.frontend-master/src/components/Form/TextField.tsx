@@ -38,7 +38,7 @@ export const FilterBoxTextField = ({
         flexDirection: "row",
         display: "flex",
         marginTop: 20,
-        backgroundColor: "#DEF6FF",
+        backgroundColor: "#EDEDED",
         color: "#000",
         minHeight: 45,
         borderRadius: 25,
@@ -137,7 +137,7 @@ export function CustomTextField({
       style={{
         width: "100%",
         backgroundColor: "white",
-        borderRadius: "2em",
+        borderRadius: "2rem",
         display: "flex",
         alignItems: "stretch",
         margin: "5px 0",
@@ -147,8 +147,8 @@ export function CustomTextField({
         htmlFor="my-input"
         style={{
           padding: "4px 8px",
-          background: "#7AD3FF",
-          borderRadius: 16,
+          background: "#CBF2CF",
+          borderRadius: "2rem",
           color: "#000",
           display: "flex",
           alignItems: "center",
@@ -161,7 +161,7 @@ export function CustomTextField({
         id="my-input"
         value={value}
         onChange={e => onChange && onChange(e.target.value)}
-        style={{ flex: 1 }}
+        style={{ flex: 1 , borderRadius: "2rem"}}
         inputProps={{ style: { textAlign: "center", paddingLeft: 22 } }}
         disabled={disabled}
       />

@@ -89,7 +89,7 @@ export default function ReplaceQuestion({
           variant="contained"
           onClick={handleSubmit}
           style={{
-            backgroundColor: "#4F8EC6",
+            backgroundColor: "#228B22",
             color: "#000",
             marginTop: "auto",
             borderRadius: 50,

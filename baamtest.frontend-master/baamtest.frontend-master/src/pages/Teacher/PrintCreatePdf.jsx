@@ -6,6 +6,8 @@ import {
   CircularProgress,
   Fade,
   Button,
+  LinearProgress,
+  Divider,
 } from "@material-ui/core";
 
 import logoPlaceholder from "../../images/لوگو-خیلی-سبز.png";
@@ -693,13 +695,13 @@ class CreateTest extends React.Component {
           style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.progress}
         >
-          <CircularProgress color="inherit" />
+          <LinearProgress color="inherit" />
         </Backdrop>
         <Backdrop
           style={{ zIndex: 1000000, color: "#228b22" }}
           open={this.state.loading}
         >
-          <CircularProgress color="inherit" />
+          <LinearProgress color="inherit" />
         </Backdrop>
         <ChangeBackgroundModal
           open={this.state.changeBgModal}
@@ -714,16 +716,24 @@ class CreateTest extends React.Component {
           }}
         />
         <PageTitle title="مدیریت آزمون - پرینت آزمون" />
+        <Divider />
         {!this.state.progress && (
           <div
             style={{
-              padding: 20,
+              padding: 50,
+              margin: 60,
               backgroundColor: "rgb(255 255 255 / 40%)",
               borderRadius: 20,
             }}
           >
-            <Grid container spacing={3} style={{ padding: "0 10px"}}>
-              <Grid item xs={8} spacing={2} sm={4} style={{ alignItems: "flex-start"}}>
+            <Grid container spacing={3} style={{ padding: "0 10px" }}>
+              <Grid
+                item
+                xs={8}
+                spacing={2}
+                sm={4}
+                style={{ alignItems: "flex-start", padding: "60px" }}
+              >
                 <div
                   style={{
                     position: "sticky",
@@ -741,30 +751,42 @@ class CreateTest extends React.Component {
                   >
                     <Button
                       variant="contained"
-                      color={
-                        this.state.tab === "general" ? "خیلی سبز" : "secondary"
-                      }
+                      // color={
+                      //   this.state.tab === "general" ? "primary" : "secondary"
+                      // }
                       onClick={() => this.setState({ tab: "general" })}
                       style={{
                         borderRadius: 50,
                         height: 40,
                         boxShadow: "none",
                         flexShrink: 0,
+                        backgroundColor:
+                          this.state.tab === "general"
+                            ? "#8AB668"
+                            : "red",
+                        border:this.state.tab === "general"
+                        ? "1px solid black"
+                        : "none",
                       }}
                     >
                       کلی
                     </Button>
                     <Button
                       variant="contained"
-                      color={
-                        this.state.tab === "minor" ? "primary" : "secondary"
-                      }
+                      // color={
+                      //   this.state.tab === "minor" ? "primary" : "secondary"
+                      // }
                       onClick={() => this.setState({ tab: "minor" })}
                       style={{
                         borderRadius: 50,
                         height: 40,
                         boxShadow: "none",
                         flexShrink: 0,
+                        backgroundColor:
+                          this.state.tab === "minor" ? "#8AB668" : "red",
+                          border:this.state.tab === "minor"
+                          ? "1px solid black"
+                          : "none",
                       }}
                     >
                       جزئی

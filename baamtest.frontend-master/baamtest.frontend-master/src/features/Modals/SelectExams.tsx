@@ -108,7 +108,7 @@ export default function SelectExams({
   };
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="lg">
+    <Dialog open={open} onClose={onClose} maxWidth="lg" >
       <Box width={700} p={2} bgcolor="#CBF2CF">
         <PageTitle style={{ width: "fit-content" }} title="انتخاب آزمون" />
         <Box display="flex" alignItems="center" m={1}>

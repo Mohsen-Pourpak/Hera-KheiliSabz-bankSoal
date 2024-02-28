@@ -700,7 +700,9 @@ class CreateTest extends React.Component {
             justify="flex-start"
             container
             style={{
-              padding: 20,
+              padding: 60,
+              margin: 40,
+              marginTop: 15,
               backgroundColor: "rgb(255 255 255 / 40%)",
               borderRadius: 20,
             }}

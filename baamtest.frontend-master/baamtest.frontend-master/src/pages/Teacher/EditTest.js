@@ -1229,7 +1229,7 @@ class EditTest extends React.Component {
                       justify="flex-start"
                       container
                       style={{
-                        padding: "20px"
+                        padding: "20px",
 
                         margin: 0,
                         justifyContent: isEnglish ? "flex-end" : "flex-start",
@@ -1928,10 +1928,9 @@ class EditTest extends React.Component {
                 </div>
                 <Button
                   onClick={() => this.setState({ showSelectExamModal: true })}
-                  style={{ marginBottom: 20 }}
+                  style={{ marginBottom: 20, backgroundColor: "" }}
                   fullWidth
                   variant="contained"
-                  color="secondary"
                 >
                   افزودن آزمون
                 </Button>

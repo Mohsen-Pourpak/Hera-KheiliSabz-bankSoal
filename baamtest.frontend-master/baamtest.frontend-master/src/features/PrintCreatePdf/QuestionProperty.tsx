@@ -103,7 +103,7 @@ export default function QuestionProperty({
             variant="contained"
             onClick={handleSubmit}
             style={{
-              backgroundColor: "#4F8EC6",
+              backgroundColor: "#228B22",
               color: "#000",
               marginTop: "auto",
               borderRadius: 50,
@@ -118,7 +118,7 @@ export default function QuestionProperty({
             variant="contained"
             onClick={handleClear}
             style={{
-              backgroundColor: "#4F8EC6",
+              backgroundColor: "#FF0000",
               color: "#000",
               marginTop: "auto",
               borderRadius: 50,
