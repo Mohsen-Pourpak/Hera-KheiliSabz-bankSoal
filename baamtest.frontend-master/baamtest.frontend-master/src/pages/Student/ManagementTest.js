@@ -488,6 +488,7 @@ class ManagementTest extends React.Component {
                 margin: 60,
                 backgroundColor: "#F1ECCF",
                 borderRadius: 20,
+                boxShadow: "1px 2px 5px"
               }}
             >
               <div

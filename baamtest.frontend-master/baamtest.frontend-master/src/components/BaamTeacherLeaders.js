@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import { BASE_URL } from "../api";
 import { getBamTeacherSingleLesson } from "../api/services/home";
-import { toFA } from "../utils/Utils";
+// import { toFA } from "../utils/Utils";
 import BaamTeacherSingleLesson from "./BaamTeacherSingleLesson";
 
 export default function BaamTeacherLeaders(props) {
@@ -30,8 +30,7 @@ export default function BaamTeacherLeaders(props) {
         <div style={{alignItems: 'center', display: 'flex', justifyItems: 'center', margin: '3vw 0px -11vw'}}>
             <div className="devider" />
             <div className="news-title" style={{width: '15vw', fontWeight: 'bold'}}>
-                تیم تالیف بام تست
-            </div>
+                تیم تالیف خیلی سبز            </div>
         </div>
         <div className="section-44">
             <div className="box">

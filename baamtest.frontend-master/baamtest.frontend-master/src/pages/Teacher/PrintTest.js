@@ -7,7 +7,7 @@ import "react-modern-calendar-datepicker/lib/DatePicker.css";
 // import ImageSimple from "../../images/test/Simple WB.jpg";
 // import ImageFantasy from "../../images/test/Fantasy WB.jpg";
 // import ImageNastaliq from "../../images/test/Nastaliq WB.jpg";
-import ImageSimple from "../../images/test/kheilisabz1-edited.jpg";
+import ImageSimple from "../../images/test/new-test.jpg";
 import ImageFantasy from "../../images/test/kheilisabz2-edited.jpg";
 import ImageNastaliq from "../../images/test/kheilisabz3-edited.jpg";
 

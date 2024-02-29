@@ -33,7 +33,7 @@ export default function AssignModal({
         width={400}
         height={400}
         style={{
-          background: "rgb(61 130 164 / 30%)",
+          background: "rgb(241 236 207 / 80%)",
         }}
       >
         <Box display="flex">
@@ -43,7 +43,7 @@ export default function AssignModal({
             style={{ flexGrow: 1, marginLeft: 10 }}
           />
           <Button
-            disabled={Boolean(username.length < 10)}
+            disabled={Boolean(username.length < 8)}
             onClick={() => onSearch(username)}
             variant="contained"
             color="primary"

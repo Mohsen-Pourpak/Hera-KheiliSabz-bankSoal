@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 import ExamFields from "../CreateTest/ExamFields";
 import SearchBox from "../CreateTest/SearchBox";
-import SelectedList from "../CreateTest/SelectedList";
+// import SelectedList from "../CreateTest/SelectedList";
 
 import ArrowIcon from "../../images/icons/circle-arrow-icon.svg";
 

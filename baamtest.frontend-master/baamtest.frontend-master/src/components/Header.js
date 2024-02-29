@@ -38,11 +38,11 @@ export default function Header(props) {
             title: 'خانه',
             link: 'home'
         }, {
-            title: 'طراحان بام تست',
+            title: 'طراحان خیلی سبز',
             link: 'login',
             ref: props.bamTRef
         }, {
-            title: 'خانواده بزرگ بام تست',
+            title: 'خانواده بزرگ خیلی سبز',
             link: 'login',
             ref: props.familyRef
         }, {

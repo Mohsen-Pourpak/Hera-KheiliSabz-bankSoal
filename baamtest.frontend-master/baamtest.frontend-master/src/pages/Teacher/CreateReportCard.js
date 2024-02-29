@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Grid, Backdrop, CircularProgress, Button, Select, Input, MenuItem} from '@material-ui/core';
+import {Container, Grid, Backdrop, CircularProgress, Button, Select, Input, MenuItem, LinearProgress, Divider} from '@material-ui/core';
 import TextField from '../../components/Form/TextField'
 import PageTitle from "../../components/PageTitle/PageTitle";
 import {Bookmark, SubdirectoryArrowLeft, School, DeleteSweep} from '@material-ui/icons';
@@ -7,13 +7,13 @@ import axios from 'axios';
 import {EXAM_TYPES, SUBGROUPS_TYPE, toFA} from '../../utils/Utils';
 import mask from '../../images/mask.svg'
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import { Calendar } from "react-modern-calendar-datepicker";
+// import { Calendar } from "react-modern-calendar-datepicker";
 import ArrowIcon from '../../images/icons/circle-arrow-icon.svg';
-import Image2 from '../../images/test/Untitled-1.jpg';
-import Image3 from '../../images/pishkhan/Untitled-3.svg';
-import Image4 from '../../images/pishkhan/Untitled-4.svg';
-import Image5 from '../../images/pishkhan/Untitled-5.svg';
-import {topicsConditional, grades, fields, lessons} from '../../api/services/tags';
+// import Image2 from '../../images/test/Untitled-1.jpg';
+// import Image3 from '../../images/pishkhan/Untitled-3.svg';
+// import Image4 from '../../images/pishkhan/Untitled-4.svg';
+// import Image5 from '../../images/pishkhan/Untitled-5.svg';
+// import {topicsConditional, grades, fields, lessons} from '../../api/services/tags';
 import { toast } from 'react-toastify';
 import {addToGroup, createReportCard, editTest, getLessonInExam, getTest} from '../../api/services/exam'
 import { getAllGroups } from '../../api/services/group';
@@ -32,8 +32,8 @@ const style = {
     },
     sortFilter: {
         backgroundColor: 'transparent',
-        border: '1px solid #3d82a4',
-        color: '#3d82a4',
+        border: '1px solid #8AB668',
+        color: '#8AB668',
         width: 'max-content',
         height: 40,
         flex: 1,
@@ -46,8 +46,8 @@ const style = {
         cursor: 'pointer'
     },
     sortFilterActive: {
-        backgroundColor: '#3d82a4',
-        border: '1px solid #3d82a4',
+        backgroundColor: '#8AB668',
+        border: '1px solid #8AB668',
         color: '#fff',
         width: 'max-content',
         flex: 1,
@@ -165,10 +165,10 @@ class AddToGroup extends React.Component {
                 
                 <Grid item sm={12} spacing={1} justify='space-between' alignItems="center" className='inputContainer' style={{padding: '10px 5px', marginTop: -5}}>
                     <Grid item style={{marginRight: 20}}>
-                        <SubdirectoryArrowLeft style={{fill: '#fe5f55'}} />
+                        <SubdirectoryArrowLeft style={{fill: '#FF0000'}} />
                     </Grid>
                     <Grid item style={{padding: 0, flex: 1}}>
-                        <div style={{color: '#3d82a4', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item_.fullName}</div>
+                        <div style={{color: '#8AB668', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item_.fullName}</div>
                     </Grid>
                 </Grid>
                 </div>
@@ -189,7 +189,7 @@ class AddToGroup extends React.Component {
                             }} />
                         </Grid>
                         <Grid item style={{padding: 0, flex: 1}}>
-                            <div style={{color: '#3d82a4', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.title}</div>
+                            <div style={{color: '#8AB668', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.title}</div>
                         </Grid>
                         <Grid item>
                             <div onClick={() => {
@@ -213,7 +213,7 @@ class AddToGroup extends React.Component {
                                     let selectedList = this.state.selectedList.filter(it => (it.id !== item.id) && (it.title !== item.title))
                                     this.setState({selectedList})
                                 }
-                            }} style={{backgroundColor: isSelected ? '#fe5f55' : '#3d82a4', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
+                            }} style={{backgroundColor: isSelected ? '#FF0000' : '#8AB668', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
                                 <div style={{color: '#fff', fontSize: 13, textAlign: 'center'}}>{isSelected ? '- حذف' : '+ افزودن'}</div>
                             </div>
                         </Grid>
@@ -246,7 +246,7 @@ class AddToGroup extends React.Component {
                     <div onClick={() => {
                         let selectedList = this.state.selectedList.filter(el => el !== item)
                         this.setState({selectedList})
-                    }} style={{backgroundColor: '#fe5f55', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
+                    }} style={{backgroundColor: '#FF0000', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
                         <DeleteSweep style={{fill: '#fff'}} />
                     </div>
                 </div>
@@ -275,11 +275,12 @@ class AddToGroup extends React.Component {
         return (
             <>
                 <Backdrop style={{zIndex: 1000000, color: '#228b22'}} open={this.state.progress} onClick={() => console.log('clicked')}>
-                    <CircularProgress color="inherit" />
+                    <LinearProgress color="inherit" />
                 </Backdrop>
                 <PageTitle title="مدیریت آزمون - شخصی سازی آزمون" />
+                <Divider/>
                 {!this.state.progress && <Grid container item xs={12} style={{padding: '0 10px'}}>
-                <Grid direction="column" alignItems="flex-start" spacing={1} justify="flex-start" container style={{padding: 20, marginTop: 0, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
+                <Grid direction="column" alignItems="flex-start" spacing={1} justify="flex-start" container style={{padding: 45, marginTop: 0, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: "1.8rem", margin: 60}}>
                     <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'flex-start'}}>
                         <div style={{padding: '0 15px 20px', flex: 1, background: '#fff', borderRadius: 20}}>
                             <div style={{width: '100%', marginBottom: -20, marginTop: 20}}>
@@ -307,14 +308,14 @@ class AddToGroup extends React.Component {
                                 {this.state.lessons.map(item => {
                                     return (
                                         <div style={{flexDirection: 'row', flex: '1 1 18%', display: 'flex', background: '#eff5fa', height: 50, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                                            <div style={{flexDirection: 'row', display: 'flex', width: 'max-content', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 50}}>
+                                            <div style={{flexDirection: 'row', display: 'flex', width: 'max-content', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#8AB668', height: 50}}>
                                                 {item.title}
                                             </div>
                                             <div style={{textAlign: 'center', flex: 1}}>
                                                 <span style={{fontSize: 17, flex: 1, textAlign: 'center', display: 'flex', alignItems: 'center', padding: '0 15px'}}>{
                                                     <TextField
                                                         value={toFA((this.state.coefficients[`lesson_${item.id}`]).toLocaleString())}
-                                                        style={{height: 40, flex: 1, background: 'transparent', paddingTop: 0, textAlign: 'center'}}
+                                                        style={{height: 40, flex: 1, backgroundColor: "#8AB668",background: 'transparent', paddingTop: 0, textAlign: 'center'}}
                                                         onChange={e => this.changeInput(`lesson_${item.id}`, e)}
                                                     />
                                                     

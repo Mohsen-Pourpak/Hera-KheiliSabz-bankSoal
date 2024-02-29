@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid, Container } from "@material-ui/core";
 
-import Image2 from "../../images/test/girl-student-book-on-algebra-600nw-2316142433.webp";
+// import Image2 from "../../images/test/girl-student-book-on-algebra-600nw-2316142433.webp";
 import { DeleteSweep } from "@material-ui/icons";
 
-import CreateTest from "../../pages/Student/CreateTest";
+// import CreateTest from "../../pages/Student/CreateTest";
 
 export default function SelectedList({
   selectedList,

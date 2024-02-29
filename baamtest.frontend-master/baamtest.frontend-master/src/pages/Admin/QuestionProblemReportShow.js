@@ -11,7 +11,7 @@ import {
 
 const style = {
   optionNum: {
-    border: "1px solid #495867",
+    border: "1px solid #FF0000",
     borderRadius: 60,
     height: 25,
     width: 25,
@@ -20,13 +20,13 @@ const style = {
     display: "flex",
     flex: "none",
     paddingTop: 3,
-    color: "#495867",
+    color: "#FF0000",
     position: "relative",
     fontSize: 17,
     marginLeft: 10,
   },
   correctOption: {
-    backgroundColor: "#fe5f55",
+    backgroundColor: "#FF0000",
     color: "#fff",
     width: "fit-content",
     height: 30,

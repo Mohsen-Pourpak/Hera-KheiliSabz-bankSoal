@@ -6,6 +6,7 @@ import {
   Backdrop,
   CircularProgress,
   Dialog,
+  Divider,
 } from "@material-ui/core";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import {
@@ -85,7 +86,7 @@ const Level = ({ image, right, percent }) => {
 
 const style = {
   questionNum: {
-    border: "1px solid #fff",
+    border: "1px solid #000",
     borderRadius: 60,
     height: 30,
     width: 30,
@@ -93,20 +94,19 @@ const style = {
     alignItems: "center",
     display: "flex",
     paddingTop: 3,
-    color: "#fff",
+    color: "#000",
     fontSize: 19,
   },
   questionNumContainer: {
-    marginBottom: -30,
-    top: 15,
+    top: 50,
+    paddingRight: 15,
     position: "relative",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     flexDirection: "row",
-    marginRight: 5,
+    width: "100%",
     zIndex: 1000,
-    width: "calc(100% - 60px)",
-    padding: "0 10px 0 15px",
+    fontSize: "0.8rem",
   },
   optionNum: {
     border: "1px solid #495867",
@@ -141,17 +141,18 @@ const style = {
     marginRight: 10,
   },
   questionTitle: {
-    backgroundColor: "#3d82a4",
-    color: "#fff",
-    height: 40,
-    width: "fit-content",
-    margin: "0 auto -25px",
-    padding: "10px 20px",
-    zIndex: 3000,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    height: "auto",
+    width: "95%",
+    marginTop: "0px",
+    marginBottom: "-56px",
+    marginLeft: "50px",
     position: "relative",
-    marginBottom: -25,
-    borderRadius: 50,
+    zIndex: 3000,
   },
+
   actionText: {
     color: "#deeaf4",
     fontSize: 7,
@@ -162,25 +163,24 @@ const style = {
     marginBottom: 0,
   },
   actionButton: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#228B22",
     color: "#fff",
     width: "fit-content",
-    height: 25,
+    height: 35,
     padding: "6.25px 45px 6.25px 20px",
     zIndex: 900,
-    borderRadius: 50,
     fontSize: 12,
     boxShadow: "0 0 5px -2px #000",
     marginRight: -30,
-    marginTop: 10,
+    marginTop: -10,
+    marginLeft: -2,
   },
   circleButton: {
     height: 35,
     width: 35,
-    borderRadius: 50,
-    marginBottom: -30,
-    zIndex: 1000,
-    position: "relative",
+    marginTop: -10,
+    zIndex: 910,
+    position: "absolate",
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
@@ -188,10 +188,10 @@ const style = {
     backgroundColor: "#fff",
     border: "1px solid #3d82a4",
     boxShadow: "0 0 5px -2px #000",
-    marginTop: 5,
   },
   bottomActions: {
     display: "flex",
+    justifyContent: "space-between",
     flexDirection: "row",
     width: "calc(100% - 60px)",
     marginRight: 5,
@@ -199,7 +199,7 @@ const style = {
     marginBottom: 30,
   },
   box: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#228B22",
     color: "#fff",
     width: "fit-content",
     height: 25,
@@ -220,8 +220,8 @@ const style = {
     flexDirection: "row",
   },
   randomFilter: {
-    backgroundColor: "#fff",
-    color: "#3d82a4",
+    backgroundColor: "#CBF2CF",
+    color: "#000",
     width: "auto",
     height: 40,
     flex: 1,
@@ -233,10 +233,9 @@ const style = {
     cursor: "pointer",
   },
   sortFilter: {
-    backgroundColor: "transparent",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
-    width: "fit-content",
+    backgroundColor: "#CBF2CF",
+    border: "1px solid #CBF2CF",
+    color: "#000",
     height: 40,
     flex: 1,
     borderRadius: 50,
@@ -246,10 +245,9 @@ const style = {
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#3d82a4",
-    border: "1px solid #3d82a4",
-    color: "#fff",
-    width: "fit-content",
+    backgroundColor: "#C87474",
+    border: "1px solid #C87474",
+    color: "#000",
     height: 40,
     flex: 1,
     borderRadius: 50,
@@ -259,7 +257,7 @@ const style = {
     cursor: "pointer",
   },
   correctOption: {
-    backgroundColor: "#fe5f55",
+    backgroundColor: "#FF0000",
     color: "#fff",
     width: "fit-content",
     height: 30,
@@ -434,9 +432,9 @@ class CreateTest extends React.Component {
         this.state.selectedList.filter(el => el.id === item.id).length !== 0;
       return (
         <div style={{ position: "relative", flex: 1, width: "100%" }}>
-          <div style={style.questionTitle}>
+          {/* <div style={style.questionTitle}>
             {toFA(item.lessonTitle)} | {item.topic}
-          </div>
+          </div> */}
           <div style={style.questionNumContainer}>
             <div style={style.questionNum}>{toFA(idx + rowId)}</div>
             {/* <div style={style.boxOutline}>
@@ -453,7 +451,7 @@ class CreateTest extends React.Component {
             className="inputContainer"
             style={{
               padding: 0,
-              background: `linear-gradient(90deg, #3d82a4 50%, ${labelColor} 50%)`,
+              background: `linear-gradient(90deg, ${labelColor} 50%, ${labelColor} 50%)`,
               alignItems: "center",
               width: "calc(100% - 10px)",
               marginTop: 5,
@@ -473,11 +471,10 @@ class CreateTest extends React.Component {
                 padding: "10px 5px",
                 backgroundColor: "#fff",
                 marginBottom: "0px !important",
-                borderRadius: 20,
-                borderTopRightRadius: 150,
+                borderRadius: "1.2rem",
+
                 minHeight: 300,
-                borderBottomLeftRadius: isMore ? 0 : 20,
-                borderBottomRightRadius: isMore ? 0 : 20,
+
                 borderBottom: isMore ? "1px solid #3d82a4" : "none",
               }}
             >
@@ -729,7 +726,7 @@ class CreateTest extends React.Component {
             </div>
           )}
           <div style={style.bottomActions}>
-            <div style={{ flex: 1, justifyContent: "center", display: "flex" }}>
+            <div style={{ display: "flex" }}>
               <div
                 style={style.circleButton}
                 onClick={() => {
@@ -751,7 +748,7 @@ class CreateTest extends React.Component {
                 }}
               >
                 {isSelected ? (
-                  <Remove style={{ fill: "#fe5f55" }} />
+                  <Remove style={{ fill: "#FF0000" }} />
                 ) : (
                   <Add style={{ fill: "#3EC592" }} />
                 )}
@@ -760,7 +757,7 @@ class CreateTest extends React.Component {
                 {isSelected ? "حذف" : "انتخاب"} سوال
               </div>
             </div>
-            <div style={{ flex: 1, justifyContent: "center", display: "flex" }}>
+            <div style={{ display: "flex" }}>
               <div
                 style={style.circleButton}
                 onClick={() => {
@@ -810,7 +807,7 @@ class CreateTest extends React.Component {
               this.setState({ selectedList });
             }}
             style={{
-              backgroundColor: "#fe5f55",
+              backgroundColor: "#FF0000",
               cursor: "pointer",
               width: 45,
               borderRadius: 30,
@@ -895,10 +892,12 @@ class CreateTest extends React.Component {
           <CircularProgress color="inherit" />
         </Backdrop>
         <PageTitle title="ساخت آزمون - نمایش سوالات" />
+        <Divider />
         <Grid container item xs={12} style={{ padding: "0 10px" }}>
           <div
             style={{
-              padding: 20,
+              margin: 60,
+              padding: 50,
               backgroundColor: "rgb(255 255 255 / 40%)",
               borderRadius: 20,
               alignItems: "flex-start",
@@ -918,7 +917,7 @@ class CreateTest extends React.Component {
                   className="inputContainer"
                   style={{
                     padding: "7.5px 15px",
-                    backgroundColor: "rgb(61 130 164 / 30%)",
+                    backgroundColor: "#F1ECCF",
                     margin: "20px 0",
                     width: "100%",
                   }}
@@ -960,7 +959,7 @@ class CreateTest extends React.Component {
                       سوال
                     </div>
                   </div>
-                  <div
+                  {/* <div
                     style={{
                       flexDirection: "row",
                       display: "flex",
@@ -1017,7 +1016,7 @@ class CreateTest extends React.Component {
                     <Point color="#3EC592" />
                     <Line />
                     <Point color="#fff" />
-                  </div>
+                  </div> */}
                   <div
                     style={{
                       flexDirection: "row",
@@ -1085,7 +1084,7 @@ class CreateTest extends React.Component {
                   style={{
                     flexDirection: "row",
                     display: "flex",
-                    background: "#fe5f55",
+                    background: "#8AB668",
                     color: "#fff",
                     height: 45,
                     marginBottom: 20,
@@ -1243,7 +1242,7 @@ class CreateTest extends React.Component {
                   style={{
                     padding: "7.5px 15px",
                     cursor: "pointer",
-                    backgroundColor: "rgb(61 130 164 / 30%)",
+                    backgroundColor: "#F1ECCF",
                     margin: 0,
                     marginBottom: 20,
                     width: "100%",
@@ -1284,7 +1283,7 @@ class CreateTest extends React.Component {
                   style={{
                     padding: "7.5px 15px",
                     cursor: "pointer",
-                    backgroundColor: "rgb(61 130 164 / 30%)",
+                    backgroundColor: "#F1ECCF",
                     margin: 0,
                     marginBottom: 20,
                     width: "100%",
@@ -1314,6 +1313,8 @@ class CreateTest extends React.Component {
                       />
                     )}
                   </div>
+                  {/* اضافه شده  */}
+                  {/* اضافه شده  */}
                 </Grid>
               </div>
             </div>
@@ -1348,7 +1349,7 @@ class CreateTest extends React.Component {
           >
             <div
               style={{
-                background: "rgb(61 130 164 / 30%)",
+                background: "#F1ECCF",
                 flexDirection: "column",
                 padding: "0px 30px",
                 width: 400,

@@ -71,7 +71,7 @@ export default function QuestionProperty({
           <MenuItem value={6}>دو ستون</MenuItem>
           <MenuItem value={3}>چهار ستون</MenuItem>
         </CustomSelect>
-        <CustomSelect
+        {/* <CustomSelect
           label="فونت سوال و پاسخ"
           value={font}
           onChange={v => setFont(v)}
@@ -80,7 +80,7 @@ export default function QuestionProperty({
           {PRINT_FONTS.map(f => (
             <MenuItem value={f.value}>{f.title}</MenuItem>
           ))}
-        </CustomSelect>
+        </CustomSelect> */}
         <CustomSelect
           label="سایز سوال و پاسخ"
           value={size}

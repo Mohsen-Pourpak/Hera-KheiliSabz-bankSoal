@@ -73,7 +73,7 @@ const useStyle = makeStyles({
     marginRight: 10,
   },
   questionTitle: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#8AB668",
     color: "#fff",
     height: 40,
     width: "fit-content",
@@ -94,7 +94,7 @@ const useStyle = makeStyles({
     marginBottom: 0,
   },
   actionButton: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#8AB668",
     color: "#fff",
     width: "fit-content",
     height: 25,
@@ -118,7 +118,7 @@ const useStyle = makeStyles({
     display: "flex",
     cursor: "pointer",
     backgroundColor: "#fff",
-    border: "1px solid #3d82a4",
+    border: "1px solid #8AB668",
     boxShadow: "0 0 5px -2px #000",
     marginTop: 5,
   },
@@ -131,7 +131,7 @@ const useStyle = makeStyles({
     marginBottom: 30,
   },
   box: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#8AB668",
     color: "#fff",
     width: "fit-content",
     height: 25,
@@ -143,8 +143,8 @@ const useStyle = makeStyles({
   },
   boxOutline: {
     backgroundColor: "#fff",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
+    border: "1px solid #8AB668",
+    color: "#8AB668",
     width: "fit-content",
     height: 25,
     borderRadius: 50,
@@ -153,7 +153,7 @@ const useStyle = makeStyles({
   },
   randomFilter: {
     backgroundColor: "#fff",
-    color: "#3d82a4",
+    color: "#8AB668",
     width: "auto",
     height: 40,
     flex: 1,
@@ -166,8 +166,8 @@ const useStyle = makeStyles({
   },
   sortFilter: {
     backgroundColor: "transparent",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
+    border: "1px solid #8AB668",
+    color: "#8AB668",
     width: "fit-content",
     height: 40,
     flex: 1,
@@ -178,8 +178,8 @@ const useStyle = makeStyles({
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#3d82a4",
-    border: "1px solid #3d82a4",
+    backgroundColor: "#8AB668",
+    border: "1px solid #8AB668",
     color: "#fff",
     width: "fit-content",
     height: 40,
@@ -191,7 +191,7 @@ const useStyle = makeStyles({
     cursor: "pointer",
   },
   correctOption: {
-    backgroundColor: "#fe5f55",
+    backgroundColor: "#FF0000",
     color: "#fff",
     width: "fit-content",
     height: 30,
@@ -250,7 +250,7 @@ export default function Question({
         className="inputContainer"
         style={{
           padding: 0,
-          background: `linear-gradient(90deg, #3d82a4 50%, ${labelColor} 50%)`,
+          background: `linear-gradient(90deg, #8AB668 50%, ${labelColor} 50%)`,
           alignItems: "center",
           width: "calc(100% - 10px)",
           marginTop: 5,
@@ -275,7 +275,7 @@ export default function Question({
             minHeight: 300,
             borderBottomLeftRadius: isMore ? 0 : 20,
             borderBottomRightRadius: isMore ? 0 : 20,
-            borderBottom: isMore ? "1px solid #3d82a4" : "none",
+            borderBottom: isMore ? "1px solid #8AB668" : "none",
           }}
         >
           <Grid
@@ -525,7 +525,7 @@ export default function Question({
         >
           <div className={style.circleButton} onClick={handleSelect}>
             {isSelected ? (
-              <Remove style={{ fill: "#fe5f55" }} />
+              <Remove style={{ fill: "#FF0000" }} />
             ) : (
               <Add style={{ fill: "#3EC592" }} />
             )}
@@ -569,7 +569,7 @@ export default function Question({
                   className="inputContainer"
                   style={{
                     padding: 0,
-                    background: `linear-gradient(90deg, #3d82a4 50%, ${labelColor} 50%)`,
+                    background: `linear-gradient(90deg, #8AB668 50%, ${labelColor} 50%)`,
                     alignItems: "center",
                     width: "calc(100% - 10px)",
                     marginTop: 5,
@@ -594,7 +594,7 @@ export default function Question({
                       minHeight: 300,
                       borderBottomLeftRadius: isMore ? 0 : 20,
                       borderBottomRightRadius: isMore ? 0 : 20,
-                      borderBottom: isMore ? "1px solid #3d82a4" : "none",
+                      borderBottom: isMore ? "1px solid #8AB668" : "none",
                     }}
                   >
                     <Grid
@@ -887,7 +887,7 @@ export default function Question({
                       }}
                     >
                       {isSelected ? (
-                        <Remove style={{ fill: "#fe5f55" }} />
+                        <Remove style={{ fill: "#FF0000" }} />
                       ) : (
                         <Add style={{ fill: "#3EC592" }} />
                       )}

@@ -2,7 +2,7 @@ import React from "react";
 import { CircularProgress, Grid, Button, Backdrop } from "@material-ui/core";
 import {
   Description,
-  FormatListBulleted,
+  // FormatListBulleted,
   CloudUpload,
   Attachment,
 } from "@material-ui/icons";
@@ -26,7 +26,7 @@ import CheckRadioIcon from "../../images/icons/check-radio-icon.svg";
 import UncheckRadioIcon from "../../images/icons/uncheck-radio-icon.svg";
 
 import MySample from "./excel-samples/TeacherSample.xlsx";
-import GuideFile from "./excel-samples/TeachersUploadGuide.pdf";
+// import GuideFile from "./excel-samples/TeachersUploadGuide.pdf";
 
 const styles = {
   trItem: {
@@ -267,7 +267,8 @@ class CreateTest extends React.Component {
               justify="flex-start"
               container
               style={{
-                padding: 10,
+                margin: 60,
+                padding: 50,
                 backgroundColor: "rgb(255 255 255 / 40%)",
                 borderRadius: 20,
               }}
@@ -384,6 +385,8 @@ class CreateTest extends React.Component {
                 justifyContent: "space-between",
                 width: "100%",
                 alignItems: "center",
+                marginRight:30,
+                marginLeft:30
               }}
             >
               <PageTitle

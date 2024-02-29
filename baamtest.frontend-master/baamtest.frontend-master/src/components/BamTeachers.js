@@ -86,7 +86,7 @@ export default function BamTeachers(props) {
                                         <img src="http://awazemrooz.ir/wp-content/uploads/2018/08/IMG_4206-500x375.jpg" />
                                         <div className="line" />
                                         <div className="details">
-                                            <div className="title">مراسم رونمایی از برند بام تست</div>
+                                            <div className="title">مراسم رونمایی از برند خیلی سبز</div>
                                             <div className="description">به گزارش خبرگزاری، هم اندیشی تشکیلاتی دبیران کانون های دانش آموختگان سراسر کشور صبح امروز با حضور ۱۴۵ نفر از مسئولان کانون آغاز شد</div>
                                             <div className="button-continue">
                                                 ادامه مطلب...

@@ -14,10 +14,10 @@ import logoPlaceholder from "../../images/لوگو-خیلی-سبز.png";
 // import ImageSimple from "../../images/test/Simple WB.jpg";
 // import ImageFantasy from "../../images/test/Fantasy WB.jpg";
 // import ImageNastaliq from "../../images/test/Nastaliq WB.jpg"; // Page number center
-import ImageSimple from "../../images/test/kheilisabz1-edited.jpg";
+import ImageSimple from "../../images/test/new-test.jpg";
 import ImageFantasy from "../../images/test/kheilisabz2-edited.jpg";
 import ImageNastaliq from "../../images/test/kheilisabz3-edited.jpg";
-import ImageSimpleWob from "../../images/test/3.png";
+import ImageSimpleWob from "../../images/test/new-web-test.jpg";
 import ImageFantasyWob from "../../images/test/2.png";
 import ImageNastaliqWob from "../../images/test/1.png"; // Page number center
 import ImageFantasyPage2 from "../../images/test/2.png";

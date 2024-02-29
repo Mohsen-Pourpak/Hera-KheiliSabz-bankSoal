@@ -7,14 +7,14 @@ import {
 
 } from "@material-ui/core";
 
-import SendIcon from "@material-ui/icons/Send";
+// import SendIcon from "@material-ui/icons/Send";
 
-import {
-  Menu as MenuIcon,
-  ArrowBack as ArrowBackIcon,
-  ExpandMore,
-} from "@material-ui/icons";
-import classNames from "classnames";
+// import {
+//   Menu as MenuIcon,
+//   ArrowBack as ArrowBackIcon,
+//   ExpandMore,
+// } from "@material-ui/icons";
+// import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 
@@ -27,7 +27,7 @@ import logo from "../../images/لوگو-خیلی-سبز.png";
 import {
   useLayoutState,
   useLayoutDispatch,
-  toggleSidebar,
+  // toggleSidebar,
 } from "../../context/LayoutContext";
 import { useUserDispatch, signOut } from "../../context/UserContext";
 import { getUserTypeStr, toFA, txtToPrice } from "../../utils/Utils";
@@ -38,8 +38,8 @@ import ActiveTests from "../../images/sidbar-icons/tests-icon.svg";
 import Tests from "../../images/sidbar-icons/tests-w-icon.svg";
 import ActivePack from "../../images/sidbar-icons/pack-icon.svg";
 import Pack from "../../images/sidbar-icons/pack-w-icon.svg";
-import ActiveCup from "../../images/sidbar-icons/cup-icon.svg";
-import Cup from "../../images/sidbar-icons/cup-w-icon.svg";
+// import ActiveCup from "../../images/sidbar-icons/cup-icon.svg";
+// import Cup from "../../images/sidbar-icons/cup-w-icon.svg";
 import ActiveFriends from "../../images/sidbar-icons/friends-icon.svg";
 import Friends from "../../images/sidbar-icons/friends-w-icon.svg";
 import ActiveGroup from "../../images/sidbar-icons/group-icon.svg";

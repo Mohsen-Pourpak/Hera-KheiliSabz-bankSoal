@@ -40,8 +40,7 @@ export default function BamSchools(props) {
         <div style={{alignItems: 'center', display: 'flex', justifyItems: 'center', margin: '3vw 0 -8vw'}}>
             <div className="devider" />
             <div className="news-title" style={{fontWeight: 'bold'}}>
-                مدارس بام تست
-            </div>
+                مدارس خیلی سبز            </div>
         </div>
         <div className="news">
             <div style={{margin: '0 2vw'}}>

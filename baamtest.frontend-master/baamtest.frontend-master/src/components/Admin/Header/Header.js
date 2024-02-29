@@ -25,8 +25,8 @@ import useStyles from "./styles";
 
 // components
 import { Badge, Typography, Button } from "../Wrappers/Wrappers";
-import Notification from "../Notification/Notification";
-import UserAvatar from "../UserAvatar/UserAvatar";
+// import Notification from "../Notification/Notification";
+// import UserAvatar from "../UserAvatar/UserAvatar";
 
 // context
 import {

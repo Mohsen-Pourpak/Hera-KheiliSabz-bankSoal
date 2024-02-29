@@ -1,10 +1,10 @@
 import React from "react";
-import { setSelectedGrades } from "../../../src/features/CreateTest/ExamFieldsRadio";
+// import { setSelectedGrades } from "../../../src/features/CreateTest/ExamFieldsRadio";
 import {
   Grid,
   Button,
   MenuItem,
-  CircularProgress,
+  // CircularProgress,
   LinearProgress,
   Backdrop,
 } from "@material-ui/core";
@@ -25,8 +25,8 @@ import {
 } from "../../api/services/tags";
 
 import SearchBox from "../../features/CreateTest/SearchBox";
-import ExamFields from "../../features/CreateTest/ExamFields";
-import SelectedList from "../../features/CreateTest/SelectedList";
+// import ExamFields from "../../features/CreateTest/ExamFields";
+// import SelectedList from "../../features/CreateTest/SelectedList";
 
 import { ExamFieldsRadio } from "../../features/CreateTest/ExamFieldsRadio";
 

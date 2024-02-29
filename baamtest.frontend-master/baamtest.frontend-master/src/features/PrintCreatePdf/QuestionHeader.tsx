@@ -11,7 +11,7 @@ import {
 
 import FilterBox from "../../components/FilterBox";
 import { NormalInput } from "../../components/Form/TextField";
-import { questionNormal } from "../../api/services/question";
+// import { questionNormal } from "../../api/services/question";
 
 export default function QuestionHeader({
   disabled,
@@ -100,7 +100,7 @@ export default function QuestionHeader({
             value={titleRight}
             onChange={e => setTitleRight(e.target.value)}
             fullWidth
-            style={{ flex: 1, marginBottom: "1.5rem" }}
+            style={{ flex: 1, marginBottom: "1.5rem", borderRadius: "2rem" }}
             disabled={!questionId || disabled}
           />
         </div>
@@ -112,7 +112,7 @@ export default function QuestionHeader({
             value={titleCenter}
             onChange={e => setTitleCenter(e.target.value)}
             fullWidth
-            style={{ flex: 1, marginBottom: "1.5rem" }}
+            style={{ flex: 1, marginBottom: "1.5rem", borderRadius: "2rem" }}
             disabled={!questionId || disabled}
           />
         </div>
@@ -124,7 +124,7 @@ export default function QuestionHeader({
             value={titleLeft}
             onChange={e => setTitleLeft(e.target.value)}
             fullWidth
-            style={{ flex: 1, marginBottom: "1rem" }}
+            style={{ flex: 1, marginBottom: "1rem", borderRadius: "2rem" }}
             disabled={!questionId || disabled}
           />
         </div>

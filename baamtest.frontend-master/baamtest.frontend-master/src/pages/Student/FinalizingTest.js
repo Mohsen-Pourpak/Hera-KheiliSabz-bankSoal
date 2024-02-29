@@ -77,7 +77,7 @@ const Level = ({ image, right, percent }) => {
 const styles = {
   trItem: {
     backgroundColor: "#f4faff",
-    color: "#3d82a4",
+    color: "#8AB668",
     // display: "flex",
     // alignItems: "center",
     // justifyContent: "center",
@@ -86,7 +86,7 @@ const styles = {
     padding: "10px 10px",
   },
   thItem: {
-    color: "#3d82a4",
+    color: "#8AB668",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -103,7 +103,7 @@ const styles = {
 
   randomFilter: {
     backgroundColor: "#fff",
-    color: "#3d82a4",
+    color: "#8AB668",
     width: "auto",
     height: 40,
     flex: 1,
@@ -115,7 +115,7 @@ const styles = {
     cursor: "pointer",
   },
   randomFilterActive: {
-    backgroundColor: "#3d82a4",
+    backgroundColor: "#8AB668",
     color: "#fff",
     width: "auto",
     height: 40,
@@ -129,8 +129,8 @@ const styles = {
   },
   sortFilter: {
     backgroundColor: "transparent",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
+    border: "1px solid #8AB668",
+    color: "#8AB668",
     height: 40,
     flex: 1,
     borderRadius: 50,
@@ -140,8 +140,8 @@ const styles = {
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#3d82a4",
-    border: "1px solid #3d82a4",
+    backgroundColor: "#8AB668",
+    border: "1px solid #8AB668",
     color: "#fff",
     height: 40,
     flex: 1,
@@ -742,7 +742,7 @@ class FinalizingTest extends React.Component {
                       paddingLeft: 10,
                       flex: 6,
                       borderRadius: 20,
-                      background: "#C83E43",
+                      background: "#FF0000",
                       height: 45,
                     }}
                   >
@@ -799,7 +799,7 @@ class FinalizingTest extends React.Component {
                     />
                     <div
                       style={{
-                        color: "#3d82a4",
+                        color: "#8AB668",
                         fontSize: 14,
                         padding: "10px 17px 0",
                         margin: "-30px 0 0",
@@ -818,7 +818,7 @@ class FinalizingTest extends React.Component {
                       سوال
                     </div>
                   </div>
-                  <div
+                  {/* <div
                     style={{
                       flexDirection: "row",
                       display: "flex",
@@ -875,7 +875,7 @@ class FinalizingTest extends React.Component {
                     <Point color="#3EC592" />
                     <Line />
                     <Point color="#fff" />
-                  </div>
+                  </div> */}
                   <div
                     style={{
                       flexDirection: "row",
@@ -924,9 +924,9 @@ class FinalizingTest extends React.Component {
                       flexDirection: "row",
                       display: "flex",
                       background: "#fff",
-                      border: "1px solid #3d82a4",
+                      border: "1px solid #8AB668",
                       margin: "20px 0 10px",
-                      color: "#3d82a4",
+                      color: "#8AB668",
                       height: 40,
                       borderRadius: 50,
                       width: "100%",
@@ -943,7 +943,7 @@ class FinalizingTest extends React.Component {
                   style={{
                     flexDirection: "row",
                     display: "flex",
-                    background: "#fe5f55",
+                    background: "#8AB668",
                     color: "#fff",
                     height: 45,
                     marginBottom: 20,
@@ -975,7 +975,7 @@ class FinalizingTest extends React.Component {
                     استفاده شود
                   </Button>
                 </FilterBox>
-                <FilterBox title="">
+                <FilterBox title="انتخاب بازۀ زمانی">
                   {/* <Button
                     fullWidth
                     variant="contained"

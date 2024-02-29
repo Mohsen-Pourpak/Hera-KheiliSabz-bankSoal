@@ -433,7 +433,7 @@ class Group extends React.Component {
             justify="flex-start"
             container
             style={{
-              margin: "30px",
+              margin: "80px",
               padding: "85px",
               backgroundColor: "rgb(255 255 255 / 40%)",
               borderRadius: 20,
@@ -459,7 +459,7 @@ class Group extends React.Component {
                     className={classes.createAccountButton}
                     style={{
                       backgroundColor: "#84DFAA",
-                      fontSize: "1.2vw",
+                      fontSize: "1.0vw",
                       textAlign: "center",
                       width: "fit-content",
                       fontFamily: "Dana",
@@ -487,6 +487,7 @@ class Group extends React.Component {
                   backgroundColor: "#F1ECCF",
                   marginTop: 5,
                   width: "100%",
+                  boxShadow: "1px 2px 5px"
                 }}
               >
                 <div

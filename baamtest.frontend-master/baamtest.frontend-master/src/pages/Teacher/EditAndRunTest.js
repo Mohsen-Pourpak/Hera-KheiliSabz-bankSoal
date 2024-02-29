@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Grid, Backdrop, CircularProgress, Button, Select, Input, MenuItem} from '@material-ui/core';
+import {Container, Grid, Backdrop, CircularProgress, Button, Select, Input, MenuItem, LinearProgress, Divider} from '@material-ui/core';
 import TextField from '../../components/Form/TextField'
 import PageTitle from "../../components/PageTitle/PageTitle";
 import {Bookmark, SubdirectoryArrowLeft, School, DeleteSweep} from '@material-ui/icons';
@@ -201,7 +201,7 @@ class AddToGroup extends React.Component {
                             }} />
                         </Grid>
                         <Grid item style={{padding: 0, flex: 1}}>
-                            <div style={{color: '#3d82a4', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.title}</div>
+                            <div style={{color: '#000', fontWeight: 'bold', fontSize: 18, padding: '0 17px', textAlign: 'center'}}>{item.title}</div>
                         </Grid>
                         <Grid item>
                             <div onClick={() => {
@@ -225,7 +225,7 @@ class AddToGroup extends React.Component {
                                     let selectedList = this.state.selectedList.filter(it => (it.id !== item.id) && (it.title !== item.title))
                                     this.setState({selectedList})
                                 }
-                            }} style={{backgroundColor: isSelected ? '#fe5f55' : '#3d82a4', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
+                            }} style={{backgroundColor: isSelected ? '#FF0000' : '#8AB668', borderRadius: 30, cursor: 'pointer', padding: '5px 15px', textAlign: 'center', marginLeft: 5}}>
                                 <div style={{color: '#fff', fontSize: 13, textAlign: 'center'}}>{isSelected ? '- حذف' : '+ افزودن'}</div>
                             </div>
                         </Grid>
@@ -258,7 +258,7 @@ class AddToGroup extends React.Component {
                     <div onClick={() => {
                         let selectedList = this.state.selectedList.filter(el => el !== item)
                         this.setState({selectedList})
-                    }} style={{backgroundColor: '#fe5f55', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
+                    }} style={{backgroundColor: '#FF0000', cursor: 'pointer', width: 45, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30}}>
                         <DeleteSweep style={{fill: '#fff'}} />
                     </div>
                 </div>
@@ -291,18 +291,19 @@ class AddToGroup extends React.Component {
         return (
             <>
             <Backdrop style={{zIndex: 1000000, color: '#228b22'}} open={this.state.progress} onClick={() => console.log('clicked')}>
-                <CircularProgress color="inherit" />
+                <LinearProgress color="inherit" />
             </Backdrop>
                 <PageTitle title="مدیریت آزمون - اجرای آزمون" />
+                <Divider/>
                 {!this.state.progress && <Grid container item xs={12} style={{padding: '0 10px'}}>
-                    <Grid direction="row" alignItems="flex-start" spacing={3} justify="flex-start" container style={{padding: 20, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
+                    <Grid direction="row" alignItems="flex-start" spacing={3} justify="flex-start" container style={{padding: 40, margin: 60, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
                     <Grid direction="column" container item xs={6}>
                         <Grid direction="column" container item xs={12}>
                             {this.renderUserLessons(this.state.userLessons)}
                         </Grid>
                     </Grid>
                     <Grid direction="column" container item xs={6}>
-                        <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{padding: '15px 15px', overflow: 'scroll', backgroundSize: 'cover', backgroundImage: `url(${Image2})`, marginRight: 10, marginTop: 5, width: '100%'}}>
+                        <Grid item sm={12} spacing={1} alignItems="center" className='inputContainer' style={{padding: '15px 15px', overflow: 'scroll', backgroundSize: 'cover', marginRight: 10, marginTop: 5, width: '100%'}}>
                             <div style={{flexDirection: 'column', display: 'flex', width: '100%', alignItems: 'center', height: 400}}>
                                 {this.renderSelectedList(this.state.selectedList)}
                             </div>
