@@ -24,6 +24,8 @@ export function getAllGroups(token) {
     return get(`${api_dir_2}/get-all?`, token);
 }
 
+// /api/v1/Users/get-student-byUsername?username
+
 export function getStudent(token, query) {
     return get(`${api_dir_3}/get-student-byUsername?${query}`, token);
 }

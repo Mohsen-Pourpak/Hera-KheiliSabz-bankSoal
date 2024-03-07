@@ -80,8 +80,8 @@ const styles = {
 };
 
 class ManagementTest extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       teachersList: [],
       grades: [],

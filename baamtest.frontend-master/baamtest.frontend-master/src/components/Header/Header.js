@@ -4,18 +4,19 @@ import {
   Toolbar,
   Menu,
   Fade,
+  IconButton
 
 } from "@material-ui/core";
 
 // import SendIcon from "@material-ui/icons/Send";
 
-// import {
-//   Menu as MenuIcon,
-//   ArrowBack as ArrowBackIcon,
-//   ExpandMore,
-// } from "@material-ui/icons";
-// import classNames from "classnames";
-// styles
+import {
+  Menu as MenuIcon,
+  ArrowBack as ArrowBackIcon,
+  ExpandMore,
+} from "@material-ui/icons";
+import classNames from "classnames";
+
 import useStyles from "./styles";
 
 // components
@@ -85,31 +86,31 @@ const schoolMenus = [
       // }
     ],
   },
-  //  {
-  //   id: 2,
-  //   label: "اشتراک",
-  //   link: "/dashboard/subscription",
-  //   icon: BaseIcon(Pack),
-  //   activeIcon: BaseIcon(ActivePack),
-  //   children: [
-  //     // {
-  //     //   label: "اشتراک",
-  //     //   link: "/dashboard/subscription",
-  //     // },
-  //     {
-  //       label: "افزایش اعتبار",
-  //       link: "/dashboard/subscription-credit",
-  //     },
-  //     {
-  //       label: "رسید پرداخت",
-  //       link: "/dashboard/subscription-purchase-invoices",
-  //     },
-  //     {
-  //       label: "تراکنش ها",
-  //       link: "/dashboard/subscription-all-wallet",
-  //     }
-  //   ],
-  // },
+   {
+    id: 2,
+    label: "اشتراک",
+    link: "/dashboard/subscription",
+    icon: BaseIcon(Pack),
+    activeIcon: BaseIcon(ActivePack),
+    children: [
+      // {
+      //   label: "اشتراک",
+      //   link: "/dashboard/subscription",
+      // },
+      {
+        label: "افزایش اعتبار",
+        link: "/dashboard/subscription-credit",
+      },
+      {
+        label: "رسید پرداخت",
+        link: "/dashboard/subscription-purchase-invoices",
+      },
+      {
+        label: "تراکنش ها",
+        link: "/dashboard/subscription-all-wallet",
+      }
+    ],
+  },
   {
     id: 3,
     label: "زیرگروه",
@@ -586,18 +587,18 @@ export default function Header(props) {
 
               <Mask image={avatar} size={65} />
 
-              {/* <IconButton
+              <IconButton
                 aria-haspopup="true"
                 color="inherit"
                 className={classes.headerMenuButton}
                 aria-controls="profile-menu"
                 onClick={e => setProfileMenu(e.currentTarget)}
               >
-                <ExpandMore classes={{ root: classes.headerIcon }} />
+                <ExpandMore color="primary" />
                 <Typography variant="h6" weight="medium" style={{ marginRight: 10 }}>
                   {name}
                 </Typography>
-              </IconButton> */}
+              </IconButton>
             </div>
           </Fade>
         }

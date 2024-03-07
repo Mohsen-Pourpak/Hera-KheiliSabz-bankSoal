@@ -7,6 +7,7 @@ import {
   MenuItem,
   Button,
   Typography,
+  Divider,
 } from "@material-ui/core";
 import { DatePicker } from "@material-ui/pickers";
 import { DeleteSweep } from "@material-ui/icons";
@@ -25,6 +26,7 @@ import Hard from "../../images/test/hard.svg";
 import Normal from "../../images/test/normal.svg";
 import Easy from "../../images/test/easy.svg";
 import CheckRadioIcon from "../../images/icons/check-radio-icon.svg";
+// easy color: #3EC56F
 
 const ActionButton = ({ Icon, onClick, color }) => {
   return (
@@ -77,7 +79,7 @@ const Level = ({ image, right, percent }) => {
 const styles = {
   trItem: {
     backgroundColor: "#f4faff",
-    color: "#8AB668",
+    color: "#000",
     // display: "flex",
     // alignItems: "center",
     // justifyContent: "center",
@@ -86,7 +88,7 @@ const styles = {
     padding: "10px 10px",
   },
   thItem: {
-    color: "#8AB668",
+    color: "#000",
     display: "flex",
     fontSize: 14,
     alignItems: "center",
@@ -103,7 +105,7 @@ const styles = {
 
   randomFilter: {
     backgroundColor: "#fff",
-    color: "#8AB668",
+    color: "#00",
     width: "auto",
     height: 40,
     flex: 1,
@@ -356,7 +358,7 @@ class FinalizingTest extends React.Component {
             }}
           >
             <TextField
-              style={{ ...styles.countInput, backgroundColor: "#3EC592" }}
+              style={{ ...styles.countInput, backgroundColor: "#3EC56F" }}
               value={toFA(item.numberOfEasyQuestions)}
               onChange={e =>
                 this.changeCountInput(
@@ -382,7 +384,7 @@ class FinalizingTest extends React.Component {
               }
             />
             <TextField
-              style={{ ...styles.countInput, backgroundColor: "#C83E43" }}
+              style={{ ...styles.countInput, backgroundColor: "#FF0000" }}
               value={toFA(item.numberOfHardQuestions)}
               onChange={e =>
                 this.changeCountInput(
@@ -634,6 +636,7 @@ class FinalizingTest extends React.Component {
           <CircularProgress color="inherit" />
         </Backdrop>
         <PageTitle title="ساخت آزمون - انتخاب خودکار" />
+        <Divider/>
         {!this.state.progress && (
           <Grid container item xs={12} style={{ padding: "0 10px" }}>
             <Grid
@@ -643,6 +646,7 @@ class FinalizingTest extends React.Component {
               justify="space-between"
               container
               style={{
+                margin: 80,
                 padding: 10,
                 backgroundColor: "rgb(255 255 255 / 40%)",
                 borderRadius: 20,
@@ -670,7 +674,7 @@ class FinalizingTest extends React.Component {
                       paddingLeft: 10,
                       flex: 6,
                       borderRadius: 20,
-                      background: "#3EC592",
+                      background: "#3EC56F",
                       height: 45,
                     }}
                   >
@@ -765,7 +769,9 @@ class FinalizingTest extends React.Component {
               justify="flex-start"
               container
               style={{
-                padding: 10,
+                margin: 80,
+                marginTop: 20,
+                padding: 40,
                 backgroundColor: "rgb(255 255 255 / 40%)",
                 borderRadius: 20,
               }}
@@ -868,11 +874,11 @@ class FinalizingTest extends React.Component {
                   >
                     <Point color="#fff" />
                     <Line />
-                    <Point color="#C83E43" />
+                    <Point color="#FF0000" />
                     <Line />
                     <Point color="#FB963A" />
                     <Line />
-                    <Point color="#3EC592" />
+                    <Point color="#3EC56F" />
                     <Line />
                     <Point color="#fff" />
                   </div> */}

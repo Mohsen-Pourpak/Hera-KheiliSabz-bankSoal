@@ -1,5 +1,5 @@
 import React from "react";
-import { CircularProgress, Grid, Button, Backdrop } from "@material-ui/core";
+import { CircularProgress, Grid, Button, Backdrop, Divider } from "@material-ui/core";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { DeleteSweep } from "@material-ui/icons";
 
@@ -40,7 +40,7 @@ const style = {
     borderRadius: 60,
     height: 30,
     width: 30,
-    paddingTop: "10px",
+    paddingTop: "0px",
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
@@ -314,6 +314,7 @@ class CreateTest extends React.Component {
               justify="space-between"
               alignItems="center"
               style={{
+                fontSize: "0.9rem",
                 padding: "10px 5px",
                 backgroundColor: "#fff",
                 marginBottom: 0,
@@ -488,18 +489,21 @@ class CreateTest extends React.Component {
           <CircularProgress color="inherit" />
         </Backdrop>
         <PageTitle title="آزمون آنلاین" />
+        <Divider/>
         {!this.state.progress && (
           <Grid
             container
             item
             xs={12}
             style={{
-              padding: 20,
+              marginBlock: 40,
+              padding: 70,
               borderRadius: "30px",
               backgroundColor: "rgb(255 255 255 / 40%)",
               alignItems: "flex-start",
               display: "flex",
             }}
+            spacing={3}
           >
             <div
               style={{
@@ -521,7 +525,7 @@ class CreateTest extends React.Component {
               className="render-questions"
               direction="column"
               item
-              xs={10}
+              xs={9}
               style={{ marginRight: 20 }}
             >
               {this.renderQuestionsList(this.state.questionsList)}

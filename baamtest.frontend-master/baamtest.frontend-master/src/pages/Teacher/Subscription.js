@@ -12,7 +12,7 @@ import ArrowIcon from '../../images/icons/circle-arrow-icon.svg';
 import Image2 from '../../images/test/Untitled-1.jpg';
 import Image3 from '../../images/pishkhan/Untitled-3.svg';
 import Image4 from '../../images/pishkhan/Untitled-4.svg';
-import Image5 from '../../images/teacher/get-price.svg';
+// import Image5 from '../../images/teacher/get-price.svg';
 import {books, fields} from '../../api/services/tags';
 import { toast } from 'react-toastify';
 import {payment} from '../../api/services/buy';
@@ -34,8 +34,8 @@ const Mask = ({ image, size }) => (
 const style = {
     sortFilter: {
         backgroundColor: 'transparent',
-        border: '1px solid #3d82a4',
-        color: '#3d82a4',
+        border: '1px solid #8AB668',
+        color: '#8AB668',
         width: 'fit-content',
         height: 40,
         padding: '0 50px',
@@ -46,8 +46,8 @@ const style = {
         cursor: 'pointer'
     },
     sortFilterActive: {
-        backgroundColor: '#3d82a4',
-        border: '1px solid #3d82a4',
+        backgroundColor: '#8AB668',
+        border: '1px solid #8AB668',
         color: '#fff',
         width: 'fit-content',
         padding: '0 50px',
@@ -199,7 +199,7 @@ class RegisterTest extends React.Component {
                         <div style={{flexDirection: 'row', display: 'flex', width: '100%'}}>
                             <div>
                                 <div style={{width: '100%'}}>
-                                    <PageTitle title="جهت خرید اشتراک سالانه ی بام تست به نکات زیر توجه فرمایید :" size="h2" color="#3d82a4" />
+                                    <PageTitle title="جهت خرید اشتراک سالانه ی خیلی سبز به نکات زیر توجه فرمایید :" size="h2" color="#8AB668" />
                                 </div>
                                 {this.state.isSchool ? <div style={{fontSize: '1rem', padding: '0 15px'}}>
                                 ۱ - شما میتوانید بر اساس رشته های تحصیلی موجود در مدرسه /موسسه ی خویش، رشته های تحصیلی مورد نیازتان را انتخاب کنید. <br />
@@ -207,26 +207,26 @@ class RegisterTest extends React.Component {
                                 ۳ - پس از خرید اشتراک سالانه، می‌توانید یک مشاور به ازای هر پایه و یک دبیر به ازای هر درس در هر پایه، به صورت رایگان به عنوان زیرگروه خود اضافه کنید که فرآیند طراحی و برگزاری آزمون برای شما بسیار آسان تر بشود.برای این کار کافیست به بخش "مدیریت کلاس"مراجعه کنید.<br />
                                 ۴ - بعد از خرید اشتراک سالانه، می‌توانید دانش آموزان خود را به زیرگروه خود اضافه کنید و آن ها را کلاس بندی(گروه بندی) کنید و برای آن ها آزمون آنلاین(و به زودی خدمات گسترده تر و بیشتر ) برگزار کنید و کارنامه بدهید. برای این کار کافیست به بخش "خرید زیرگروه" مراجعه کنید.<br />
                                 ۵ - پس از اتمام اعتبار ،برای بهره گیری از خدمات بیشتر، می‌توانید اعتبار خود را افزایش دهید و برای این کار تنها کافیست که به بخش "افزایش اعتبار" مراجعه کنید.<br />
-                                ۶ - برای تک تک هزینه هایی که در داخل بام تست انجام می‌دهید، نگران نباشید؛زیرا علاوه بر خدمات گیری از بام تست ،ستاره دریافت می کنید که این ستاره ها در نهایت می تواند به هدایای نفیسی از طرف بام تست به شما تبدیل شود.<br />
-                                ۷ -  بعد از گذشت یک سال ،اشتراک به حالت اولیه بازمی‌گردد و تنها تعداد ستاره های آن باقی میماند که می‌تواند به هدایای نفیسی از طرف بام تست به شما تبدیل شود ؛ برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
+                                ۶ - برای تک تک هزینه هایی که در داخل خیلی سبز انجام می‌دهید، نگران نباشید؛زیرا علاوه بر خدمات گیری از خیلی سبز ،ستاره دریافت می کنید که این ستاره ها در نهایت می تواند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود.<br />
+                                ۷ -  بعد از گذشت یک سال ،اشتراک به حالت اولیه بازمی‌گردد و تنها تعداد ستاره های آن باقی میماند که می‌تواند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود ؛ برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
                                 </div> : this.state.isAdvisor ? <div style={{fontSize: '1rem', padding: '0 15px'}}>
                                 ۱ - شما میتوانید بر اساس رشته های تحصیلی مورد نیازتان، اشتراک خود را دریافت کنید و به سوالات آن رشته (رشته های)تحصیلی دسترسی پیدا کنید.<br />
                                 ۲ - بعد از خرید اشتراک سالانه ، به مقدار هزینه ی ثبت ۱۰۰۰۰ سوال برای شما در بخش اعتبار ،شارژ انجام می شود که می‌توانید از آن در بخش های مختلف استفاده کنید.<br />
                                 ۳ - پس از خرید اشتراک سالانه، می‌توانید دبیران خود را به زیرگروه خود اضافه کنید و آن ها را سامان دهی کنید. براي اين کار کافیست به بخش "خرید زیرگروه"مراجعه کنید.<br />
                                 ۴ - بعد از خرید اشتراک سالانه، می‌توانید دانش آموزان خود را به زیرگروه خود اضافه کنید و آن ها را کلاس بندی(گروه بندی) کنید و برای آن ها آزمون آنلاین(و به زودی خدمات گسترده تر و بیشتر ) برگزار کنید و کارنامه بدهید.برای این کار کافیست به بخش "خرید زیرگروه" مراجعه کنید.<br />
                                 ۵ - پس از اتمام اعتبار ،برای بهره گیری از خدمات بیشتر، می‌توانید اعتبار خود را افزایش دهید و برای این کار تنها کافیست که به بخش "افزایش اعتبار" مراجعه کنید.<br />
-                                ۶ - برای تک تک هزینه هایی که در داخل بام تست انجام می‌دهید، نگران نباشید؛زیرا علاوه بر خدمات گیری از بام تست ،ستاره دریافت می کنید که این ستاره ها در نهایت می تواند به هدایای نفیسی از طرف بام تست به شما تبدیل شود.<br />
-                                ۷ -  بعد از گذشت یک سال ،اشتراک به حالت اولیه بازمی‌گردد و تنها تعداد ستاره های آن باقی میماند که می‌تواند به هدایای نفیسی از طرف بام تست به شما تبدیل شود ؛ برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
+                                ۶ - برای تک تک هزینه هایی که در داخل خیلی سبز انجام می‌دهید، نگران نباشید؛زیرا علاوه بر خدمات گیری از خیلی سبز ،ستاره دریافت می کنید که این ستاره ها در نهایت می تواند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود.<br />
+                                ۷ -  بعد از گذشت یک سال ،اشتراک به حالت اولیه بازمی‌گردد و تنها تعداد ستاره های آن باقی میماند که می‌تواند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود ؛ برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
                                 </div> : <div style={{fontSize: '1rem', padding: '0 15px'}}>
                                 ۱ - شما میتوانید بر اساس دروس مورد نیازتان، اشتراک خود را دریافت کنید و به سوالات آن درس(دروس)دسترسی پیدا کنید.<br />
                                 ۲ - بعد از خرید اشتراک سالانه ، به مقدار هزینه ی ثبت ۲۰۰۰ سوال برای شما در بخش اعتبار ،شارژ انجام می شود که می‌توانید از آن در بخش های مختلف استفاده کنید.<br />
                                 ۳ - بعد از خرید اشتراک سالانه، می‌توانید دانش آموزان خود را به زیرگروه خود اضافه کنید و آن ها را کلاس بندی(گروه بندی) کنید و برای آن ها آزمون آنلاین(و به زودی خدمات گسترده تر و بیشتر ) برگزار کنید و کارنامه بدهید.برای این کار کافیست به بخش "خرید زیرگروه" مراجعه کنید.<br />
                                 ۴ - پس از اتمام اعتبار ،برای بهره گیری از خدمات بیشتر، می‌توانید اعتبار خود را افزایش دهید و برای این کار تنها کافیست که به بخش "افزایش اعتبار" مراجعه کنید.<br />
-                                ۵ - برای تک تک هزینه هایی که در داخل بام تست انجام می‌دهید، نگران نباشید؛زیرا علاوه بر خدمات گیری از بام تست ،ستاره دریافت می کنید که این ستاره ها در نهایت می تواند به هدایای نفیسی از طرف بام تست به شما تبدیل شود.<br />
-                                ۶ -  بعد از گذشت یک سال ،اشتراک به حالت اولیه بازمی‌گردد و تنها تعداد ستاره های آن باقی میماند که می‌تواند به هدایای نفیسی از طرف بام تست به شما تبدیل شود ؛ برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
+                                ۵ - برای تک تک هزینه هایی که در داخل خیلی سبز انجام می‌دهید، نگران نباشید؛زیرا علاوه بر خدمات گیری از خیلی سبز ،ستاره دریافت می کنید که این ستاره ها در نهایت می تواند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود.<br />
+                                ۶ -  بعد از گذشت یک سال ،اشتراک به حالت اولیه بازمی‌گردد و تنها تعداد ستاره های آن باقی میماند که می‌تواند به هدایای نفیسی از طرف خیلی سبز به شما تبدیل شود ؛ برای اطلاعات بیشتر می‌توانید با بخش پشتیبانی تماس حاصل بفرمایید.
                                 </div>}
                             </div>
-                            <img src={Image5} style={{height: 200}} />
+                            {/* <img src={Image5} style={{height: 200}} /> */}
                         </div>
                     </Grid>
                 </Grid>
@@ -258,7 +258,7 @@ class RegisterTest extends React.Component {
                 <Grid direction="column" alignItems="flex-start" spacing={3} justify="flex-start" container style={{padding: 20, marginTop: 40, backgroundColor: 'rgb(255 255 255 / 40%)', borderRadius: 20}}>
                     <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'space-between',}}>
                         <div style={{flexDirection: 'row', display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45}}>
+                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#8AB668', height: 45}}>
                                 مدت زمان باقی مانده
                             </div>
                             <div style={{flex: 1, textAlign: 'center', width: 200}}>
@@ -267,7 +267,7 @@ class RegisterTest extends React.Component {
                         </div>
                         <div style={{flex: 0.5}} />
                         <div style={{flexDirection: 'row', marginRight: 20, display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45}}>
+                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#8AB668', height: 45}}>
                                 کد تخفیف
                             </div>
                             <div style={{flex: 1, textAlign: 'center', width: 200}}>
@@ -282,7 +282,7 @@ class RegisterTest extends React.Component {
                         </div>
                         <div style={{flex: 0.5}} />
                         <div style={{flexDirection: 'row', display: 'flex', background: '#fff', height: 45, borderRadius: 50, alignItems: 'center', justifyContent: 'space-between'}}>
-                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#3d82a4', height: 45}}>
+                            <div style={{flexDirection: 'row', display: 'flex', color: '#fff', alignItems: 'center', padding: '0 15px', borderRadius: 50, background: '#8AB668', height: 45}}>
                                 قیمت
                             </div>
                             <div style={{flex: 1, textAlign: 'center', width: 200}}>

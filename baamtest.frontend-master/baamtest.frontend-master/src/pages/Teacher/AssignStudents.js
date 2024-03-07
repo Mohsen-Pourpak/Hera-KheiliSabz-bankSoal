@@ -1,5 +1,5 @@
 import React from "react";
-import { CircularProgress, Grid, Backdrop, Button } from "@material-ui/core";
+import { CircularProgress, Grid, Backdrop, Button, Divider } from "@material-ui/core";
 import { Description, CloudUpload, Attachment } from "@material-ui/icons";
 import { toast } from "react-toastify";
 import * as XLSX from "xlsx";
@@ -233,6 +233,7 @@ class CreateTest extends React.Component {
     return (
       <>
         <PageTitle title="مدیریت دانش آموزان" />
+        <Divider/>
         {this.state.isLoading ? (
           <Backdrop
             style={{ zIndex: 1000000, color: "#228b22" }}

@@ -1,7 +1,8 @@
 import tinycolor from "tinycolor2";
 
 const primary = "#8AB668";
-const secondary = "#000000";
+// const secondary = "#000000";
+const secondary = "#616161";
 const warning = "#FF0000";
 const success = "#3CD4A0";
 const info = "#9013FE";
@@ -91,6 +92,7 @@ export default {
     MuiBackdrop: {
       root: {
         backgroundColor: "#CBF2CF",
+        opacity: "0.5 !important"
       },
     },
     MuiMenu: {

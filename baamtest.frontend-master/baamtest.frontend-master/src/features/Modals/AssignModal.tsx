@@ -39,7 +39,10 @@ export default function AssignModal({
         <Box display="flex">
           <NormalInput
             placeholder="نام کاربری را وارد کنید"
-            onChange={e => setUsername(e.target.value)}
+            onChange={e => {
+              console.log(e);
+              setUsername(e.target.value);
+            }}
             style={{ flexGrow: 1, marginLeft: 10 }}
           />
           <Button
@@ -75,7 +78,7 @@ export default function AssignModal({
             </Box>
             <div style={{ flexGrow: 1 }} />
             <Button
-              disabled={Boolean(username.length < 10)}
+              disabled={Boolean(username.length < 0)}
               onClick={onAssign}
               fullWidth
               variant="contained"

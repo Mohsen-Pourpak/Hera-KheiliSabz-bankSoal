@@ -6,6 +6,7 @@ import {
   Backdrop,
   MenuItem,
   Dialog,
+  Divider,
 } from "@material-ui/core";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
@@ -28,8 +29,8 @@ import { toast } from "react-toastify";
 const style = {
   sortFilter: {
     backgroundColor: "transparent",
-    border: "1px solid #3d82a4",
-    color: "#3d82a4",
+    border: "1px solid #8AB668",
+    color: "#8AB668",
     width: "fit-content",
     padding: "4px 8px 2px",
     fontSize: 11,
@@ -40,8 +41,8 @@ const style = {
     cursor: "pointer",
   },
   sortFilterActive: {
-    backgroundColor: "#3d82a4",
-    border: "1px solid #3d82a4",
+    backgroundColor: "#8AB668",
+    border: "1px solid #8AB668",
     color: "#fff",
     width: "fit-content",
     padding: "4px 8px 2px",
@@ -149,23 +150,26 @@ class AllPackages extends React.Component {
           <CircularProgress color="inherit" />
         </Backdrop>
         <PageTitle title="خرید پک سوال" />
+        <Divider/>
         {!this.state.progress && (
-          <Grid container item xs={12} style={{ padding: "0 10px" }}>
+          <Grid container item xs={12} style={{ padding: "124px" }}>
             <div
               style={{ width: "100%", flexDirection: "row", display: "flex" }}
             >
-              <div style={{ padding: 10, flex: 3.5 }}>
+              {/* showing books images */}
+              {/* <div style={{ padding: 10, flex: 3.5 }}>
                 <img
                   src={BASE_URL + pack.image || bookImage}
                   width="100%"
                   alt=""
                 />
-              </div>
+              </div> */}
               <div style={{ width: 20 }} />
               <div
                 style={{
-                  padding: 20,
-                  flex: 3.5,
+                  padding: 44,
+                  margin: 70,
+                  flex: 2,
                   display: "flex",
                   flexDirection: "column",
                   backgroundColor: "rgb(255 255 255 / 40%)",
@@ -193,7 +197,7 @@ class AllPackages extends React.Component {
                       padding: "0 15px",
                       borderRadius: 25,
                       justifyContent: "center",
-                      background: "#3d82a4",
+                      background: "#8AB668",
                       width: 150,
                     }}
                   >
@@ -251,7 +255,7 @@ class AllPackages extends React.Component {
                       padding: "0 15px",
                       borderRadius: 25,
                       justifyContent: "center",
-                      background: "#3d82a4",
+                      background: "#8AB668",
                       width: 150,
                     }}
                   >
@@ -309,7 +313,7 @@ class AllPackages extends React.Component {
                       padding: "0 15px",
                       borderRadius: 25,
                       justifyContent: "center",
-                      background: "#3d82a4",
+                      background: "#8AB668",
                       width: 150,
                     }}
                   >
@@ -361,7 +365,7 @@ class AllPackages extends React.Component {
                       padding: "0 15px",
                       borderRadius: 25,
                       justifyContent: "center",
-                      background: "#3d82a4",
+                      background: "#8AB668",
                       width: 150,
                     }}
                   >
@@ -416,7 +420,7 @@ class AllPackages extends React.Component {
                       padding: "0 15px",
                       borderRadius: 25,
                       justifyContent: "center",
-                      background: "#3d82a4",
+                      background: "#8AB668",
                     }}
                   >
                     کد تخفیف
@@ -440,7 +444,7 @@ class AllPackages extends React.Component {
                   style={{
                     flexDirection: "row",
                     display: "flex",
-                    background: "#fe5f55",
+                    background: "#FF0000",
                     color: "#fff",
                     height: 45,
                     marginTop: 20,
@@ -476,7 +480,7 @@ class AllPackages extends React.Component {
                       padding: "0 15px",
                       borderRadius: 25,
                       justifyContent: "center",
-                      background: "#3d82a4",
+                      background: "#8AB668",
                       width: 150,
                     }}
                   >
@@ -505,7 +509,7 @@ class AllPackages extends React.Component {
                   style={{
                     flexDirection: "row",
                     display: "flex",
-                    background: "#fe5f55",
+                    background: "#FF0000",
                     color: "#fff",
                     height: 45,
                     marginBottom: 0,
