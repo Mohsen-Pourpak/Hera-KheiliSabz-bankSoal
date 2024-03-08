@@ -16,7 +16,7 @@ export default function AssignModal({
   onAssign: () => void;
   userSearched?: any;
 }) {
-  const [username, setUsername] = useState("");
+  let [username, setUsername] = useState("");
 
   return (
     <Dialog
@@ -40,14 +40,17 @@ export default function AssignModal({
           <NormalInput
             placeholder="نام کاربری را وارد کنید"
             onChange={e => {
-              console.log(e);
+              console.log(e.target.value);
               setUsername(e.target.value);
             }}
             style={{ flexGrow: 1, marginLeft: 10 }}
           />
           <Button
             disabled={Boolean(username.length < 8)}
-            onClick={() => onSearch(username)}
+            onClick={() => {
+              console.log(username)
+              onSearch(username)
+            }}
             variant="contained"
             color="primary"
           >

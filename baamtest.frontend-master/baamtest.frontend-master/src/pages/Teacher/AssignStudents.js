@@ -55,6 +55,8 @@ class CreateTest extends React.Component {
       isLoading: true,
       subAdvisors: [],
       username: "",
+      userSearched: "",
+      open: false,
     };
   }
 
@@ -176,11 +178,13 @@ class CreateTest extends React.Component {
     });
   };
 
-  searchStudent = () => {
+  searchStudent = (username) => {
     let token = localStorage.getItem("userToken");
-    let query = `username=${this.state.username}`;
+    let query = `username=${username}`;
+    console.log(query);
     getStudent(token, query).then(res => {
       if (res.data) {
+        console.log(res);
         this.setState({ userSearched: res.data });
       }
     });

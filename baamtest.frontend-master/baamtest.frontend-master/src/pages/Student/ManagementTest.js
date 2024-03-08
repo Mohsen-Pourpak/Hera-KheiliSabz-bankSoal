@@ -141,6 +141,7 @@ class ManagementTest extends React.Component {
     };
     getAllFilter(req, token, this.state.headId, this.state.page).then(res_ => {
       let res = res_.data;
+      console.log(res)
       let pagination = JSON.parse(res_.headers.pagination);
 
       let pageCount = pagination.totalPages;

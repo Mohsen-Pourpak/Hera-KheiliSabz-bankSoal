@@ -33,7 +33,7 @@ export function getAll(headId, token, page) {
 // Added by AMM
 export function getAllFilter(obj, token, headId, page) {
   return post(
-    `${api_dir_1}/all/?headId=${headId}&&PageNumber=${page}&PageSize=${PER_PAGE_TABLES}`,
+    `${api_dir_1}/all/?headId=${headId}&PageNumber=${page}&PageSize=${PER_PAGE_TABLES}`,
     obj,
     token,
     true,
