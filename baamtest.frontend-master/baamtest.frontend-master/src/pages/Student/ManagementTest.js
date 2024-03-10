@@ -107,7 +107,7 @@ class ManagementTest extends React.Component {
     this.setState({ isStudent });
     getHeads(token).then(res => {
       if (res.isSuccess) {
-        console.error({ res });
+        console.error(res);
         let heads = res.data
           .filter((x, i, a) => a.indexOf(x) === i)
           .map(el => {

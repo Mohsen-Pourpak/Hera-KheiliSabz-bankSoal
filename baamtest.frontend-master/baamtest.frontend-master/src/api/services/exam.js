@@ -78,6 +78,9 @@ export function getNotAccepted(token, page) {
   );
 }
 
+// /api/v1/exam
+// {{kheilisabz}}/api/v1/Exam/all-group-in-exam?examId=1400
+
 export function allGroupInExam(id, token) {
   return get(`${api_dir_1}/all-group-in-exam?examId=${id}`, token);
 }
