@@ -34,6 +34,7 @@ import {
   getAllFilter,
   getExamPercentResult,
   getHaveReportCard,
+  getAllExamByToken
 } from "../../api/services/exam";
 import { getHeads } from "../../api/services/user";
 import { getDateTime, toFA, toEn } from "../../utils/Utils";
@@ -121,6 +122,7 @@ class ManagementTest extends React.Component {
 
   fetchData = () => {
     let token = localStorage.getItem("userToken");
+    console.log(token);
     // let req = {
     //   examName: this.state.nameFilter,
     //   fromDate: this.state.startTime
@@ -130,23 +132,29 @@ class ManagementTest extends React.Component {
     //     ? toEn(this.state.startTime._d.toISOString()).slice(0, 11) + "23:59:59" + toEn(this.state.startTime._d.toISOString()).slice(19)
     //     : "",
     // };
-    let req = {
-      examName: this.state.nameFilter,
-      fromDate: this.state.startTime
-        ? toEn(this.state.startTime._d.toISOString())
-        : "",
-      toDate: this.state.startTime
-        ? toEn(this.state.startTime.format("YYYY-MM-DDT23:59:59"))
-        : "",
-    };
-    getAllFilter(req, token, this.state.headId, this.state.page).then(res_ => {
-      let res = res_.data;
-      console.log(res)
-      let pagination = JSON.parse(res_.headers.pagination);
+    // let req = {
+    //   examName: this.state.nameFilter,
+    //   fromDate: this.state.startTime
+    //     ? toEn(this.state.startTime._d.toISOString())
+    //     : "",
+    //   toDate: this.state.startTime
+    //     ? toEn(this.state.startTime.format("YYYY-MM-DDT23:59:59"))
+    //     : "",
+    // };
+    // getAllFilter(req, token, this.state.headId, this.state.page).then(res_ => {
+    //   let res = res_.data;
+    //   console.log(res_)
+    //   console.log(res);
+    //   let pagination = JSON.parse(res_.headers.pagination);
 
-      let pageCount = pagination.totalPages;
-      this.setState({ userExams: res.data, progress: false, pageCount });
-    });
+    //   let pageCount = pagination.totalPages;
+    //   this.setState({ userExams: res.data, progress: false, pageCount });
+    // });
+    getAllExamByToken(token, this.state.page).then((response) => {
+      // console.log(response.data.data)
+      this.setState({userExams: response.data.data, progress: false})
+    })
+    
   };
 
   handleChangePage = (_r, page) => {
@@ -156,7 +164,7 @@ class ManagementTest extends React.Component {
   changeInput = (field, e) => {
     let value = e.target.value;
     this.setState(
-      {
+      { 
         [field]: value,
       },
       () => this.fetchData(),
@@ -475,7 +483,7 @@ class ManagementTest extends React.Component {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <PageTitle title="مدیریت آزمون" />
         </div>
-        <Divider/>
+        <Divider />
         {!this.state.progress && (
           <Grid container item xs={12} style={{ padding: "0 10px" }}>
             <Grid
@@ -489,7 +497,7 @@ class ManagementTest extends React.Component {
                 margin: 60,
                 backgroundColor: "#F1ECCF",
                 borderRadius: 20,
-                boxShadow: "1px 2px 5px"
+                boxShadow: "1px 2px 5px",
               }}
             >
               <div
@@ -528,7 +536,7 @@ class ManagementTest extends React.Component {
                       input={<Input disableUnderline />}
                       onChange={e => this.changeInput("headId", e)}
                     >
-                      <MenuItem value="none">آزمون های من</MenuItem>
+                      <MenuItem value="none">آزمون های</MenuItem>
                       {this.renderMenuItem(this.state.heads)}
                     </Select>
                   </Grid>

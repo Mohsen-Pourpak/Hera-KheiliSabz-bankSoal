@@ -96,6 +96,7 @@ class CreateTest extends React.Component {
       questionsList: [],
       selectedList: [],
       time: null,
+      startTime: null,
       progress: true,
     };
   }
@@ -104,12 +105,13 @@ class CreateTest extends React.Component {
     let token = localStorage.getItem("userToken");
     let startTime = localStorage.getItem("startTime");
     if (!startTime) {
-      startTime = `${Date.now()}`;
+      startTime = Date.now();
       localStorage.setItem("startTime", startTime);
     }
+    console.log(parseInt(startTime))
     runTest(examId, token)
       .then(res => {
-        console.error(res);
+        console.log(typeof(res.data.suggestTime))
         res.data.questions.map(item => {
           this.setState({
             answers: { ...this.state.answers, [`question__${item.id}`]: 0 },
@@ -127,9 +129,10 @@ class CreateTest extends React.Component {
         });
         this.setState({
           questionsList: res.data.questions,
-          time: parseInt(res.data.suggestTime),
+          time: res.data.suggestTime,
           progress: false,
-          startTime: parseInt(startTime),
+          // startTime: parseInt(startTime),
+          startTime: parseInt(startTime)
         });
       })
       .catch(() => {
@@ -216,7 +219,7 @@ class CreateTest extends React.Component {
               alignItems: "center",
               padding: "0 15px",
               borderRadius: 50,
-              background: "#fe5f55",
+              background: "#8AB668",
               height: 45,
             }}
           >
@@ -278,11 +281,11 @@ class CreateTest extends React.Component {
       let isFourActive = this.state.answers[`question__${item.id}`] === 4;
       let labelColor =
         levelId === 1
-          ? "#bae4bc"
+          ? "#3EC592"
           : levelId === 2
-          ? "#94ce95"
+          ? "#FB963A"
           : levelId === 3
-          ? "#6eb76f"
+          ? "#C83E43"
           : levelId === 4
           ? "#48a148"
           : "#228b22";
@@ -491,46 +494,107 @@ class CreateTest extends React.Component {
         <PageTitle title="آزمون آنلاین" />
         <Divider/>
         {!this.state.progress && (
+          // <Grid
+          //   container
+          //   item
+          //   xs={12}
+          //   style={{
+          //     marginBlock: 40,
+          //     padding: 70,
+          //     borderRadius: "30px",
+          //     backgroundColor: "rgb(255 255 255 / 40%)",
+          //     alignItems: "flex-start",
+          //     display: "flex",
+          //   }}
+          //   spacing={3}
+          // >
+          //   <div
+          //     style={{
+          //       position: "sticky",
+          //       top: -15,
+          //       flex: 1,
+          //       minWidth: 270,
+          //       maxHeight: `calc(100vh - 80px)`,
+          //       overflowY: "auto",
+          //       scrollbarWidth: "thin",
+          //       textAlign: "center",
+          //     }}
+          //   >
+          //     <FilterBox title="زمان باقیمانده"></FilterBox>
+          //     <FilterBox title="مشخصات آزمون"></FilterBox>
+          //     <FilterBox title="وضعیت پاسخگویی"></FilterBox>
+          //   </div>
+          //   <Grid
+          //     className="render-questions"
+          //     direction="column"
+          //     item
+          //     xs={9}
+          //     style={{ marginRight: 20 }}
+          //   >
+          //     {this.renderQuestionsList(this.state.questionsList)}
+          //   </Grid>
+          // </Grid>
+          <Grid container item xs={12} style={{ padding: "0 10px" }}>
           <Grid
-            container
-            item
-            xs={12}
-            style={{
-              marginBlock: 40,
-              padding: 70,
-              borderRadius: "30px",
-              backgroundColor: "rgb(255 255 255 / 40%)",
-              alignItems: "flex-start",
-              display: "flex",
-            }}
+            direction="column"
+            alignItems="flex-start"
             spacing={3}
+            justify="flex-start"
+            container
+            style={{
+              margin: 50,
+              padding: 40,
+              backgroundColor: "rgb(255 255 255 / 40%)",
+              borderRadius: 20,
+            }}
           >
+            {this.state.time && (
+              <div style={{ marginBottom: 20 }}>
+                <Countdown
+                  date={Date.now() + ((this.state.time)*60)*1000}
+                  renderer={this.renderer}
+                  onComplete={this.correctionExam}
+                />
+              </div>
+            )}
             <div
               style={{
-                position: "sticky",
-                top: -15,
-                flex: 1,
-                minWidth: 270,
-                maxHeight: `calc(100vh - 80px)`,
-                overflowY: "auto",
-                scrollbarWidth: "thin",
+                alignSelf: "center",
                 textAlign: "center",
+                maxWidth: "80%",
               }}
             >
-              <FilterBox title="زمان باقیمانده"></FilterBox>
-              <FilterBox title="مشخصات آزمون"></FilterBox>
-              <FilterBox title="وضعیت پاسخگویی"></FilterBox>
-            </div>
-            <Grid
-              className="render-questions"
-              direction="column"
-              item
-              xs={9}
-              style={{ marginRight: 20 }}
-            >
               {this.renderQuestionsList(this.state.questionsList)}
+            </div>
+          </Grid>
+          <Grid
+            direction="row"
+            justify="center"
+            style={{ marginTop: 30 }}
+            container
+            spacing={2}
+          >
+            <Grid item xs={2}>
+              <Button
+                onClick={() => {
+                  this.correctionExam();
+                }}
+                fullWidth
+                variant="contained"
+                color="primary"
+                size="large"
+                className={classes.createAccountButton}
+                style={{
+                  fontSize: "1rem",
+                  textAlign: "center",
+                  fontFamily: "Dana",
+                }}
+              >
+                پایان
+              </Button>
             </Grid>
           </Grid>
+        </Grid>
         )}
       </>
     );

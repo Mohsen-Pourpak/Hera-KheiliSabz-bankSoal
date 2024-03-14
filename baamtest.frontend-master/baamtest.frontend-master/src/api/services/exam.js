@@ -24,11 +24,21 @@ export function getAll(headId, token, page) {
     headId = `headId=${headId}&`;
   }
   return get(
-    `${api_dir_1}/get-all/?${headId}PageNumber=${page}&PageSize=${PER_PAGE_TABLES}`,
+    `${api_dir_1}/get-all?${headId}PageNumber=${page}&PageSize=${PER_PAGE_TABLES}`,
     token,
     true,
   );
 }
+
+
+export function getAllExamByToken(token, page){
+  return get(
+    `${api_dir_1}/get-all?PageNumber=${page}&PageSize=${PER_PAGE_TABLES}`,
+    token, 
+    true
+  )
+}
+
 
 // Added by AMM
 export function getAllFilter(obj, token, headId, page) {
